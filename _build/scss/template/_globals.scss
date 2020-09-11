@@ -1,0 +1,58 @@
+/* --------------------------------------------------------------------------- */
+/*
+/*	Globals
+/*
+/* --------------------------------------------------------------------------- */
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+// root
+:root {}
+
+// body
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    text-rendering: optimizeSpeed;
+}
+
+
+// text & links
+p, a {
+	margin: 0;
+	padding: 0;
+	/*-webkit-transform: translateZ(0);*/
+}
+
+p {
+	&:not(:last-child) {
+		margin-bottom: 1em;
+	}
+}
+
+a {
+	text-decoration: none;
+	transition: all .3s ease;
+	color: inherit;
+}
+
+
+
+// container
+.container {}
+
+
+
+// lists
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
