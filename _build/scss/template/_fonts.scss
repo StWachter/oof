@@ -3,3 +3,65 @@
 /*	Fonts
 /*
 /* --------------------------------------------------------------------------- */
+@font-face {
+    font-family: 'Cantata One';
+    src: url('../fonts/CantataOne-Regular.woff2') format('woff2'),
+        url('../fonts/CantataOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cardo Italic';
+    src: url('../fonts/Cardo-Italic.woff2') format('woff2'),
+        url('../fonts/Cardo-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cardo Bold';
+    src: url('../fonts/Cardo-Bold.woff2') format('woff2'),
+        url('../fonts/Cardo-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans Thin';
+    src: url('../fonts/JosefinSans-Thin.woff2') format('woff2'),
+        url('../fonts/JosefinSans-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Imprima';
+    src: url('../fonts/Imprima-Regular.woff2') format('woff2'),
+        url('../fonts/Imprima-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans Thin Italic';
+    src: url('../fonts/JosefinSans-ThinItalic.woff2') format('woff2'),
+        url('../fonts/JosefinSans-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cardo';
+    src: url('Cardo-Regular.woff2') format('woff2'),
+        url('Cardo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

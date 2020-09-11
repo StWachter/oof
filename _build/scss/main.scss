@@ -13,10 +13,22 @@
 /* --------------------------------------------------------------------------- */
 
 // fonts
-// ...
+$fontSpecialBold: 'Cardo Bold', serif;
+$fontSpecialItalic: 'Cardo Italic', serif;
+$fontRegular: 'Josefin Sans Thin', sans-serif;
+
+$fontCantata: 'Cantata One', serif;
+$fontCardo: 'Cardo', serif;
+$fontJosefin: 'Josefin Sans', sans-serif;
+$fontJosefinThinItalic: 'Josefin Sans Thin Italic', sans-serif;
+$fontImprima: 'Imprima', serif;
 
 // colors
-// ...
+$color1: #ED7C30;
+$color2: #A72B6D;
+$color3: #D8A1B0;
+$color4: #5C4514;
+$color5: #f5ff00;
 
 
 /* --------------------------------------------------------------------------- */
@@ -49,7 +61,8 @@
 
 // modules
 @import
-'modules/cookiemessage';
+'modules/cookiemessage',
+'modules/gallery';
 
 
 // components

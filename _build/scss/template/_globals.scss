@@ -9,7 +9,11 @@
 }
 
 // root
-:root {}
+:root {
+    font-family: $fontRegular;
+    font-size: 20px;
+    line-height: 1.4;
+}
 
 // body
 html,
@@ -46,7 +50,14 @@ a {
 
 
 // container
-.container {}
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+
+    @media (max-width: 1440px) {
+        margin: 0 120px;
+    }
+}
 
 
 
