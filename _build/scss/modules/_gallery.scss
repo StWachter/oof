@@ -7,6 +7,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 200px 250px;
+    align-items: flex-start;
 
     @media (max-width: 900px) {
         grid-gap: 150px;
@@ -65,9 +66,16 @@
         color: #fff;
     }
 
+    &__item:hover &__overlay {
+        opacity: 1;
+    }
+
     &__item--color2:hover &__overlay {
         background: $color2;
-        opacity: 1;
+    }
+
+    &__item--color3:hover &__overlay {
+        background: $color3;
     }
 
     &__text {
