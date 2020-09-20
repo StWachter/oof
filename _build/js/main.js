@@ -135,4 +135,17 @@ $(document).ready(function() {
     });
 
 
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * *
+    // * mobileNavigation
+    // *
+    // *
+    $(".js-nav-mobile-button").click(function(){
+        $(".js-nav-mobile-button").toggleClass("active");
+        $(".js-nav-mobile").toggleClass("active");
+        $(".js-nav-splash").toggleClass("active");
+        $('html, body').toggleClass('freeze');
+    });
+
+
 });

@@ -5,24 +5,33 @@
 /* --------------------------------------------------------------------------- */
 .gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 200px 250px;
-    align-items: flex-start;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 200px 0;
+    padding: 200px 0;
+    overflow: hidden;
 
-    @media (max-width: 900px) {
-        grid-gap: 150px;
+    @media(max-width: 1000px) {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 100px 0;
+        padding: 100px 0;
     }
 
-    &__outer {
-        position: relative;
-        padding-top: 100px;
+    @media(max-width: 700px) {
+        grid-template-columns: 1fr;
     }
 
-    &__item {
-        position: relative;
+    &--top {
+        margin-top: -300px;
+        padding: 0;
+        grid-gap: 0;
 
-        &:nth-child(2n) {
-            transform: translateY(300px)
+        @media(max-width: 1000px) {
+            grid-gap: 0;
+            padding: 0;
+        }
+
+        @media (max-width: 800px) {
+            margin-top: 50px;
         }
     }
 
@@ -30,25 +39,20 @@
         display: block;
         width: 100%;
         height: auto;
-    }
 
-    &__title {
-        position: absolute;
-        top: 1rem;
-        left: -5.5rem;
-        font-size: 8rem;
-        color: $color5;
-        font-family: $fontSpecialItalic;
-        transition: all .3s ease;
-
-        @media (max-width: 900px) {
-            font-size: 6rem;
+        @media (max-width: 700px) {
+            transform: translate(0,0) !important;
         }
-    }
 
-    &__item:hover &__title {
-        opacity: 0;
-        pointer-events: none;
+
+        &Wrapper {
+            margin: 0 auto;
+            position: relative;
+
+            @media (max-width: 500px) {
+                width: 80% !important;
+            }
+        }
     }
 
     &__overlay {
@@ -66,8 +70,12 @@
         color: #fff;
     }
 
-    &__item:hover &__overlay {
+    &__imageWrapper:hover &__overlay {
         opacity: 1;
+    }
+
+    &__item--color1:hover &__overlay {
+        background: $color1;
     }
 
     &__item--color2:hover &__overlay {
@@ -78,12 +86,20 @@
         background: $color3;
     }
 
+    &__item--color4:hover &__overlay {
+        background: $color4;
+    }
+
+    &__item--color5:hover &__overlay {
+        background: $color5;
+    }
+
+
     &__text {
         margin-left: auto;
         max-width: 300px;
         text-align: right;
-        transform: translateY(100px);
+        margin-bottom: -100px;
+        transform: translateY(220px);
     }
-
-	@media (max-width: 320px) {}
 }

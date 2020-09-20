@@ -4,6 +4,39 @@
 /*
 /* --------------------------------------------------------------------------- */
 .footer {
+    margin-top: auto;
+    padding-top: 100px;
 
-	@media (max-width: 320px) {}
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+
+        @media (max-width: 700px) {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &__nav {
+        ul {
+            display: flex;
+
+            @media (max-width: 700px) {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        li {
+            &:not(:last-child):after {
+                content:'/';
+                margin: 0 .5em;
+
+                @media (max-width: 700px) {
+                    display: none;
+                }
+            }
+        }
+    }
 }

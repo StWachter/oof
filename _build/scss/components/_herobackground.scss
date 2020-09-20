@@ -1,0 +1,28 @@
+/* --------------------------------------------------------------------------- */
+/*
+/*	heroBackground
+/*
+/* --------------------------------------------------------------------------- */
+.heroBackground {
+    text-align: right;
+
+    &__background {
+        background: $color3;
+    }
+
+    &__space {
+        display: flex;
+        align-items: flex-end;
+        height: 600px;
+
+        @media (max-width: 800px) {
+            height: 400px;
+        }
+    }
+
+    &__inner {
+        max-width: 400px;
+        margin-left: auto;
+        padding: 1.5rem 0;
+    }
+}

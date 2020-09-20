@@ -56,7 +56,8 @@ $color5: #f5ff00;
 'template/padding',
 'template/header',
 'template/footer',
-'template/animation';
+'template/animation',
+'template/navmobile';
 
 
 // modules
@@ -69,4 +70,5 @@ $color5: #f5ff00;
 @import
 'components/headlines',
 'components/buttons',
-'components/content';
+'components/content',
+'components/herobackground';

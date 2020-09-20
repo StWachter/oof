@@ -21,50 +21,128 @@
 
 
         <!-- header -->
-        <header class="header">
+        <header class="header" id="top">
             <div class="container">
                 <div class="header__inner">
-                    <a href="/" class="header__logo">Ofis super Seite</a>
+                    <a href="/">
+                        <img src="img/logo.png" alt="Logo" class="header__logo">
+                    </a>
+                    <div class="header__navBars js-nav-mobile-button">
+                        <span class="top"></span>
+                        <span class="middle"></span>
+                        <span class="bottom"></span>
+                    </div>
+                    <div class="navMobile__splash js-nav-splash"></div>
                 </div>
             </div>
         </header>
 
-        <!-- gallery -->
-        <div class="pt0 pb0">
-            <div class="container">
-                <div class="gallery__outer">
-                    <div class="gallery__text">
-                        Hallo ich heiße OFi, ich male den ganzen Tag was geht yo dawg
+        <!-- navMobile -->
+        <div class="navMobile js-nav-mobile">
+            <nav class="navMobile__nav">
+                <ul>
+                    <li class="active"><a href="/">Start</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- heroBackground -->
+        <div class="heroBackground">
+            <div class="heroBackground__background">
+                <div class="container">
+                    <div class="heroBackground__space">
+                        <div class="heroBackground__inner">Hallo ich heiße OFi, ich male den ganzen Tag was geht yo dawg.</div>
                     </div>
-                    <div class="gallery">
-                        <a href="#" class="gallery__item gallery__item--color2">
-                            <figure>
-                                <img src="uploads/illu-01.jpg" alt="" class="gallery__image">
-                                <figcaption>
-                                    <span class="gallery__title">Lorem</span>
-                                    <span class="gallery__overlay">
-                                        Kauf mich!
-                                    </span>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <a href="#" class="gallery__item gallery__item--color3">
-                            <figure>
-                                <img src="uploads/illu-02.jpg" alt="" class="gallery__image">
-                                <figcaption>
-                                    <span class="gallery__title">Lorem</span>
-                                    <span class="gallery__overlay">
-                                        Kauf mich!
-                                    </span>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
+                </div>
+            </div>
+            <div class="heroBackground__bottom">
+                <div class="container">
+                    <div class="heroBackground__inner">Alle Motive als Prints in den Größen Din A4, Din A5 oder als Postkarten erhältlich.</div>
                 </div>
             </div>
         </div>
 
+        <!-- gallery -->
+        <div class="pt0 pb0">
+            <div class="containerWide">
+                <div class="gallery gallery--top">
+                    <a href="#" class="gallery__item gallery__item--color2">
+                        <figure class="gallery__imageWrapper" style="width: 60%">
+                            <img src="uploads/illu-01.jpg" alt="" class="gallery__image" style="transform: translate(0,0)">
+                            <figcaption>
+                                <span class="gallery__overlay">
+                                    Kauf mich!
+                                </span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="gallery">
+                    <a href="#" class="gallery__item gallery__item--color2">
+                        <figure class="gallery__imageWrapper" style="width: 60%">
+                            <img src="uploads/illu-01.jpg" alt="" class="gallery__image" style="transform: translate(0,100px)">
+                            <figcaption>
+                                <span class="gallery__overlay">
+                                    Kauf mich!
+                                </span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="#" class="gallery__item gallery__item--color2">
+                        <figure class="gallery__imageWrapper" style="width: 60%">
+                            <img src="uploads/illu-01.jpg" alt="" class="gallery__image" style="transform: translate(0,-100px)">
+                            <figcaption>
+                                <span class="gallery__overlay">
+                                    Kauf mich!
+                                </span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="#" class="gallery__item gallery__item--color2">
+                        <figure class="gallery__imageWrapper" style="width: 70%">
+                            <img src="uploads/illu-01.jpg" alt="" class="gallery__image" style="transform: translate(100px,-100px)">
+                            <figcaption>
+                                <span class="gallery__overlay">
+                                    Kauf mich!
+                                </span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="#" class="gallery__item gallery__item--color2">
+                        <figure class="gallery__imageWrapper" style="width: 60%">
+                            <img src="uploads/illu-01.jpg" alt="" class="gallery__image" style="transform: translate(0,0)">
+                            <figcaption>
+                                <span class="gallery__overlay">
+                                    Kauf mich!
+                                </span>
+                            </figcaption>
+                        </figure>
+                    </a>
 
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <nav class="footer__nav">
+                        <ul>
+                            <li><a href="#top">&copy; 2020 Sophie Kuhn</a></li>
+                            <li><a href="impressum.html">Impressum</a></li>
+                            <li><a href="datenschutz.html">Datenschutz</a></li>
+                        </ul>
+                    </nav>
+                    <a href="instagram.com" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </footer>
 
         <!-- cookieMessage -->
         <div class="cookieMessage js-cookie-message">
