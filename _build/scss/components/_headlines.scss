@@ -14,7 +14,14 @@ h1, h2, h3, h4, h5 {
 }
 
 h1, .h1 {
+    color: $color5;
+    font-size: 4rem;
+    font-family: $fontSpecialItalic;
+    margin-bottom: 1em;
 
+    @media (max-width: 600px) {
+        font-size: 2rem;
+    }
 }
 
 h2, .h2 {

@@ -15,13 +15,14 @@
 // fonts
 $fontSpecialBold: 'Cardo Bold', serif;
 $fontSpecialItalic: 'Cardo Italic', serif;
-$fontRegular: 'Josefin Sans Thin', sans-serif;
+$fontRegular: 'JosefinSans-Light', sans-serif;
 
 $fontCantata: 'Cantata One', serif;
 $fontCardo: 'Cardo', serif;
 $fontJosefin: 'Josefin Sans', sans-serif;
+$fontJosefinThin: 'Josefin Sans Thin', sans-serif;
 $fontJosefinThinItalic: 'Josefin Sans Thin Italic', sans-serif;
-$fontImprima: 'Imprima', serif;
+$fontImprima: 'Cantata One', serif;
 
 // colors
 $color1: #ED7C30;
@@ -38,7 +39,8 @@ $color5: #f5ff00;
 /* --------------------------------------------------------------------------- */
 
 @import
-'vendor/normalize';
+'vendor/normalize',
+'vendor/fancybox';
 
 
 
@@ -63,7 +65,8 @@ $color5: #f5ff00;
 // modules
 @import
 'modules/cookiemessage',
-'modules/gallery';
+'modules/gallery',
+'modules/product';
 
 
 // components
@@ -71,4 +74,8 @@ $color5: #f5ff00;
 'components/headlines',
 'components/buttons',
 'components/content',
-'components/herobackground';
+'components/herobackground',
+'components/cartform',
+'components/intrologo',
+'components/megaimage',
+'components/text';

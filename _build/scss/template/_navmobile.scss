@@ -6,7 +6,7 @@
 .navMobile {
     opacity: 0;
     pointer-events: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -18,7 +18,6 @@
 
     &.active {
         opacity: 1;
-        pointer-events: auto;
     }
 
     &__nav {
@@ -32,9 +31,17 @@
         }
     }
 
+    &.active &__nav {
+        pointer-events: auto;
+    }
+
     li {
         opacity: 0;
         transition: all .3s ease .5s;
+    }
+
+    a:hover {
+        color: #F8C7C3;
     }
 
     @for $i from 1 through 5 {
@@ -72,7 +79,7 @@
             left: -142vmax;
             transform: scale(0);
             transform-origin: 50% 50%;
-            transition: transform .5s cubic-bezier(0.755, 0.050, 0.855, 0.060);
+            transition: transform .8s ease-out;
             will-change:transform;
         }
     }

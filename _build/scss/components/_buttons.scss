@@ -6,10 +6,15 @@
 .button {
 	appearance: none;
     cursor: pointer;
-
+    display: inline-block;
+    padding: .3em 1.65em .2em;
+    background: #efefef;
+    border-radius: 2em;
+    border: 1px solid currentColor;
+    transition: all .3s ease;
 
 	&:hover {
-
+        background: #fff;
 	}
 
 	@media (max-width: 320px) {}

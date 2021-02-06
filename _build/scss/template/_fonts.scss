@@ -34,7 +34,16 @@
     font-family: 'Josefin Sans Thin';
     src: url('../fonts/JosefinSans-Thin.woff2') format('woff2'),
         url('../fonts/JosefinSans-Thin.woff') format('woff');
-    font-weight: 100;
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JosefinSans-Light';
+    src: url('../fonts/JosefinSans-Light.woff2') format('woff2'),
+        url('../fonts/JosefinSans-Light.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }

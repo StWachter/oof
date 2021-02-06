@@ -5,10 +5,17 @@
 /* --------------------------------------------------------------------------- */
 .header {
     padding: 2rem 0;
-    position: absolute;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
+    color: #fff;
+    z-index: 100;
+
+    &--colored {
+        position: relative;
+        color: $color3;
+    }
 
     &__inner {
         display: flex;
@@ -16,10 +23,27 @@
         position: relative;
     }
 
-    &__logo {
+    &--landing &__inner {
+        justify-content: flex-end;
+    }
+
+    &__back {
         display: block;
-        width: 120px;
-        height: auto;
+        width: 30px;
+        height: 30px;
+        fill: currentColor;
+    }
+
+    &__cart {
+        display: block;
+        width: 30px;
+        height: 28px;
+        fill: currentColor;
+        transform: translateY(-4px);
+    }
+
+    &__right {
+        display: flex;
     }
 
     &__navBars {
@@ -48,7 +72,7 @@
 				top: 50%;
 				transform: translate(0,-50%);
 				height: 2px;
-				background: #fff;
+				background: currentColor;
 				position: absolute;
 			}
 

@@ -148,4 +148,39 @@ $(document).ready(function() {
     });
 
 
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * *
+    // * increment input
+    // *
+    // *
+
+    $(".js-increment-plus").click(function(){
+        var oldVal = $(this).parents(".js-increment-wrapper").find(".js-increment-counter").val();
+        var newVal = parseFloat(oldVal) + 1;
+        $(this).parents(".js-increment-wrapper").find(".js-increment-counter").val(newVal);
+    });
+
+    $(".js-increment-minus").click(function(){
+        var oldVal = $(this).parents(".js-increment-wrapper").find(".js-increment-counter").val();
+        if (oldVal > 0) {
+            var newVal = parseFloat(oldVal) - 1;
+        } else {
+            newVal = 0;
+        }
+        $(this).parents(".js-increment-wrapper").find(".js-increment-counter").val(newVal);
+    });
+
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * *
+    // * Fancybox
+    // *
+    // *
+
+    $('[data-fancybox="gallery"]').fancybox({
+        buttons: [
+            "close"
+        ]
+    });
+
+
 });
