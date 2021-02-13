@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'imageplus',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '4752ec3aa3c9fac51c7ca203b44d6b53',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'f1bd1f3061bca76da3ed799078f3617a',
+  'native_key' => 'imageplus.allow_caption',
+  'object' => '{"key":"imageplus.allow_caption","value":"0","xtype":"combo-boolean","namespace":"imageplus","area":"imageplus","editedon":null}',
+);

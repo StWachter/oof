@@ -1,0 +1,16 @@
+id: 9
+source: 2
+type: listbox
+name: productOverlayColor
+caption: Overlay-Farbe
+category: Grafiken
+elements: 'Rot==color1||Pink==color2||Grün==color3||Gelb==color4||Rosa==#fbb1b0||Orange==#ff7000'
+rank: 15
+display: default
+properties: 'a:0:{}'
+input_properties: 'a:7:{s:10:"allowBlank";s:4:"true";s:9:"listWidth";s:0:"";s:5:"title";s:0:"";s:9:"typeAhead";s:5:"false";s:14:"typeAheadDelay";s:3:"250";s:14:"forceSelection";s:5:"false";s:13:"listEmptyText";s:0:"";}'
+output_properties: 'a:3:{s:14:"phpThumbParams";s:6:"w=1000";s:11:"outputChunk";s:0:"";s:11:"generateUrl";s:4:"true";}'
+
+-----
+
+Rot

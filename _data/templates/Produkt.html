@@ -1,0 +1,66 @@
+id: 4
+templatename: Produkt
+description: ''
+category: Admin
+icon: icon-shopping-cart
+properties: 'a:0:{}'
+
+-----
+
+[[$htmlHeader]]
+                
+        [[$headerProduct]]
+        
+        <!-- product -->
+        <div class="pt7">
+            <div class="containerWide">
+                <div class="product">
+                    <div class="product__slider">
+                        <svg class="product__sliderIcon"><use xlink:href="[[checksumFile? &file=`img/sprite.svg#arrow-right`]]"></use></svg>
+                        <ul>
+                            <li>
+                                <a href="[[*productImage]]" data-fancybox="gallery" data-fancybox data-caption="[[*productCaption]]">
+                                <img src="[[*productImage]]" alt="[[pagetitle:htmlent]] [[*productCaption:htmlent]]" class="product__image">
+                                </a>
+                            </li>
+                            [[getImageList?
+                                &tvname=`productSliderWrapper`
+                                &tpl=`productImageTpl`
+                            ]]
+                        </ul>
+                    </div>
+                    <div class="product__info">
+                        <h1 class="product__title">[[*pagetitle]]</h1>
+                        <div class="product__introtext">
+                            [[*content]]
+                        </div>
+                        <form action="">
+                            <div class="cartForm">
+                                <div>
+                                    <div class="cartForm__field">
+                                        <span class="cartForm__label">[[*productLabel]]</span>
+                                        <span class="cartForm__price">[[*productPrice]] €</span>
+                                        <div class="js-increment-wrapper">
+                                            <div class="cartForm__incrementWrapper">
+                                                <div class="cartForm__increment cartForm__increment--plus js-increment-plus">+</div>
+                                                <div class="cartForm__increment cartForm__increment--minus js-increment-minus">-</div>
+                                            </div>
+                                            <input class="cartForm__incrementInput js-increment-counter" type="text" name="quantity" value="0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt2">
+                                <button class="button">Zum Warenkorb hinzufügen</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        [[$footer]]
+                
+        [[$scripts]]
+
+[[$htmlFooter]]

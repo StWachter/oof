@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'e67e6030a3c999e1b272a2c1266c55df',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '37b7ad36674fa116e8d1bd61f802a49e',
+  'native_key' => 'bigbrother.admin_groups',
+  'object' => '{"key":"bigbrother.admin_groups","value":"Administrator","xtype":"textfield","namespace":"bigbrother","area":"Google Analytics for MODx Revolution","editedon":null}',
+);

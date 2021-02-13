@@ -1,0 +1,20 @@
+id: 12
+source: 2
+name: galleryTpl
+description: ''
+category: Template
+properties: 'a:0:{}'
+
+-----
+
+<li>
+    <a href="[[~[[+id]]]]" class="gallery__item gallery__item--[[+productOverlayColor]]" id="produkt-[[+id]]">
+        <figure class="gallery__imageWrapper">
+            <img src="[[+productImage]]" alt="[[+pagetitle:htmlent]]" class="gallery__image">
+            <figcaption class="gallery__overlay">
+                [[+productOverlay]]
+            </figcaption>
+        </figure>
+    </a>
+    <div class="gallery__caption">[[+pagetitle]]</div>
+</li>

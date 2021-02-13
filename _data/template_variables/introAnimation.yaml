@@ -1,0 +1,14 @@
+id: 2
+source: 2
+type: image
+name: introAnimation
+caption: Intro-Animation
+category: Grafiken
+elements: ''
+rank: 10
+display: default
+default_text: ''
+properties: 'a:0:{}'
+input_properties: 'a:1:{s:10:"allowBlank";s:4:"true";}'
+output_properties: 'a:0:{}'
+content: ''

@@ -1,0 +1,30 @@
+id: 8
+source: 2
+name: header
+description: ''
+category: Template
+properties: 'a:0:{}'
+
+-----
+
+<!-- header -->
+<header class="header" id="top">
+    <div class="container">
+        <div class="header__inner">
+            <div></div>
+            <div class="header__right">
+                <a href="">
+                    <svg class="header__cart"><use xlink:href="[[checksumFile? &file=`img/sprite.svg#cart`]]"></use></svg>
+                </a>
+                <div class="header__navBars js-nav-mobile-button">
+                    <span class="top"></span>
+                    <span class="middle"></span>
+                    <span class="bottom"></span>
+                </div>
+                <div class="navMobile__splash js-nav-splash"></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+[[$navigation]]

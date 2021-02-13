@@ -1,0 +1,9 @@
+id: 12
+key: socialXing
+label: Xing
+xtype: textfield
+description: ''
+is_required: 1
+sortorder: 40
+value: 'https://'
+group: 3

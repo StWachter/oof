@@ -1,0 +1,12 @@
+id: 11
+source: 2
+type: imageplus
+name: productSliderImage
+category: Grafiken
+elements: ''
+display: imageplus
+default_text: ''
+properties: 'a:0:{}'
+input_properties: 'a:7:{s:11:"targetWidth";s:0:"";s:12:"targetHeight";s:0:"";s:11:"targetRatio";s:1:"1";s:14:"thumbnailWidth";s:0:"";s:11:"allowAltTag";s:5:"false";s:12:"allowCaption";s:5:"false";s:12:"allowCredits";s:5:"false";}'
+output_properties: 'a:3:{s:14:"phpThumbParams";s:6:"w=1000";s:11:"outputChunk";s:0:"";s:11:"generateUrl";s:4:"true";}'
+content: ''

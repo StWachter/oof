@@ -1,0 +1,37 @@
+id: 3
+templatename: Shop
+description: ''
+category: Admin
+icon: icon-shopping-cart
+properties: 'a:0:{}'
+
+-----
+
+[[$htmlHeader]]
+                
+        [[$header]]
+        
+        <!-- gallery -->
+        <div class="pt7 pb0">
+            <div class="container">
+                <ul class="gallery">
+                    
+                    [[pdoResources?
+                        &depth=`0`
+                        &limit=`0`
+                        &tpl=`galleryTpl`
+                        &includeTVs=`productImage,productOverlayColor,productOverlay`
+                        &processTVs=`1`
+                        &sortby=`menuindex`
+                        &tvPrefix=``
+                    ]]
+
+                </ul>
+            </div>
+        </div>
+        
+        [[$footer]]
+                
+        [[$scripts]]
+
+[[$htmlFooter]]

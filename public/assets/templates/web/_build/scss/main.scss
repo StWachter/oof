@@ -1,0 +1,83 @@
+ /* ==========================================================================
+ *
+ *    CSS main
+ *
+ *  ========================================================================== */
+
+
+
+/* --------------------------------------------------------------------------- */
+/*
+/*	Variables
+/*
+/* --------------------------------------------------------------------------- */
+
+// fonts
+$fontSpecialBold: 'Cardo Bold', serif;
+$fontSpecialItalic: 'Cardo Italic', serif;
+$fontRegular: 'JosefinSans-Light', sans-serif;
+
+$fontCantata: 'Cantata One', serif;
+$fontCardo: 'Cardo', serif;
+$fontJosefin: 'Josefin Sans', sans-serif;
+$fontJosefinThin: 'Josefin Sans Thin', sans-serif;
+$fontJosefinThinItalic: 'Josefin Sans Thin Italic', sans-serif;
+$fontImprima: 'Cantata One', serif;
+
+// colors
+$color1: #ff3907;
+$color2: #eb34a2;
+$color3: #dbab25;
+$color4: #ffef00;
+$color5: #fbb1b0;
+$color6: #ff7000;
+$color7: #d69cc6;
+
+
+/* --------------------------------------------------------------------------- */
+/*
+/*	Vendor Imports
+/*
+/* --------------------------------------------------------------------------- */
+
+@import
+'vendor/normalize',
+'vendor/fancybox';
+
+
+
+
+/* --------------------------------------------------------------------------- */
+/*
+/*	Imports
+/*
+/* --------------------------------------------------------------------------- */
+
+// template
+@import
+'template/fonts',
+'template/globals',
+'template/padding',
+'template/header',
+'template/footer',
+'template/animation',
+'template/navmobile';
+
+
+// modules
+@import
+'modules/cookiemessage',
+'modules/gallery',
+'modules/product';
+
+
+// components
+@import
+'components/headlines',
+'components/buttons',
+'components/content',
+'components/herobackground',
+'components/cartform',
+'components/intrologo',
+'components/megaimage',
+'components/text';

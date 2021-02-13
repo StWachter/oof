@@ -1,0 +1,29 @@
+id: 9
+source: 2
+name: footer
+description: ''
+category: Template
+properties: 'a:0:{}'
+
+-----
+
+<!-- footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <nav class="footer__nav">
+                <ul>
+                    <li><a href="[[~[[++site_start]]]]">&copy; 2020 Sophie Kuhn</a></li>
+                    [[pdoMenu?
+                        &tplOuter=`@INLINE [[+wrapper]]`
+                        &parents=`0`
+                        &level=`1`
+                        &resources=`16,17`
+                        &showHidden=`1`
+                    ]]
+                </ul>
+            </nav>
+            <a href="https://www.instagram.com/oh.ofi/" target="_blank">Instagram</a>
+        </div>
+    </div>
+</footer>

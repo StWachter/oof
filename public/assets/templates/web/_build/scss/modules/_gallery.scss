@@ -1,0 +1,77 @@
+/* --------------------------------------------------------------------------- */
+/*
+/*	gallery
+/*
+/* --------------------------------------------------------------------------- */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
+    align-items: flex-start;
+
+    @media(max-width: 1000px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media(max-width: 700px) {
+        grid-template-columns: 1fr;
+    }
+
+    &__item {
+        position: relative;
+        display: block;
+        outline: none;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .3s ease;
+        color: #fff;
+    }
+
+    &__imageWrapper:hover &__overlay {
+        opacity: 1;
+    }
+
+    &__item--color1:hover &__overlay {
+        background: $color1;
+    }
+
+    &__item--color2:hover &__overlay {
+        background: $color2;
+    }
+
+    &__item--color3:hover &__overlay {
+        background: $color3;
+    }
+
+    &__item--color4:hover &__overlay {
+        background: $color4;
+    }
+
+    &__item--color5:hover &__overlay {
+        background: $color5;
+    }
+
+    &__caption {
+        margin-top: .3em;
+        text-align: center;
+        color: $color1;
+        font-family: $fontSpecialItalic;
+    }
+}

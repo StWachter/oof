@@ -1,0 +1,86 @@
+/* --------------------------------------------------------------------------- */
+/*
+/*	navMobile
+/*
+/* --------------------------------------------------------------------------- */
+.navMobile {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    min-height: 100vh;
+    z-index: 550;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.active {
+        opacity: 1;
+    }
+
+    &__nav {
+        font-family: $fontSpecialItalic;
+        font-size: 3rem;
+        color: #fff;
+        text-align: center;
+
+        @media (max-width: 500px) {
+            font-size: 2rem;
+        }
+    }
+
+    &.active &__nav {
+        pointer-events: auto;
+    }
+
+    li {
+        opacity: 0;
+        transition: all .3s ease .5s;
+    }
+
+    a:hover {
+        color: #F8C7C3;
+    }
+
+    @for $i from 1 through 5 {
+        li:nth-child(#{$i}){
+            transform:translateY(-40px * $i);
+        }
+    }
+
+    &.active li {
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    &__splash {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        width: 1px;
+        height: 1px;
+        z-index: 400;
+
+        &.active:after {
+            transform: scale(1);
+        }
+
+        &::after {
+            content:"";
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            background-color: $color6;
+            width: 284vmax;
+            height: 284vmax;
+            top: -142vmax;
+            left: -142vmax;
+            transform: scale(0);
+            transform-origin: 50% 50%;
+            transition: transform .8s ease-out;
+            will-change:transform;
+        }
+    }
+}

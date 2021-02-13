@@ -1,0 +1,16 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '872cff8081b454d4d471c1bb7665f5b4',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => '79d336da8779c151bb9f3d6f40c6d30a',
+  'native_key' => 'bigbrother',
+  'object' => '{"text":"bigbrother","parent":"components","action":"report","description":"bigbrother.menu_desc","icon":"images\\/icons\\/plugin.gif","menuindex":0,"params":"","handler":"","permissions":"","namespace":"bigbrother"}',
+);

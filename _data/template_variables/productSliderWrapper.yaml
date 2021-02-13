@@ -1,0 +1,14 @@
+id: 6
+source: 2
+type: migx
+name: productSliderWrapper
+caption: 'Weitere Produktbilder'
+category: Grafiken
+elements: ''
+rank: 30
+display: default
+default_text: ''
+properties: 'a:0:{}'
+input_properties: "a:7:{s:7:\"configs\";s:0:\"\";s:8:\"formtabs\";s:164:\"[\n{\"caption\":\"Slider\", \"fields\": [\n    {\"field\":\"image\",\"caption\":\"Bild\",\"inputTV\":\"productSliderImage\"},\n    {\"field\":\"caption\",\"caption\":\"Bild-Unterschrift\"}\n]}\n]\";s:7:\"columns\";s:211:\"[\n{\"header\": \"Bild\", \"width\": \"50\", \"sortable\": \"false\", \"dataIndex\": \"image\",\"renderer\": \"ImagePlus.MIGX_Renderer\"},\n{\"header\": \"Bild-Unterschrift\", \"width\": \"160\", \"sortable\": \"true\", \"dataIndex\": \"caption\"}\n]\";s:7:\"btntext\";s:23:\"Produktbild hinzufügen\";s:10:\"previewurl\";s:0:\"\";s:10:\"jsonvarkey\";s:0:\"\";s:19:\"autoResourceFolders\";s:5:\"false\";}"
+output_properties: 'a:0:{}'
+content: ''
