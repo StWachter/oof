@@ -1,0 +1,14 @@
+id: 14
+source: 2
+type: image
+name: megaAnimation
+caption: Mega-Animation
+category: Allgemein
+elements: ''
+rank: 20
+display: default
+default_text: ''
+properties: 'a:0:{}'
+input_properties: 'a:1:{s:10:"allowBlank";s:4:"true";}'
+output_properties: 'a:3:{s:14:"phpThumbParams";s:6:"w=1000";s:11:"outputChunk";s:0:"";s:11:"generateUrl";s:4:"true";}'
+content: ''

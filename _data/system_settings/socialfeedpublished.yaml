@@ -1,0 +1,5 @@
+key: socialfeed.published
+value: '1'
+xtype: combo-boolean
+namespace: socialfeed
+area: system

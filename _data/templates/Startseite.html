@@ -16,12 +16,49 @@ properties: 'a:0:{}'
             <figure class="introLogo__wrapper">
                 <img src="[[*introAnimation]]" alt="Intro-Animation" class="introLogo">
             </figure>
+            <div class="text content">
+                [[*content]]
+            </div>
         </div>
 
         <!-- megaImage -->
-        <div class="pt0">
+        <div class="pt6">
             <div class="container">
-                <img src="[[*megaImage]]" alt="Mega-Image" class="megaImage">
+                <img src="[[*megaAnimation]]" alt="Mega-Image" class="megaImage">
+            </div>
+        </div>
+        
+        <!-- instagram -->
+        <div class="pt6">
+            <div class="container">
+                <div class="text content">
+                    FOLLOW ME ON INSTAGRAM:
+                </div>
+                <ul class="instagram pt2">
+                    <li>
+                        <a target="_blank" href="">
+                            <img class="instagram__image" src="/assets/image-cache/poster-mockupcofffee-duplicate.fab3f405.3336beca.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="">
+                            <img class="instagram__image" src="/assets/image-cache/poster-mockupcofffee-duplicate.fab3f405.3336beca.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="">
+                            <img class="instagram__image" src="/assets/image-cache/poster-mockupcofffee-duplicate.fab3f405.3336beca.jpg" alt="">
+                          </a>
+                    </li>
+               
+                    
+                    [[-!socialFeed?
+                        &tpl=`instagramTpl`
+                        &limit=`3`
+                        &cacheTime=`3600`
+                        &cacheKey=`socialFeed`
+                    ]]
+                </ul>
             </div>
         </div>
         

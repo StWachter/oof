@@ -1,0 +1,4 @@
+key: socialfeed.image_path
+value: bilder/instagram
+namespace: socialfeed
+area: system

@@ -6,5 +6,5 @@ content: '[[++core_path]]components/versionx/elements/widgets/resources.dashboar
 namespace: versionx
 lexicon: 'versionx:default'
 size: full
-name_trans: 'Kürzliche Ressourcenveränderungen'
-description_trans: '(Teil von VersionX) Zeigt eine Tabelle mit den letzten Änderungen aller User.'
+name_trans: versionx.widget.resources
+description_trans: versionx.widget.resources.desc

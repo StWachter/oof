@@ -1,0 +1,3 @@
+name: socialfeed
+path: '{core_path}components/socialfeed/'
+assets_path: '{assets_path}components/socialfeed/'

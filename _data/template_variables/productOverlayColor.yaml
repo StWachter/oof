@@ -4,7 +4,7 @@ type: listbox
 name: productOverlayColor
 caption: Overlay-Farbe
 category: Grafiken
-elements: 'Rot==color1||Pink==color2||Grün==color3||Gelb==color4||Rosa==#fbb1b0||Orange==#ff7000'
+elements: Rot==color1||Pink==color2||Grün==color3||Gelb==color4||Rosa==color5||Orange==color6||Lila==color7
 rank: 15
 display: default
 properties: 'a:0:{}'

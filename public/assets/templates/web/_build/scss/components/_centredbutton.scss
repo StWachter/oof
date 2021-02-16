@@ -1,0 +1,46 @@
+/* --------------------------------------------------------------------------- */
+/*
+/*	centredButton
+/*
+/* --------------------------------------------------------------------------- */
+.centredButton {
+    text-decoration: underline;
+    color: $color6;
+    font-size: 6rem;
+    font-family: $fontSpecialItalic;
+
+    @media (max-width: 1200px) {
+        font-size: 4rem;
+    }
+
+    @media (max-width: 700px) {
+        font-size: 3.6rem;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 2.8rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 2.6rem;
+    }
+
+    @media (max-width: 450px) {
+        font-size: 2rem;
+    }
+
+    @media (max-width: 370px) {
+        font-size: 1.8rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}

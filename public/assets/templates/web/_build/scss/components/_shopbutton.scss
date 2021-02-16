@@ -1,0 +1,16 @@
+/* --------------------------------------------------------------------------- */
+/*
+/*	shopButton
+/*
+/* --------------------------------------------------------------------------- */
+.shopButton {
+    display: block;
+    margin-left: auto;
+    margin-bottom: -200px;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    transform: translateX(50%);
+    position: relative;
+    z-index: 2;
+}

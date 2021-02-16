@@ -69,7 +69,7 @@ function images(done) {
 // browsersync
 function browser_sync(done) {
     browserSync.init({
-        server: "./",
+        proxy: "oof.local",
         notify: false
     });
     done();

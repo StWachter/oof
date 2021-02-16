@@ -20,7 +20,7 @@
     &__item {
         position: relative;
         display: block;
-        outline: none;
+        outline: none
     }
 
     &__image {
@@ -68,10 +68,19 @@
         background: $color5;
     }
 
+    &__item--color6:hover &__overlay {
+        background: $color6;
+    }
+
+    &__item--color7:hover &__overlay {
+        background: $color7;
+    }
+
     &__caption {
-        margin-top: .3em;
+        margin-top: .7em;
+        font-size: 1.2rem;
         text-align: center;
-        color: $color1;
+        color: #fff;
         font-family: $fontSpecialItalic;
     }
 }

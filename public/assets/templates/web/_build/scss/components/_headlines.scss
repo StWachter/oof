@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5 {
 
 h1, .h1 {
     color: $color5;
-    font-size: 5rem;
+    font-size: 6rem;
     font-family: $fontSpecialItalic;
     margin-bottom: .5em;
 
@@ -23,17 +23,21 @@ h1, .h1 {
         font-size: 4rem;
     }
 
-    @media (max-width: 900px) {
-        font-size: 3rem;
+    @media (max-width: 500px) {
+        font-size: 3.6rem;
     }
 
-    @media (max-width: 600px) {
-        font-size: 2rem;
+    @media (max-width: 400px) {
+        font-size: 3.2rem;
+    }
+
+    @media (max-width: 374px) {
+        font-size: 2.6rem;
     }
 }
 
 h2, .h2 {
-    color: $color5;
+    color: $color6;
     font-size: 1.4rem;
     font-family: $fontSpecialBold;
     margin-bottom: .5em;

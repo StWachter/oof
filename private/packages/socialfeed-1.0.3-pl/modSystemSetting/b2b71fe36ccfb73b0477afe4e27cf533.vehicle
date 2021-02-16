@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'socialfeed',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '6e77f8a2df68897acd21297162197450',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'b2b71fe36ccfb73b0477afe4e27cf533',
+  'native_key' => 'socialfeed.image_path',
+  'object' => '{"key":"socialfeed.image_path","value":"socialfeed\\/images\\/","xtype":"textfield","namespace":"socialfeed","area":"system","editedon":null}',
+);

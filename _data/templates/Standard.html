@@ -10,13 +10,32 @@ properties: 'a:0:{}'
         [[$header]]
         
         <!-- text -->
-        <div class="pt7">   
+        [[*content:notempty=`
+        <div class="pt2">   
             <div class="container">
                 <div class="text content">
                     [[*content]]
                 </div>
             </div>
         </div>
+        `]]
+        
+        [[*megaImage:notempty=`
+        <!-- megaImage -->
+        <div class="pt3">
+            <div class="container">
+                <img src="[[*megaImage]]" alt="Mega-Image" class="megaImage">
+            </div>
+        </div>
+        `]]
+        
+        [[*centredButton:notempty=`
+        <div class="centredButton__wrapper">
+            <a href="[[*centredButton]]" class="centredButton">
+                [[*centredButtonText]]
+            </a>
+        </div>
+        `]]
         
         [[$footer]]
                 
