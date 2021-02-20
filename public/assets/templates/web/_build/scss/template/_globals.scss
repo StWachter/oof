@@ -21,7 +21,6 @@ html,
 body {
     min-height: 100vh;
     font-size: 16px;
-	overflow-x: hidden;
 }
 
 body {
@@ -29,9 +28,14 @@ body {
     flex-direction: column;
     text-rendering: optimizeSpeed;
 	background-color: #F8C7C3;
+	position: relative;
 
     &.colored {
         background-color: #E1D4DE;
+    }
+
+    &.freeze {
+        overflow: hidden;
     }
 }
 

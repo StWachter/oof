@@ -13,16 +13,9 @@
 /* --------------------------------------------------------------------------- */
 
 // fonts
-$fontSpecialBold: 'Cardo Bold', serif;
-$fontSpecialItalic: 'Cardo Italic', serif;
+$fontSpecialBold: 'Cardo-Bold', serif;
+$fontSpecialItalic: 'JosefinSans-Light', serif;
 $fontRegular: 'JosefinSans-Light', sans-serif;
-
-$fontCantata: 'Cantata One', serif;
-$fontCardo: 'Cardo', serif;
-$fontJosefin: 'Josefin Sans', sans-serif;
-$fontJosefinThin: 'Josefin Sans Thin', sans-serif;
-$fontJosefinThinItalic: 'Josefin Sans Thin Italic', sans-serif;
-$fontImprima: 'Cantata One', serif;
 
 // colors
 $color1: #ff3907;
@@ -69,7 +62,8 @@ $color7: #d69cc6;
 'modules/cookiemessage',
 'modules/gallery',
 'modules/product',
-'modules/instagram';
+'modules/instagram',
+'modules/backgroundimage';
 
 
 // components

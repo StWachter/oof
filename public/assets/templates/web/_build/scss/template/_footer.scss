@@ -7,6 +7,13 @@
     margin-top: auto;
     padding-top: 100px;
 
+    &--landing {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
     &__inner {
         display: flex;
         justify-content: space-between;

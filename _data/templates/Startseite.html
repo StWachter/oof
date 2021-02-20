@@ -20,15 +20,9 @@ properties: 'a:0:{}'
                 [[*content]]
             </div>
         </div>
-
-        <!-- megaImage -->
-        <div class="pt6">
-            <div class="container">
-                <img src="[[*megaAnimation]]" alt="Mega-Image" class="megaImage">
-            </div>
-        </div>
         
-        <!-- instagram -->
+        
+        <!-- instagram 
         <div class="pt6">
             <div class="container">
                 <div class="text content">
@@ -61,9 +55,20 @@ properties: 'a:0:{}'
                 </ul>
             </div>
         </div>
+        -->
         
-        [[$footer]]
-                
+        <!-- backgroundImage -->
+        <figure class="backgroundImage__wrapper">
+            <img src="[[*backgroundImage]]" alt="" class="backgroundImage">
+        </figure>
+        
+        [[$footer?
+            &footerClass=`footer--landing`
+        ]]
+        
+        
+        
         [[$scripts]]
 
 [[$htmlFooter]]
+
