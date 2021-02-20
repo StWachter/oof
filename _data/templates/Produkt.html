@@ -11,6 +11,8 @@ properties: 'a:0:{}'
                 
         [[$headerProduct]]
         
+        
+        
         <!-- product -->
         <div class="pt7">
             <div class="containerWide">
@@ -34,7 +36,21 @@ properties: 'a:0:{}'
                         <div class="product__introtext">
                             [[*content]]
                         </div>
-                        <form action="">
+                        
+                        [[!easycartAddToCart?
+                            &title=`[[*pagetitle]]`
+                            &sku=`[[*id]]`
+                            &price=`[[*productPrice:priceToCent]]`
+                            &tax=`19`
+                            &image=`[[++site_url]][[*productImage:replace=`/assets==assets`]]`
+                            &description=``
+                            &url=`[[~[[*id]]? &scheme=`full`]]`
+                            &redirect=`0`
+                        ]]
+
+                        <form action="[[~[[*id]]]]" method="post">
+                            <input type="hidden" name="add_to_cart" value="1">
+                            
                             <div class="cartForm">
                                 <div>
                                     <div class="cartForm__field">
@@ -45,13 +61,13 @@ properties: 'a:0:{}'
                                                 <div class="cartForm__increment cartForm__increment--plus js-increment-plus">+</div>
                                                 <div class="cartForm__increment cartForm__increment--minus js-increment-minus">-</div>
                                             </div>
-                                            <input class="cartForm__incrementInput js-increment-counter" type="text" name="quantity" value="0">
+                                            <input class="cartForm__incrementInput js-increment-counter" type="text" name="quantity" value="1">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="pt2">
-                                <button class="button">Zum Warenkorb hinzufügen</button>
+                                <button type="submit" class="button">Zum Warenkorb hinzufügen</button>
                             </div>
                         </form>
                     </div>

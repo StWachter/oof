@@ -1,0 +1,113 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Snippets' => 
+    array (
+      'ed84b82a8edb26fd0e455a8a80bcbe4c' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"easycartAddToCart","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/*\\n * easycartAddToCart\\n *\\n * Snippet to add Products to cart\\n *\\n * Usage examples:\\n * [[easycartAddToCart? &sku=`123` ...]]\\n *\\n * @author Jan D\\u00e4hne <jan.daehne@quadro-system.de>\\n *\\/\\n\\nif (empty($_REQUEST[\'add_to_cart\'])) return;\\n\\n$corePath = $modx->getOption(\'easycart.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/easycart\\/\');\\n$easycart = $modx->getService(\'easycart\', \'easycart\', $corePath . \'model\\/easycart\\/\', array(\\n    \'core_path\' => $corePath\\n));\\n\\n\\/\\/ properties\\n$sku = $modx->getOption(\'sku\', $scriptProperties);\\n$price = $modx->getOption(\'price\', $scriptProperties);\\n$title = $modx->getOption(\'title\', $scriptProperties);\\n$quantity = $modx->getOption(\'quantity\', $scriptProperties, ($_REQUEST[\'quantity\'] ? $_REQUEST[\'quantity\'] : 1), true);\\n$quantity_unit = $modx->getOption(\'quantityUnit\', $scriptProperties, 1, true);\\n$quantity_max = $modx->getOption(\'quantityMax\', $scriptProperties);\\n$tax = $modx->getOption(\'tax\', $scriptProperties, 0, true);\\n$redirect = $modx->getOption(\'redirect\', $scriptProperties, false, true);\\n$image = $modx->getOption(\'image\', $scriptProperties);\\n$description = $modx->getOption(\'description\', $scriptProperties);\\n$url = $modx->getOption(\'url\', $scriptProperties);\\n$data = $modx->getOption(\'data\', $scriptProperties);\\n$attributes = $modx->getOption(\'attributes\', $scriptProperties);\\n\\n\\n\\/\\/ format data\\nif (!empty($data)) {\\n    $dataArray = explode(\'||\', $data);\\n    $data = array();\\n\\n    foreach ($dataArray as $item) {\\n        $array = explode(\'==\', $item);\\n        $data[$array[0]] = $array[1];\\n    }\\n\\n    $properties[\'data\'] = $data;\\n}\\n\\n\\/\\/ format attributes\\nif (!empty($attributes)) {\\n    $attributesArray = explode(\'||\', $attributes);\\n    $attributes = array();\\n\\n    foreach ($attributesArray as $item) {\\n        $array = explode(\'==\', $item);\\n        $attributes[] = array(\\n            \'title\' => $array[0],\\n            \'value\' => $array[1],\\n        );\\n    }\\n\\n    $properties[\'attributes\'] = $attributes;\\n}\\n\\n\\n\\/\\/ add product to cart\\n$ec = new easyCart($modx);\\n$order = $ec->apiRequest(\'orderitem\', \\"POST\\", array(\\n    \'order\' => $_SESSION[\'order\'],\\n    \'sku\' => $sku,\\n    \'price\' => $price,\\n    \'title\' => $title,\\n    \'quantity\' => $quantity,\\n    \'quantity_unit\' => $quantity_unit,\\n    \'quantity_max\' => $quantity_max,\\n    \'tax\' => $tax,\\n    \'image\' => $image,\\n    \'description\' => $description,\\n    \'url\' => $url,\\n    \'properties\' => json_encode($properties),\\n));\\n\\n\\/\\/ if item is addet to cart\\nif (!$order->id) {\\n\\n    \\/\\/ set error message\\n    $modx->toPlaceholders(array(\\n        \'message\' => \'Fehler: Das Produkt konnte nicht hinzugef\\u00fcgt werden.\',\\n    ),\'easycart\');\\n\\n    $modx->log(xPDO::LOG_LEVEL_ERROR, \'[easyCart] Could not add Item to Cart via API\' . json_encode($order->message));\\n\\n    return;\\n}\\n\\n\\/\\/ set cart id to session to add more items\\n$_SESSION[\'order\'] = $order->id;\\n\\n\\/\\/ url to cart\\n$url = \'\\/\\/\' . $order->shop->host . \'\\/cart\\/\' . $order->id;\\n\\n\\/\\/ Set Message to placeholder\\n$modx->toPlaceholders(array(\\n    \'message\' => \'Das Produkt wurde dem Warenkorb hinzugef\\u00fcgt.\',\\n    \'order\' => $order->id,\\n    \'url\' => $url,\\n),\'easycart\');\\n\\n\\/\\/ redirect to Cart\\nif ($redirect != false) {\\n    $modx->sendRedirect($url);\\n}\\n\\nreturn;","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"\\/*\\n * easycartAddToCart\\n *\\n * Snippet to add Products to cart\\n *\\n * Usage examples:\\n * [[easycartAddToCart? &sku=`123` ...]]\\n *\\n * @author Jan D\\u00e4hne <jan.daehne@quadro-system.de>\\n *\\/\\n\\nif (empty($_REQUEST[\'add_to_cart\'])) return;\\n\\n$corePath = $modx->getOption(\'easycart.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/easycart\\/\');\\n$easycart = $modx->getService(\'easycart\', \'easycart\', $corePath . \'model\\/easycart\\/\', array(\\n    \'core_path\' => $corePath\\n));\\n\\n\\/\\/ properties\\n$sku = $modx->getOption(\'sku\', $scriptProperties);\\n$price = $modx->getOption(\'price\', $scriptProperties);\\n$title = $modx->getOption(\'title\', $scriptProperties);\\n$quantity = $modx->getOption(\'quantity\', $scriptProperties, ($_REQUEST[\'quantity\'] ? $_REQUEST[\'quantity\'] : 1), true);\\n$quantity_unit = $modx->getOption(\'quantityUnit\', $scriptProperties, 1, true);\\n$quantity_max = $modx->getOption(\'quantityMax\', $scriptProperties);\\n$tax = $modx->getOption(\'tax\', $scriptProperties, 0, true);\\n$redirect = $modx->getOption(\'redirect\', $scriptProperties, false, true);\\n$image = $modx->getOption(\'image\', $scriptProperties);\\n$description = $modx->getOption(\'description\', $scriptProperties);\\n$url = $modx->getOption(\'url\', $scriptProperties);\\n$data = $modx->getOption(\'data\', $scriptProperties);\\n$attributes = $modx->getOption(\'attributes\', $scriptProperties);\\n\\n\\n\\/\\/ format data\\nif (!empty($data)) {\\n    $dataArray = explode(\'||\', $data);\\n    $data = array();\\n\\n    foreach ($dataArray as $item) {\\n        $array = explode(\'==\', $item);\\n        $data[$array[0]] = $array[1];\\n    }\\n\\n    $properties[\'data\'] = $data;\\n}\\n\\n\\/\\/ format attributes\\nif (!empty($attributes)) {\\n    $attributesArray = explode(\'||\', $attributes);\\n    $attributes = array();\\n\\n    foreach ($attributesArray as $item) {\\n        $array = explode(\'==\', $item);\\n        $attributes[] = array(\\n            \'title\' => $array[0],\\n            \'value\' => $array[1],\\n        );\\n    }\\n\\n    $properties[\'attributes\'] = $attributes;\\n}\\n\\n\\n\\/\\/ add product to cart\\n$ec = new easyCart($modx);\\n$order = $ec->apiRequest(\'orderitem\', \\"POST\\", array(\\n    \'order\' => $_SESSION[\'order\'],\\n    \'sku\' => $sku,\\n    \'price\' => $price,\\n    \'title\' => $title,\\n    \'quantity\' => $quantity,\\n    \'quantity_unit\' => $quantity_unit,\\n    \'quantity_max\' => $quantity_max,\\n    \'tax\' => $tax,\\n    \'image\' => $image,\\n    \'description\' => $description,\\n    \'url\' => $url,\\n    \'properties\' => json_encode($properties),\\n));\\n\\n\\/\\/ if item is addet to cart\\nif (!$order->id) {\\n\\n    \\/\\/ set error message\\n    $modx->toPlaceholders(array(\\n        \'message\' => \'Fehler: Das Produkt konnte nicht hinzugef\\u00fcgt werden.\',\\n    ),\'easycart\');\\n\\n    $modx->log(xPDO::LOG_LEVEL_ERROR, \'[easyCart] Could not add Item to Cart via API\' . json_encode($order->message));\\n\\n    return;\\n}\\n\\n\\/\\/ set cart id to session to add more items\\n$_SESSION[\'order\'] = $order->id;\\n\\n\\/\\/ url to cart\\n$url = \'\\/\\/\' . $order->shop->host . \'\\/cart\\/\' . $order->id;\\n\\n\\/\\/ Set Message to placeholder\\n$modx->toPlaceholders(array(\\n    \'message\' => \'Das Produkt wurde dem Warenkorb hinzugef\\u00fcgt.\',\\n    \'order\' => $order->id,\\n    \'url\' => $url,\\n),\'easycart\');\\n\\n\\/\\/ redirect to Cart\\nif ($redirect != false) {\\n    $modx->sendRedirect($url);\\n}\\n\\nreturn;"}',
+        'guid' => 'db7465f1cfab966954d0ca43a224a332',
+        'native_key' => NULL,
+        'signature' => 'ef5d24c1402119a1bdf8231054f7c6d0',
+      ),
+      'bfe6b0dcf60907a2a4b86b6fe3feac7b' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"easycartGetCart","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/*\\n * easycartGetCart\\n *\\n * Snippet to get cart items\\n *\\n * Usage examples:\\n * [[easycartGetCart? ...]]\\n *\\n * @author Jan D\\u00e4hne <jan.daehne@quadro-system.de>\\n *\\/\\n\\n$corePath = $modx->getOption(\'easycart.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/easycart\\/\');\\n$easycart = $modx->getService(\'easycart\', \'easycart\', $corePath . \'model\\/easycart\\/\', array(\\n    \'core_path\' => $corePath\\n));\\n\\n\\/\\/ properties\\n\\/\\/ ...\\n\\n\\nif (empty($_SESSION[\'order\'])) {\\n    $modx->toPlaceholders(array(\\n        \'total_quantity\' => 0,\\n    ),\'easycart\');\\n\\n    return;\\n}\\n\\n\\/\\/ get items\\n$ec = new easyCart($modx);\\n$request = $ec->apiRequest(\'order\\/\' . $_SESSION[\'order\']);\\n$order = $request->data;\\n\\n\\/\\/ if no order exists\\nif (!$order->id or $order->status >= 3) {\\n    $modx->toPlaceholders(array(\\n        \'total_quantity\' => 0,\\n    ),\'easycart\');\\n\\n    unset($_SESSION[\'order\']);\\n\\n    return;\\n}\\n\\n\\/\\/ set placeholders\\n$modx->toPlaceholders(array(\\n    \'total_quantity\' => $order->total_quantity,\\n),\'easycart\');\\n\\nreturn;","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"\\/*\\n * easycartGetCart\\n *\\n * Snippet to get cart items\\n *\\n * Usage examples:\\n * [[easycartGetCart? ...]]\\n *\\n * @author Jan D\\u00e4hne <jan.daehne@quadro-system.de>\\n *\\/\\n\\n$corePath = $modx->getOption(\'easycart.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/easycart\\/\');\\n$easycart = $modx->getService(\'easycart\', \'easycart\', $corePath . \'model\\/easycart\\/\', array(\\n    \'core_path\' => $corePath\\n));\\n\\n\\/\\/ properties\\n\\/\\/ ...\\n\\n\\nif (empty($_SESSION[\'order\'])) {\\n    $modx->toPlaceholders(array(\\n        \'total_quantity\' => 0,\\n    ),\'easycart\');\\n\\n    return;\\n}\\n\\n\\/\\/ get items\\n$ec = new easyCart($modx);\\n$request = $ec->apiRequest(\'order\\/\' . $_SESSION[\'order\']);\\n$order = $request->data;\\n\\n\\/\\/ if no order exists\\nif (!$order->id or $order->status >= 3) {\\n    $modx->toPlaceholders(array(\\n        \'total_quantity\' => 0,\\n    ),\'easycart\');\\n\\n    unset($_SESSION[\'order\']);\\n\\n    return;\\n}\\n\\n\\/\\/ set placeholders\\n$modx->toPlaceholders(array(\\n    \'total_quantity\' => $order->total_quantity,\\n),\'easycart\');\\n\\nreturn;"}',
+        'guid' => '6bdde421675d167ffab59d02502e8679',
+        'native_key' => NULL,
+        'signature' => '12749c81f49ce83c660e991c9a1130e5',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Children' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'parent',
+        1 => 'category',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Plugins' => 
+    array (
+      'unique_key' => 'name',
+      'preserve_keys' => false,
+      'update_object' => true,
+      'related_objects' => true,
+      'related_object_attributes' => 
+      array (
+        'PluginEvents' => 
+        array (
+          'preserve_keys' => true,
+          'update_object' => false,
+          'unique_key' => 
+          array (
+            0 => 'pluginid',
+            1 => 'event',
+          ),
+        ),
+      ),
+    ),
+  ),
+  'namespace' => 'easycart',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"easycart-1.0.6-pl\\/modCategory\\/2c8d50d0e0fd84f8d3c7c6745411765c\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"easycart"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"easycart-1.0.6-pl\\/modCategory\\/2c8d50d0e0fd84f8d3c7c6745411765c\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"easycart"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '2fa9ed38fd2a741a24fb9824dd4fa115',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '2c8d50d0e0fd84f8d3c7c6745411765c',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"easyCart","rank":0}',
+);

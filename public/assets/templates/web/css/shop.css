@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'JosefinSans-Light';
+    src: url('../fonts/JosefinSans-Light.woff2') format('woff2'),
+        url('../fonts/JosefinSans-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cardo-Bold';
+    src: url('../fonts/Cardo-Bold.woff2') format('woff2'),
+        url('../fonts/Cardo-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cardo-Italic';
+    src: url('../fonts/Cardo-Italic.woff2') format('woff2'),
+        url('../fonts/Cardo-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'JosefinSans-Light', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: rgba(0,0,0,0.8)
+}
+
+.header__logo {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.header {
+    background-color: #fff;
+    color: rgba(0,0,0,0.8);
+    box-shadow: none;
+    padding: 2rem 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.header__inner,
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    .header__inner,
+    .container {
+        margin: 0 70px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .header__inner,
+    .container {
+        margin: 0 40px;
+    }
+}
+
+.asideBox.asideBox--sticky {
+    top: 100px;
+}
+
+.asideBox {
+    background: #f8c7c3;
+}
+
+.progress__number {
+    box-shadow: 0 0 0 15px #fff;
+}
+
+.footer__inner {
+    
+}
+
+.footer__nav li:before {
+    content:'/';
+    margin: 0 .5em;
+    font-size: 1rem;
+    position: relative;
+    display: inline-block;
+    transform: translateY(0);
+}
+
