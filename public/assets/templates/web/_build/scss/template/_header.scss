@@ -19,7 +19,7 @@
 
     &__inner {
         display: flex;
-        
+
         justify-content: space-between;
         position: relative;
     }
@@ -36,7 +36,7 @@
     }
 
     &__cart {
-        display: block;
+        display: inline-block;
         width: 30px;
         height: 28px;
         fill: currentColor;
@@ -111,4 +111,12 @@
             }
         }
     }
+
+    &__number {
+        display: inline-block;
+        font-size: 1.4rem;
+        line-height: 1;
+        transform: translate(-2px,-7px);
+    }
+
 }
