@@ -162,10 +162,10 @@ $(document).ready(function() {
 
     $(".js-increment-minus").click(function(){
         var oldVal = $(this).parents(".js-increment-wrapper").find(".js-increment-counter").val();
-        if (oldVal > 0) {
+        if (oldVal > 1) {
             var newVal = parseFloat(oldVal) - 1;
         } else {
-            newVal = 0;
+            newVal = 1;
         }
         $(this).parents(".js-increment-wrapper").find(".js-increment-counter").val(newVal);
     });
