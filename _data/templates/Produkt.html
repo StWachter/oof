@@ -11,8 +11,6 @@ properties: 'a:0:{}'
                 
         [[$headerProduct]]
         
-        
-        
         <!-- product -->
         <div class="pt7">
             <div class="containerWide">
@@ -43,11 +41,10 @@ properties: 'a:0:{}'
                             &price=`[[*productPrice:priceToCent]]`
                             &tax=`19`
                             &image=`[[++site_url]][[*productImage:replace=`/assets==assets`]]`
-                            &description=``
                             &url=`[[~[[*id]]? &scheme=`full`]]`
-                            &redirect=`0`
+                            &redirect=``
                         ]]
-
+                        
                         <form action="[[~[[*id]]]]" method="post">
                             <input type="hidden" name="add_to_cart" value="1">
                             

@@ -34,8 +34,8 @@ body {
 
 .header__logo {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 108px;
+    height: 20px;
 }
 
 .header {
@@ -43,11 +43,11 @@ body {
     color: rgba(0,0,0,0.8);
     box-shadow: none;
     padding: 2rem 0;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+}
+
+.header__inner {
+    padding: 0;
+    height: auto;
 }
 
 .header__inner,
@@ -82,10 +82,14 @@ body {
     box-shadow: 0 0 0 15px #fff;
 }
 
-.footer__inner {
-    
+.orderSummary__row--total {
+    border-top: 1px solid #fff;
 }
 
+.footer__background {
+    background: #fff;
+    padding: 20px 0;
+}
 .footer__nav li:before {
     content:'/';
     margin: 0 .5em;
