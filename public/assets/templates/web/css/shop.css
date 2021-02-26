@@ -75,7 +75,7 @@ body {
 }
 
 .asideBox {
-    background: #f8c7c3;
+    background: #e1d4de;
 }
 
 .progress__number {
@@ -99,3 +99,6 @@ body {
     transform: translateY(0);
 }
 
+.listOptions__description {
+    font-size: 1rem;
+}

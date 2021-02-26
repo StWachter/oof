@@ -19,9 +19,12 @@
 
     &__inner {
         display: flex;
-
         justify-content: space-between;
         position: relative;
+
+        @media(max-width: 370px) {
+            margin: 0 -20px;
+        }
     }
 
     &--landing &__inner {
@@ -55,6 +58,10 @@
         margin-left: 2em;
         transition: all 0.3s ease;
         z-index: 600;
+
+        @media(max-width: 400px) {
+            margin-left: 1rem;
+        }
 
 		span {
             z-index: 600;
@@ -117,6 +124,18 @@
         font-size: 1.4rem;
         line-height: 1;
         transform: translate(-2px,-7px);
+    }
+
+    &__logo {
+        display: block;
+        width: 150px;
+        height: auto;
+        transform: translateY(-10px);
+
+        @media(max-width: 400px) {
+            width:120px;
+            transform: translateY(-5px);
+        }
     }
 
 }
