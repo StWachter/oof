@@ -1,7 +1,7 @@
 User-agent: *
 
 
-Sitemap: http://www.ihre-domain.de/sitemap.xml
+Sitemap: https://ohofi.de/sitemap.xml
 
 
 Allow: /*.htm$
