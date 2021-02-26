@@ -5,11 +5,10 @@
 /* --------------------------------------------------------------------------- */
 .cookieMessage {
 	font-size: 0.8rem;
-	background: #ececec;
+	background: #ffef00;
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
-	color: #000;
 	display: none;
 	z-index: 1200;
 	max-width: 300px;
@@ -29,7 +28,6 @@
 		display: block;
 		width: 100%;
 		background: #fff;
-		color: #000;
 		padding: .3rem 1rem;
 		transition: all .4s ease-in-out;
 		cursor: pointer;
@@ -50,4 +48,11 @@
 			text-decoration: underline;
 		}
 	}
+
+    &__image {
+        display: inline-block;
+        width: 20px;
+        height: auto;
+        transform: translateY(4px);
+    }
 }

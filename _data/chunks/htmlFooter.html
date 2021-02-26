@@ -7,6 +7,21 @@ properties: 'a:0:{}'
 
 -----
 
+        <!-- cookieMessage -->
+        <div class="cookieMessage js-cookie-message">
+            <div class="cookieMessage__inner">
+                <div class="cookieMessage__content">
+                    My site only uses functional cookies <br> (
+                    <img class="cookieMessage__image" src="[[++checksumfile.assets_path]]img/cookie.png" alt="Cookie" class="cookie__image">
+                    ) for the shop system (user session, shopping cart) and for this beautiful popup. I hope that's ok for you. More info: <a href="[[~17]]">Privacy Policies</a>
+                </div>
+                <div>
+                    <a class="cookieMessage__button js-cookie-message-btn">ok</a>
+                </div>
+            </div>
+        </div>
+        
+        
         <script async src="[[checksumFile? &file=`js/main.min.js`]]"></script>
         [[!easycartGetCart]]
     </body>
