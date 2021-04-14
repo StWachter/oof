@@ -32,14 +32,24 @@ properties: 'a:0:{}'
                     <div class="product__info">
                         <h1 class="product__title">[[*pagetitle]]</h1>
                         <div class="product__introtext">
-                            [[*content]]
+                            <div class="content">
+                                [[*content]]
+                                <p>Please note that colors may vary slightly due to monitor settings.<br>Payment in advance via paypal or bank transfer.</p>
+                                <p><strong>FREE SHIPPING AVAILABLE!</strong><br>Please read shipping informations (<a href="[[~29]]">here</a>) before you place your order.</p>
+                            </div>
+                            
+                            
+                            
+
+
+                            
                         </div>
                         
                         [[!easycartAddToCart?
                             &title=`[[*pagetitle]]`
                             &sku=`[[*id]]`
                             &price=`[[*productPrice:priceToCent]]`
-                            &tax=`19`
+                            &tax=`0`
                             &image=`[[++site_url]][[*productImage:replace=`/assets==assets`]]`
                             &url=`[[~[[*id]]? &scheme=`full`]]`
                             &redirect=`1`
@@ -63,10 +73,16 @@ properties: 'a:0:{}'
                                     </div>
                                 </div>
                             </div>
-                            <div class="pt2">
+                            <div class="pt1">
                                 <button type="submit" class="button">Add to cart</button>
                             </div>
                         </form>
+                        <div class="content">
+                            <div style="font-size:.7rem; margin: 1rem auto 0;">
+                                <p>* Prices excluding additional shipping costs // 
+                                <br>Preise zzgl. Versandkosten; keine Umsatzsteuererhebung gem. §19 UstG.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
