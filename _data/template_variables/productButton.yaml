@@ -4,7 +4,7 @@ type: listbox
 name: productButton
 caption: Button
 category: Shop
-elements: 'More Rosa==b-more-l||More Lila==b-more-r||New Rot==b-new-o||New Pink==b-new-p||Sold==b-sold-o'
+elements: 'Kein Button==||More Rosa==b-more-l||More Lila==b-more-r||New Rot==b-new-o||New Pink==b-new-p||Sold==b-sold-o'
 rank: 30
 display: default
 default_text: ''
