@@ -1,0 +1,14 @@
+id: 18
+source: 2
+type: listbox
+name: productButton
+caption: Button
+category: Shop
+elements: 'More Rosa==b-more-l||More Lila==b-more-r||New Rot==b-new-o||New Pink==b-new-p||Sold==b-sold-o'
+rank: 30
+display: default
+default_text: ''
+properties: 'a:0:{}'
+input_properties: 'a:7:{s:10:"allowBlank";s:4:"true";s:9:"listWidth";s:0:"";s:5:"title";s:0:"";s:9:"typeAhead";s:5:"false";s:14:"typeAheadDelay";s:3:"250";s:14:"forceSelection";s:5:"false";s:13:"listEmptyText";s:0:"";}'
+output_properties: 'a:0:{}'
+content: ''
