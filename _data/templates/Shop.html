@@ -25,21 +25,36 @@ properties: 'a:0:{}'
             }
         </style>
         
-        <!-- gallery -->
-        <div class="pt7 pb0">
+        <div class="pt3">
             <div class="container">
-                <div class="urlaub__shop pb3">
-                    <p>
-                        SHOP SUMMER BREAK — BACK ON AUGUST 23RD.
-                    </p>
+                <div class="urlaub__shop">
+                    SHOP SUMMER BREAK — BACK ON AUGUST 23RD.
                 </div>
-                <ul class="gallery">
+            </div>
+        </div>
+        
+        <!-- filter -->
+        <div class="pt4">
+            <div class="container">
+                <ul class="filter__wrapper">
+                    <li class="filter js-filter" data-filter=".all">Show All</li>
+                    <li class="filter js-filter" data-filter=".js-filter-1">Prints</li>
+                    <li class="filter js-filter" data-filter=".js-filter-2">Postcards</li>
+                    <li class="filter js-filter" data-filter=".js-filter-3">Accessoires</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- gallery -->
+        <div class="pt3 pb0">
+            <div class="container">
+                <ul class="gallery js-filter-elements">
                     
                     [[pdoResources?
                         &depth=`0`
                         &limit=`0`
                         &tpl=`galleryTpl`
-                        &includeTVs=`productImage,productOverlayColor,productOverlay,productButton,productButtonPosition,productHide`
+                        &includeTVs=`productImage,productOverlayColor,productOverlay,productButton,productButtonPosition,productHide,productCategory`
                         &processTVs=`1`
                         &where=`{"hidemenu:=":"1"}`
                         &sortby=`menuindex`

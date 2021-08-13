@@ -183,4 +183,21 @@ $(document).ready(function() {
     });
 
 
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * *
+    // * filter products
+    // *
+    // *
+    if ($(".js-filter-elements").length) {
+        var mixer = mixitup('.js-filter-elements', {
+            selectors: {
+                target: '.js-filter-element'
+            },
+            load: {
+                filter: '.all'
+            }
+        });
+    }
+
+
 });

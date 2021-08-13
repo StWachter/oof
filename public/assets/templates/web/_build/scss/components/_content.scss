@@ -6,13 +6,30 @@
 .content {
 
     a {
-        text-decoration: underline;
+        position: relative;
 
         // long Links break
         overflow-wrap: break-word;
         word-wrap: break-word;
         word-break: break-word;
         hyphens: auto;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: $color6;
+            transition: all .3s ease;
+        }
+
+        &:hover:after {
+            height: 130%;
+        }
     }
 
     ul {
