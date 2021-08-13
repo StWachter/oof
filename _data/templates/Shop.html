@@ -11,17 +11,37 @@ properties: 'a:0:{}'
                 
         [[$header]]
         
+        <style>
+            .urlaub__shop {
+                font-size: 2rem;
+                text-align:center;
+            }
+            
+            @media (max-width: 700px) {
+                
+                .urlaub__shop {
+                    font-size: 1.2rem;
+                }
+            }
+        </style>
+        
         <!-- gallery -->
         <div class="pt7 pb0">
             <div class="container">
+                <div class="urlaub__shop pb3">
+                    <p>
+                        SHOP SUMMER BREAK — BACK ON AUGUST 23RD.
+                    </p>
+                </div>
                 <ul class="gallery">
                     
                     [[pdoResources?
                         &depth=`0`
                         &limit=`0`
                         &tpl=`galleryTpl`
-                        &includeTVs=`productImage,productOverlayColor,productOverlay,productButton,productButtonPosition`
+                        &includeTVs=`productImage,productOverlayColor,productOverlay,productButton,productButtonPosition,productHide`
                         &processTVs=`1`
+                        &where=`{"hidemenu:=":"1"}`
                         &sortby=`menuindex`
                         &tvPrefix=``
                     ]]
