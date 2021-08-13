@@ -11,6 +11,7 @@
     right: 0;
     color: #fff;
     z-index: 100;
+    pointer-events: none;
 
     &--colored {
         position: relative;
@@ -36,6 +37,7 @@
         width: 30px;
         height: 30px;
         fill: currentColor;
+        pointer-events: auto;
     }
 
     &__cart {
@@ -44,6 +46,7 @@
         height: 28px;
         fill: currentColor;
         transform: translateY(-4px);
+        pointer-events: auto;
     }
 
     &__right {
@@ -58,6 +61,7 @@
         margin-left: 2em;
         transition: all 0.3s ease;
         z-index: 600;
+        pointer-events: auto;
 
         @media(max-width: 400px) {
             margin-left: 1rem;
@@ -124,6 +128,7 @@
         font-size: 1.4rem;
         line-height: 1;
         transform: translate(-2px,-7px);
+        pointer-events: auto;
     }
 
     &__logo {
@@ -131,6 +136,7 @@
         width: 150px;
         height: auto;
         transform: translateY(-10px);
+        pointer-events: auto;
 
         @media(max-width: 400px) {
             width:120px;
