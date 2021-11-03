@@ -1,0 +1,5 @@
+key: crosscontextssettings.clear_cache
+value: '0'
+xtype: combo-boolean
+namespace: crosscontextssettings
+area: system

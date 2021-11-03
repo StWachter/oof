@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'contentblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '5d63dfd936d3d5a8b5793eadc1bd0f9d',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '13ba4ac124a266e5c75942045585e04a',
+  'native_key' => 'contentblocks.file_template_path',
+  'object' => '{"key":"contentblocks.file_template_path","value":"contentblocks\\/","xtype":"textfield","namespace":"contentblocks","area":"File Templates","editedon":1635934195}',
+);

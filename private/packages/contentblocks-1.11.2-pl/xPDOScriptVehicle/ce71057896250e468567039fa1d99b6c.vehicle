@@ -1,0 +1,16 @@
+<?php return array (
+  'class' => 'xPDOScriptVehicle',
+  'object' => 
+  array (
+    'source' => 'contentblocks-1.11.2-pl/xPDOScriptVehicle/ce71057896250e468567039fa1d99b6c.encryption.resolver.script',
+  ),
+  'vehicle_class' => 'xPDOScriptVehicle',
+  'namespace' => 'contentblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'guid' => 'da06104cae87cc6e5114a4722e32074a',
+  'package' => '',
+  'signature' => 'ce71057896250e468567039fa1d99b6c',
+  'native_key' => 'da06104cae87cc6e5114a4722e32074a',
+);
