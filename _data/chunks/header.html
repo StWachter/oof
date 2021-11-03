@@ -15,12 +15,10 @@ properties: 'a:0:{}'
                 <img src="[[++checksumfile.assets_path]]img/logo-font-small.png" alt="Logo" class="header__logo">
             </a>
             <div class="header__right">
-                [[- 
                 <a href="http://shop.ohofi.de/cart">
                     <div class="header__number">[[!+easycart.total_quantity]]</div>
                     <svg class="header__cart"><use xlink:href="[[checksumFile? &file=`img/sprite.svg#cart`]]"></use></svg>
                 </a>
-                ]]
                 <div class="header__navBars js-nav-mobile-button">
                     <span class="top"></span>
                     <span class="middle"></span>
