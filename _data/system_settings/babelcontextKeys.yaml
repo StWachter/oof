@@ -1,4 +1,4 @@
 key: babel.contextKeys
-value: 'web,de,en'
+value: 'de,en'
 namespace: babel
 area: common

@@ -7,14 +7,84 @@ properties: 'a:0:{}'
 
 -----
 
+<style>
+    .header__language ul {
+        display: flex;
+        margin-right: 1rem;
+        text-transform: uppercase;
+        transform: translateY(2px);
+    }
+
+    .header__language li {
+        margin: 0 .3em;
+    }
+    
+    .header__language li a {
+        position: relative;
+        pointer-events: auto;
+    }
+    
+    .header__language li a:hover:before {
+        height: 130%;
+    }
+    
+    .header__language li.active a:before {
+    }
+    
+    .header__language li.active a:before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #ff7000;
+        -webkit-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+    
+    @media (max-width: 500px) {
+        .header__language {
+            position: absolute;
+            right: -1rem;
+            top: 40px;
+        }
+    }
+    
+    .header--relative {
+        position: relative;
+    }
+</style>
+
 <!-- header -->
-<header class="header" id="top">
+<header class="header [[*template:is=`1`:then=`header--landing`]] [[*template:is=`3`:then=`header--relative`]]" id="top">
     <div class="container">
         <div class="header__inner">
-            <a href="[[~[[++site_start]]]]">
-                <img src="[[++checksumfile.assets_path]]img/logo-font-small.png" alt="Logo" class="header__logo">
-            </a>
+            [[*template:is=`1`:then=``:else=`
+                [[*template:is=`4`:then=`
+                <a href="[[~[[*parent]]]]#produkt-[[*id]]">
+                    <svg class="header__back"><use xlink:href="[[checksumFile? &file=`img/sprite.svg#arrow-left`]]"></use></svg>
+                </a>
+                `:else=`
+                <a href="[[~[[++site_start]]]]">
+                    <img src="[[++checksumfile.assets_path]]img/logo-font-small.png" alt="Logo" class="header__logo">
+                </a>
+                `]]
+            `]]
             <div class="header__right">
+                <div class="header__language">
+                    <ul>
+                        [[BabelLinks?
+                            &tpl=`languageTpl`
+                            &showCurrent=`1`
+                            &includeUnlinked=`1`
+                        ]]
+                    </ul>
+                </div>
+
                 <a href="http://shop.ohofi.de/cart">
                     <div class="header__number">[[!+easycart.total_quantity]]</div>
                     <svg class="header__cart"><use xlink:href="[[checksumFile? &file=`img/sprite.svg#cart`]]"></use></svg>

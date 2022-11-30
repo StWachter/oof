@@ -1,0 +1,3 @@
+name: lexiconeditor
+path: '{core_path}components/lexiconeditor/'
+assets_path: '{assets_path}components/lexiconeditor/'

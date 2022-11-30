@@ -1,0 +1,86 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => true,
+  'related_object_attributes' => 
+  array (
+    'Children' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'parent',
+        1 => 'category',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Plugins' => 
+    array (
+      'unique_key' => 'name',
+      'preserve_keys' => false,
+      'update_object' => true,
+      'related_objects' => true,
+      'related_object_attributes' => 
+      array (
+        'PluginEvents' => 
+        array (
+          'preserve_keys' => true,
+          'update_object' => false,
+          'unique_key' => 
+          array (
+            0 => 'pluginid',
+            1 => 'event',
+          ),
+        ),
+      ),
+    ),
+  ),
+  'namespace' => 'lexiconeditor',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"lexiconeditor-1.0.0-pl\\/modCategory\\/00d21e7d22c1552d10b3800060b07e00\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"lexiconeditor"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"lexiconeditor-1.0.0-pl\\/modCategory\\/00d21e7d22c1552d10b3800060b07e00\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"lexiconeditor"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '83b56a30fc203aefc5c846822351c47c',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '00d21e7d22c1552d10b3800060b07e00',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"LexikonEditor","rank":0}',
+);

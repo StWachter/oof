@@ -13,7 +13,7 @@ properties: 'a:0:{}'
         
         <style>
             .temp {
-                fonts-size: 1.5rem;
+                fonts-size: 1.8rem;
                 text-align:center;
                 max-width: 800px;
                 margin: 0 auto;
@@ -26,22 +26,28 @@ properties: 'a:0:{}'
         <div class="pt4">
             <div class="container">
                 <ul class="filter__wrapper">
-                    <li class="filter js-filter" data-filter=".all">Show All</li>
-                    <li class="filter js-filter" data-filter=".js-filter-1">Prints</li>
-                    <li class="filter js-filter" data-filter=".js-filter-2">Postcards</li>
-                    <li class="filter js-filter" data-filter=".js-filter-3">Accessoires</li>
-                    <li class="filter js-filter" data-filter=".js-filter-4">Calendar 2022</li>
+                    <li class="filter js-filter" data-filter=".all">[[%product.category.all? &namespace=`site` &language=`[[++cultureKey]]`]]</li>
+                    <li class="filter js-filter" data-filter=".js-filter-1">[[%product.category.1]]</li>
+                    <li class="filter js-filter" data-filter=".js-filter-2">[[%product.category.2]]</li>
+                    <li class="filter js-filter" data-filter=".js-filter-3">[[%product.category.3]]</li>
                 </ul>
             </div>
         </div>
         
+        [[-
         <div class="pt4">
             <div class="container">
-                <div class="temp">
-                    IMPORTANT: Pre-orders for the calendar 2022 are now open. Please keep in mind: The pre-orders are running until Nov 4. Production starts after that date. Everything you order together with the calendar will be shipped together with the calendar on Nov 11 the earliest. So maybe better place an extra order for the calendar if you want any further product(s). 
+                <div class="temp content">
+                    [[++cultureKey:is=`en`:then=`
+<strong>ATTENTION — SHIPPING BREAK!</strong> <br>
+You can still order as usual, but have to wait a little longer. <br>Shipping will be continued June 27.                    `:else=`
+<strong>ACHTUNG — VERSANDPAUSE!</strong><br>
+Bestellen könnt ihr weiterhin wie gewohnt, ihr müsst nur etwas länger warten.<br> Verschickt wird erst wieder ab dem 27.06.                     `]]
                 </div>
             </div>
         </div>
+        ]]
+        
         
         <!-- gallery -->
         <div class="pt3 pb0">
@@ -52,7 +58,7 @@ properties: 'a:0:{}'
                         &depth=`0`
                         &limit=`0`
                         &tpl=`galleryTpl`
-                        &includeTVs=`productImage,productOverlayColor,productOverlay,productButton,productButtonPosition,productHide,productCategory`
+                        &includeTVs=`productImage,productPrice,productOverlayColor,productOverlay,productButton,productButtonPosition,productHide,productCategory`
                         &processTVs=`1`
                         &where=`{"hidemenu:=":"1"}`
                         &sortby=`menuindex`

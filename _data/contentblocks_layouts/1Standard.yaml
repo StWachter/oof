@@ -5,7 +5,7 @@ sortorder: 1
 icon: site-cb-exampleicon
 icon_type: custom
 columns: '[{"reference":"main","width":"100"}]'
-template: "<div class=\"pt[[+paddingTop]] pb[[+paddingBottom]]\" [[+anchor:setModuleId]]>\n    <div class=\"container\">\n        [[+main]]\n    </div>\n</div>"
+template: "<div class=\"pt0 pb[[+paddingBottom]]\" [[+anchor:setModuleId]]>\n    <div class=\"container\">\n        [[+main]]\n    </div>\n</div>"
 availability: '[{"field":"context","value":"hidden"}]'
 times_per_page: 0
 layout_only_nested: '0'

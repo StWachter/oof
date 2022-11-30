@@ -1,0 +1,13 @@
+id: 23
+source: 2
+type: migx
+name: downloads
+caption: Downloads
+category: Downloads
+elements: ''
+display: default
+default_text: ''
+properties: 'a:0:{}'
+input_properties: "a:7:{s:7:\"configs\";s:0:\"\";s:8:\"formtabs\";s:106:\"[\n{\"caption\":\"Slider\", \"fields\": [\n    {\"field\":\"image\",\"caption\":\"Bild\",\"inputTV\":\"downloadsImage\"}\n]}\n] \";s:7:\"columns\";s:118:\"[\n{\"header\": \"Bild\", \"width\": \"50\", \"sortable\": \"false\", \"dataIndex\": \"image\",\"renderer\": \"ImagePlus.MIGX_Renderer\"}\n]\";s:7:\"btntext\";s:20:\"Download hinzufügen\";s:10:\"previewurl\";s:0:\"\";s:10:\"jsonvarkey\";s:0:\"\";s:19:\"autoResourceFolders\";s:5:\"false\";}"
+output_properties: 'a:0:{}'
+content: ''

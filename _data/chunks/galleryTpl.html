@@ -17,5 +17,8 @@ properties: 'a:0:{}'
         </figure>
         [[+productButton:notempty=`<img src="[[++checksumfile.assets_path]]img/[[+productButton]].png" alt="" class="gallery__button gallery__button[[+productButtonPosition]]">`]]
     </a>
-    <div class="gallery__caption">[[+pagetitle]]</div>
+    <div class="gallery__caption">
+        <div>[[+pagetitle]]</div>
+        <div style="font-size:.8em;">[[+productPrice:formatPrice]]€</div>
+    </div>
 </li>

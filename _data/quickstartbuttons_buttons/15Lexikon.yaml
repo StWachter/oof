@@ -1,0 +1,12 @@
+id: 15
+set: 2
+icon: 315
+icon_file: null
+text: Lexikon
+description: 'Übersetzen Sie die statischen Inhalte Ihrer Webseite.'
+action_props: ''
+handler: null
+link: '?a=home&namespace=lexiconeditor'
+ranking: 4
+iconcls: fa-language
+iconpath: ''

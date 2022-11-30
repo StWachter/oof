@@ -1,0 +1,5 @@
+key: lexiconeditor.namespace
+value: site
+xtype: modx-combo-namespace
+namespace: lexiconeditor
+area: system

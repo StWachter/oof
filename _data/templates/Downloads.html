@@ -1,0 +1,77 @@
+id: 5
+templatename: Downloads
+description: ''
+icon: icon-file
+properties: 'a:0:{}'
+
+-----
+
+[[$htmlHeader]]
+                
+        [[$header]]
+        
+        <!-- text -->
+        [[*content:notempty=`
+        <div class="pt2">   
+            <div class="text content">
+                [[*content]]
+            </div>
+        </div>
+        `]]
+        
+        <style>
+            .downloads {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 2rem;
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+            
+            @media (max-width:700px) {
+                .downloads {
+                    grid-template-columns: 1fr;
+                }
+            } 
+            
+            .downloads__image {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        </style>
+        
+        <div class="pt4">
+            <div class="container">
+                <ul class="downloads">
+                     [[getImageList?
+        			    &tvname=`downloads`
+        			    &tpl=`downloadsTpl`
+        			]]
+                </ul>
+            </div>
+        </div>
+        
+        
+        [[*megaImage:notempty=`
+        <!-- megaImage -->
+        <div class="pt3">
+            <div class="container">
+                <img src="[[*megaImage]]" alt="Mega-Image" class="megaImage">
+            </div>
+        </div>
+        `]]
+        
+        [[*centredButton:notempty=`
+        <div class="centredButton__wrapper">
+            <a href="[[*centredButton]]" class="centredButton">
+                [[*centredButtonText]]
+            </a>
+        </div>
+        `]]
+        
+        [[$footer]]
+                
+        [[$scripts]]
+
+[[$htmlFooter]]
