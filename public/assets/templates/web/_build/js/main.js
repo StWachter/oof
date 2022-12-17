@@ -189,14 +189,26 @@ $(document).ready(function() {
     // *
     // *
     if ($(".js-filter-elements").length) {
+
+        var initialFilter = '.all';
+        var hash = window.location.hash.replace(/^#/g, '');
+
+        if (hash) {
+            initialFilter = '.' + hash;
+        }
+
+        console.log(hash);
+
         var mixer = mixitup('.js-filter-elements', {
             selectors: {
                 target: '.js-filter-element'
             },
             load: {
-                filter: '.all'
+                filter: initialFilter
             }
         });
+
+        console.log(initialFilter);
     }
 
 
