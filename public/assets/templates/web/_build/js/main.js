@@ -197,8 +197,6 @@ $(document).ready(function() {
             initialFilter = '.' + hash;
         }
 
-        console.log(hash);
-
         var mixer = mixitup('.js-filter-elements', {
             selectors: {
                 target: '.js-filter-element'
@@ -207,8 +205,6 @@ $(document).ready(function() {
                 filter: initialFilter
             }
         });
-
-        console.log(initialFilter);
     }
 
 
