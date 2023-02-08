@@ -27,27 +27,28 @@ properties: 'a:0:{}'
             <div class="container">
                 <ul class="filter__wrapper">
                     <li class="filter js-filter" data-filter=".all">[[%product.category.all? &namespace=`site` &language=`[[++cultureKey]]`]]</li>
-                    [[-<li class="filter js-filter" data-filter=".x-mas-special">X-Mas Special</li>]]
                     <li class="filter js-filter" data-filter=".prints">[[%product.category.1]]</li>
                     <li class="filter js-filter" data-filter=".cards">[[%product.category.2]]</li>
                     <li class="filter js-filter" data-filter=".more">[[%product.category.3]]</li>
+    
+
                 </ul>
             </div>
         </div>
         
-        [[-
+        <!--
         <div class="pt4">
-            <div class="container">
+           <div class="container">
                 <div class="temp content">
                     [[++cultureKey:is=`en`:then=`
 <strong>ATTENTION — SHIPPING BREAK!</strong> <br>
-You can still order as usual, but have to wait a little longer. <br>Shipping will be continued June 27.                    `:else=`
+You can still order as usual, but have to wait a little longer. <br>Shipping will be continued December 28.                   `:else=`
 <strong>ACHTUNG — VERSANDPAUSE!</strong><br>
-Bestellen könnt ihr weiterhin wie gewohnt, ihr müsst nur etwas länger warten.<br> Verschickt wird erst wieder ab dem 27.06.                     `]]
+Bestellen könnt ihr weiterhin wie gewohnt, ihr müsst nur etwas länger warten.<br> Verschickt wird erst wieder ab dem 28.12.                     `]]
                 </div>
             </div>
-        </div>
-        ]]
+        </div> -->
+        
         
         
         <!-- gallery -->
@@ -59,7 +60,7 @@ Bestellen könnt ihr weiterhin wie gewohnt, ihr müsst nur etwas länger warten.
                         &depth=`0`
                         &limit=`0`
                         &tpl=`galleryTpl`
-                        &includeTVs=`productImage,productPrice,productOverlayColor,productOverlay,productButton,productButtonPosition,productHide,productCategory`
+                        &includeTVs=`productImage,productPrice,productOverlayColor,productOverlay,productButton,productButtonPosition,productHide,productCategory,productCategorySecond`
                         &processTVs=`1`
                         &where=`{"hidemenu:=":"1"}`
                         &sortby=`menuindex`

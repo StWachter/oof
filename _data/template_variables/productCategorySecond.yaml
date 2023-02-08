@@ -1,15 +1,14 @@
-id: 21
+id: 26
 source: 2
 type: listbox
-name: productCategory
-caption: Kategorie
+name: productCategorySecond
+caption: ' Zweite Kategorie'
 category: Shop
-elements: Prints==js-filter-1||Cards==js-filter-2||More==js-filter-3||Valentine’s–Special==js-filter-4
+elements: Keine==||Prints==js-filter-1||Cards==js-filter-2||More==js-filter-3||Valentine‘s-Special==js-filter-4
+rank: 1
 display: default
+default_text: ''
 properties: 'a:0:{}'
 input_properties: 'a:7:{s:10:"allowBlank";s:5:"false";s:9:"listWidth";s:0:"";s:5:"title";s:0:"";s:9:"typeAhead";s:5:"false";s:14:"typeAheadDelay";s:3:"250";s:14:"forceSelection";s:5:"false";s:13:"listEmptyText";s:0:"";}'
 output_properties: 'a:0:{}'
-
------
-
-js-filter-1
+content: ''
