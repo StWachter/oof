@@ -1,0 +1,13 @@
+id: 5
+parent_properties: null
+input: repeater
+name: Bilder
+description: ''
+sortorder: 5
+category: 5
+icon: chunk_A
+template: "<li class=\"imageGallery__item animateIn animateIn--toTop\" data-animation-delay=\".1\">\n    <a href=\"[[+image]]\" data-caption=\"[[+caption]]\" data-fancybox=\"imageGallery-[[+id]]\">\n        <img class=\"imageGallery__image\" src=\"[[+image]]\" alt=\"[[+caption:htmlent]]\">\n    </a>\n    <div class=\"imageGallery__caption\">[[+caption]]</div>\n</li>"
+properties: '{"wrapper_template":"[[+rows]]","row_separator":"","max_items":"0","min_items":"0","add_first_item":"true","manager_columns":"2","layout_style":"default"}'
+availability: '[]'
+layouts: '3'
+settings: '[]'

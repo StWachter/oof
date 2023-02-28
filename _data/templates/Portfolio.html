@@ -1,0 +1,36 @@
+id: 6
+templatename: Portfolio
+description: ''
+category: Admin
+icon: icon-star
+properties: 'a:0:{}'
+
+-----
+
+[[$htmlHeader]]
+                
+        [[$header]]
+        
+        <!-- portfolio -->
+        <div class="pt7">
+            <div class="containerSmall animateIn animateIn--toTop">
+                <h1 class="portfolio__headline">Work</h1>
+                <div class="js-portfolio portfolio__wrapper">
+                    [[pdoResources?
+                        &includeTVs=`portfolioImage,productOverlayColor`
+                        &processTVs=`1`
+                        &tvPrefix=``
+                        &tpl=`portfolioTpl`
+                        &sortby=`menuindex`
+                        &sortdir=`ASC`
+                    ]]
+                </div>
+            </div>
+        </div>
+
+        
+        [[$footer]]
+                
+        [[$scripts]]
+
+[[$htmlFooter]]

@@ -100,7 +100,7 @@ $(document).ready(function() {
     // * animateIn
     // *
     // *
-    var offset = 60; // Distance from Browserbottom where the animation should start
+    var offset = 0; // Distance from Browserbottom where the animation should start
 
     function fadeInElements(){
         var viewPort = $(window).scrollTop() + $(window).height();
@@ -207,5 +207,43 @@ $(document).ready(function() {
         });
     }
 
+
+});
+
+// * * * * * * * * * * * * * * * * * * * * * * * * *
+// * bookingButton: add Class to header if window scrolls up or down
+// *
+// *
+var position = $(window).scrollTop(),
+    $header = $(".js-header");
+
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+    if(scroll > position) {
+        //scroll down
+        $header.addClass("scroll-down").removeClass("scroll-up");
+        // setTimeout(function() {
+        //     $header.addClass("scroll-up").removeClass("scroll-down");
+        // }, 2000);
+    } else {
+        // scroll up
+        $header.addClass("scroll-up").removeClass("scroll-down");
+    }
+
+    position = scroll;
+});
+
+
+$(window).on("load", function (e) {
+    // * * * * * * * * * * * * * * * * * * * * * * * * *
+    // * startTeaser
+    // *
+    // *
+    $('.js-portfolio').masonry({
+        itemSelector: '.js-portfolio-item',
+        columnWidth: '.js-portfolio-item',
+        gutter: 80,
+    });
 
 });

@@ -1,16 +1,15 @@
-id: 9
+id: 27
 source: 2
 type: listbox
-name: productOverlayColor
-caption: Vorschau-Farbe
-category: Grafiken
+name: bodyColor
+caption: Hintergrundfarbe
+category: Allgemein
 elements: 'Flieder==color1||Neutral==color2||Lila hell==color3||Grün==color4||Grünblass==color5||Blau==color6||Lila dunkel==color7||Orange==color8||Rosa==color9||Pink==color10||Gelb==color11||Türkis==color12||Rot==color13||Weiß==color14'
-rank: 15
 display: default
 properties: 'a:0:{}'
 input_properties: 'a:7:{s:10:"allowBlank";s:4:"true";s:9:"listWidth";s:0:"";s:5:"title";s:0:"";s:9:"typeAhead";s:5:"false";s:14:"typeAheadDelay";s:3:"250";s:14:"forceSelection";s:5:"false";s:13:"listEmptyText";s:0:"";}'
-output_properties: 'a:3:{s:14:"phpThumbParams";s:6:"w=1000";s:11:"outputChunk";s:0:"";s:11:"generateUrl";s:4:"true";}'
+output_properties: 'a:0:{}'
 
 -----
 
-Rot
+color1

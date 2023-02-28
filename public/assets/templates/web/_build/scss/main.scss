@@ -19,13 +19,21 @@ $fontRegular: 'JosefinSans-Light', sans-serif;
 $fontBold: 'JosefinSans-Medium', sans-serif;
 
 // colors
-$color1: #ff3907;
-$color2: #eb34a2;
-$color3: #dbab25;
-$color4: #ffef00;
-$color5: #fbb1b0;
-$color6: #ff7000;
-$color7: #d69cc6;
+$color1: #e1d3e2;
+$color2: #f8fbea;
+$color3: #b58ce3;
+$color4: #ced34c;
+$color5: #dce3a8;
+$color6: #becdf8;
+$color7: #603cac;
+$color8: #ff8e24;
+$color9: #fec4ef;
+$color10: #fa77a3;
+$color11: #fdfa9c;
+$color12: #a0dcde;
+$color13: #ff3907;
+$color14: #fff;
+
 
 
 /* --------------------------------------------------------------------------- */
@@ -64,7 +72,10 @@ $color7: #d69cc6;
 'modules/gallery',
 'modules/product',
 'modules/instagram',
-'modules/backgroundimage';
+'modules/backgroundimage',
+'modules/portfolio',
+'modules/imagegallery',
+'modules/textblock';
 
 
 // components

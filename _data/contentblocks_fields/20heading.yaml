@@ -1,0 +1,13 @@
+id: 2
+parent_properties: null
+input: heading
+name: Überschrift
+description: ''
+sortorder: 2
+category: 4
+icon: heading
+template: '<[[+level]]>[[+value]]</[[+level]]>'
+properties: '{"default_level":"h1","available_levels":"h1=heading_1,h2=heading_2,h3=heading_3","use_tinyrte":"0"}'
+availability: '[]'
+layouts: '2'
+settings: '[]'

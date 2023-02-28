@@ -52,11 +52,12 @@
         transition: all .3s ease .5s;
     }
 
+    li.active a,
     a:hover {
-        color: $color5;
+        color: $color7;
     }
 
-    @for $i from 1 through 5 {
+    @for $i from 1 through 10 {
         li:nth-child(#{$i}){
             transform:translateY(-40px * $i);
         }
@@ -84,7 +85,7 @@
             display: block;
             position: absolute;
             border-radius: 50%;
-            background-color: $color6;
+            background-color: $color9;
             width: 284vmax;
             height: 284vmax;
             top: -142vmax;

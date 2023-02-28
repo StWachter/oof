@@ -1,0 +1,7 @@
+id: 2
+name: Galerie
+description: ''
+category: 1
+icon: image
+content: '[{"layout":3,"content":{"main":[{"rows":[{"image":{"url":"","size":"","width":"","height":"","extension":"","crops":{},"fieldId":"contentblocks-field-2"},"caption":{"value":"","fieldId":"contentblocks-field-3"}}],"field":5,"settings":{}}]},"settings":{"paddingTop":"4","paddingBottom":"0","anchor":"","grid":"2","width":""},"parent":0,"title":""}]'
+availability: '[]'

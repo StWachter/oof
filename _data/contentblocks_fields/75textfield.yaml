@@ -1,0 +1,12 @@
+id: 7
+parent: 5
+parent_properties: '{"key":"caption","width":"100"}'
+name: Caption
+description: ''
+sortorder: 7
+icon: paragraph
+template: '[[+value]]'
+properties: '{"use_tinyrte":"false"}'
+availability: '[]'
+layouts: null
+settings: '[]'

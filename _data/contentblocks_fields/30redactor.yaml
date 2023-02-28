@@ -1,0 +1,13 @@
+id: 3
+parent_properties: null
+input: redactor
+name: Inhalt
+description: ''
+sortorder: 3
+category: 4
+icon: richtext
+template: '[[+value]]'
+properties: '{"configuration_set":"4"}'
+availability: '[]'
+layouts: '2'
+settings: '[]'

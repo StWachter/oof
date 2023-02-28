@@ -1,0 +1,18 @@
+id: 21
+source: 2
+name: portfolioTpl
+description: ''
+category: Template
+properties: 'a:0:{}'
+
+-----
+
+<a href="[[~[[+id]]]]" class="portfolio portfolio--[[+productOverlayColor]] js-portfolio-item">
+    <figure class="portfolio__figure">
+        <img src="[[+portfolioImage]]" alt="[[+pagetitle:htmlent]]" class="portfolio__image">
+    </figure>
+    <div class="portfolio__content">
+        <div class="portfolio__title">[[+pagetitle]]</div>
+        <div class="portfolio__button">More</div>
+    </div>
+</a>

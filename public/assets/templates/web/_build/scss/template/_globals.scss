@@ -27,15 +27,29 @@ body {
     display: flex;
     flex-direction: column;
     text-rendering: optimizeSpeed;
-	background-color: #F8C7C3;
 	position: relative;
-
-    &.colored {
-        background-color: #E1D4DE;
-    }
 
     &.freeze {
         overflow: hidden;
+    }
+
+    &.body--color {
+        &1 { background: $color1;}
+        &2 { background: $color2;}
+        &3 { background: $color3;}
+        &3 { background: $color3;}
+        &4 { background: $color4;}
+        &5 { background: $color5;}
+        &6 { background: $color6;}
+        &7 { 
+            background: $color7;
+            color: #fff;
+        }
+        &8 { background: $color8;}
+        &9 { background: $color9;}
+        &10 { background: $color10;}
+        &11 { background: $color11;}
+        &12 { background: $color12;}
     }
 }
 
@@ -78,6 +92,19 @@ strong {
 
     @media (max-width: 1000px) {
         margin: 0 40px;
+    }
+
+    &Small {
+        max-width: 1100px;
+        margin: 0 auto;
+
+        @media (max-width: 1240px) {
+            margin: 0 70px;
+        }
+
+        @media (max-width: 1000px) {
+            margin: 0 40px;
+        }
     }
 
 
