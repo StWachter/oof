@@ -15,6 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     &.active {
         opacity: 1;
@@ -85,7 +86,7 @@
             display: block;
             position: absolute;
             border-radius: 50%;
-            background-color: $color9;
+            background-color: $color8;
             width: 284vmax;
             height: 284vmax;
             top: -142vmax;
