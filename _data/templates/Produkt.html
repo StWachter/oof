@@ -23,7 +23,12 @@ properties: 'a:0:{}'
                         <ul>
                             <li>
                                 <a href="[[*productImage]]" data-fancybox="gallery" data-fancybox data-caption="[[*productCaption]]">
-                                    <img src="[[*productImage:phpthumbof=`w=1000&h=1000`]]" alt="[[pagetitle:htmlent]] [[*productCaption:htmlent]]" class="product__image">
+                                   <picture>
+                                        <source srcset="[[*productImage:pThumb=`w=1200`]]" media="(min-width: 1000px)">
+                                        <source srcset="[[*productImage:pThumb=`w=1000`]]" media="(min-width: 600px)">
+                                        <source srcset="[[*productImage:pThumb=`w=600`]]" media="(min-width: 320px)">
+                                        <img class="backgroundImage" width="1000" height="1000" src="[[*productImage]]" alt="[[*productCaption:htmlent]]">
+                                    </picture>
                                 </a>
                             </li>
                             [[getImageList?
