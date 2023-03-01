@@ -13,10 +13,10 @@ properties: 'a:0:{}'
         
         <!-- introLogo -->
         <div class="container">
-            <figure class="introLogo__wrapper">
+            <figure class="introLogo__wrapper animateIn animateIn--toTop animateIn--fade" data-animation-delay=".2">
                 <img src="[[*introAnimation]]" alt="Intro-Animation" class="introLogo">
             </figure>
-            <div class="text content">
+            <div class="text content animateIn animateIn--toTop animateIn--fade" data-animation-delay=".4">
                 [[*content]]
             </div>
         </div>
@@ -59,8 +59,13 @@ properties: 'a:0:{}'
         
         
         <!-- backgroundImage -->
-        <figure class="backgroundImage__wrapper" style="margin-top:-50px">
-            <img src="[[*backgroundImage]]" alt="" class="backgroundImage">
+        <figure class="backgroundImage__wrapper animateIn animateIn--toTop animateIn--fade" data-animation-delay=".6" style="margin-top:-50px">
+            <picture>
+                <source srcset="[[*backgroundImage:pThumb=`w=1200`]]" media="(min-width: 1000px)">
+                <source srcset="[[*backgroundImage:pThumb=`w=1000`]]" media="(min-width: 600px)">
+                <source srcset="[[*backgroundImage:pThumb=`w=600`]]" media="(min-width: 320px)">
+                <img class="backgroundImage" width="900" height="900" src="[[*backgroundImage]]" alt="[[*pagetitle:htmlent]]" loading="lazy">
+            </picture>
         </figure>
         
         [[$footer?

@@ -10,7 +10,10 @@ properties: 'a:0:{}'
 <li class="js-filter-element all [[+productCategory:tvLabel:filterPathSegment]] [[+productCategorySecond:tvLabel:filterPathSegment]]">
     <a href="[[~[[+id]]]]" target="_blank" class="gallery__item gallery__item--[[+productOverlayColor]]" id="produkt-[[+id]]">
         <figure class="gallery__imageWrapper">
-            <img src="[[+productImage:phpthumbof=`w=500&h=500`]]" alt="[[+pagetitle:htmlent]]" class="gallery__image">
+            <picture>
+                <source srcset="[[+productImage:pThumb=`w=600&f=webp`]]" media="(min-width: 320px)">
+                <img class="gallery__image" width="400" height="400" src="[[+productImage]]" alt="[[+pagetitle:htmlent]]" loading="lazy">
+            </picture>
             <figcaption class="gallery__overlay">
                 [[+productOverlay]]
             </figcaption>
