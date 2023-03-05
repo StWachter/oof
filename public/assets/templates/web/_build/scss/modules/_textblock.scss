@@ -30,12 +30,17 @@
 		@media(max-width: 1100px) {
 			order: -1;
 		}
+
+		@media(max-width: 600px) {
+			font-size: .9rem;
+		}
 		
 		ul {
 			// font-size: 1rem;
 			text-transform: uppercase;
 			color: $color6;
 			list-style: none !important;
+			padding-left: none;
 			
 			li {
 				padding-left: 3em;
