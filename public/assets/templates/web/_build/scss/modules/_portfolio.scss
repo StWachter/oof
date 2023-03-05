@@ -112,21 +112,22 @@
 
 	&__headline {
 		animation: 3.5s portfolioTitle infinite linear;
+		font-size: 7rem;
 
 		@media (max-width: 1200px) {
-			font-size: 5rem;
+			font-size: 6rem;
 		}
 
 		@media (max-width: 600px) {
-			font-size: 4.5rem;
+			font-size: 5.5rem;
 		}
 
 		@media (max-width: 480px) {
-			font-size: 3.5rem;
+			font-size: 4.5rem;
 		}
 
 		@media (max-width: 435px) {
-			font-size: 2.8rem;
+			font-size: 3.8rem;
 		}
 	}
 
