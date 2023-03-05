@@ -220,15 +220,18 @@ var position = $(window).scrollTop(),
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
 
-    if(scroll > position) {
-        //scroll down
-        $header.addClass("scroll-down").removeClass("scroll-up");
-        // setTimeout(function() {
-        //     $header.addClass("scroll-up").removeClass("scroll-down");
-        // }, 2000);
-    } else {
-        // scroll up
-        $header.addClass("scroll-up").removeClass("scroll-down");
+    if (scroll > 100) {
+        console.log("insinde");
+        if(scroll > position) {
+            //scroll down
+            $header.addClass("scroll-down").removeClass("scroll-up");
+            // setTimeout(function() {
+            //     $header.addClass("scroll-up").removeClass("scroll-down");
+            // }, 2000);
+        } else {
+            // scroll up
+            $header.addClass("scroll-up").removeClass("scroll-down");
+        }
     }
 
     position = scroll;
