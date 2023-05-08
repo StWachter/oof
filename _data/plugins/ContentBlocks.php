@@ -12,17 +12,16 @@ properties: null
  * Events: OnDocFormRender, OnDocFormSave
  *
  * @package contentblocks
- */
-
-$corePath = $modx->getOption('contentblocks.core_path', null, $modx->getOption('core_path') . 'components/contentblocks/');
-$assetsUrl = $modx->getOption('contentblocks.assets_url', null, $modx->getOption('assets_url') . 'components/contentblocks/');
-
-/**
+ *
  * @var ContentBlocks $ContentBlocks
  * @var modResource $resource
  * @var modX $modx
  * @var array $scriptProperties
  */
+
+$corePath = $modx->getOption('contentblocks.core_path', null, $modx->getOption('core_path') . 'components/contentblocks/');
+$assetsUrl = $modx->getOption('contentblocks.assets_url', null, $modx->getOption('assets_url') . 'components/contentblocks/');
+
 $ContentBlocks = $modx->getService('contentblocks', 'ContentBlocks', $corePath . 'model/contentblocks/');
 if (!$ContentBlocks) {
     $modx->log(modX::LOG_LEVEL_ERROR, 'Could not load ContentBlocks service from plugin. Reinstalling ContentBlocks might fix this.');
@@ -31,7 +30,10 @@ if (!$ContentBlocks) {
 
 switch ($modx->event->name) {
     case 'OnDocFormPrerender':
-        if ($modx->controller && isset($modx->controller->resource) && $modx->controller->resource instanceof modResource) {
+        if ($modx->controller
+            && isset($modx->controller->resource)
+            && ($modx->controller->resource instanceof modResource || $modx->controller->resource instanceof \MODX\Revolution\modResource)
+        ) {
             $resource = $modx->controller->resource;
             $ContentBlocks->setResource($modx->controller->resource);
         }
@@ -191,8 +193,11 @@ HTML
             'cbJson' => $cbJson,
             'resource' => $resource
         ));
-        // check if customized content was returned
-        if (!empty($response) && is_array($response) && json_encode($response) !== '[""]') {
+        // If multiple responses were returned, only keep filled values
+        if (is_array($response)) {
+            $response = array_values(array_filter($response));
+        }
+        if (!empty($response) && is_array($response) && !empty($response[0]['cbContent'])) {
             $cbContent = $response[0]['cbContent'];
             $cbJson = $response[0]['cbJson'];
         }
@@ -233,6 +238,27 @@ HTML
      */
     case 'OnFileManagerFileRename':
         $ContentBlocks->renames[] = $path;
+        break;
+
+    /**
+     * @var modResource $resource
+     */
+    case 'OnResourceMagicPreview':
+        $cbJson = $resource->get('contentblocks');
+        if (!$cbJson) {
+            break; // Avoid attempting to load CB data when CB is disabled.
+        }
+
+        $cbContent = $modx->fromJSON($cbJson);
+
+        try {
+            $ContentBlocks->loadParser();
+            $resource->setContent($ContentBlocks->generateHtml($cbContent));
+            $ContentBlocks->restoreParser();
+        } catch (Exception $e) {
+            $modx->log(modX::LOG_LEVEL_ERROR, 'Exception while trying to use Magic Preview on resource ' . $resource->id . ': ' . $e->getMessage());
+        }
+
         break;
 }
 

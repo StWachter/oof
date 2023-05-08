@@ -35,7 +35,7 @@ $resource = isset($modx->resource) ? $modx->resource : false;
 // If we have a requested resource...
 if (array_key_exists('resource', $scriptProperties) && !empty($scriptProperties['resource'])) {
     // ... check if it is the same one as the current, and only load the requested resource if it isn't
-    if ($resource instanceof modResource) {
+    if ($resource instanceof modResource || $resource instanceof \MODX\Revolution\modResource) {
         if ($scriptProperties['resource'] != $resource->get('id')) {
             $resource = $modx->getObject('modResource', (int)$scriptProperties['resource']);
         }

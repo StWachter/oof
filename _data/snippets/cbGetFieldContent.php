@@ -47,7 +47,7 @@ $resource = isset($modx->resource) ? $modx->resource : false;
 // If we have a requested resource...
 if ($scriptProperties['resource']) {
     // ... check if it is the same one as the current, and only load the requested resource if it isn't
-    if ($resource instanceof modResource) {
+    if ($resource instanceof modResource || $resource instanceof \MODX\Revolution\modResource) {
         if ($scriptProperties['resource'] != $resource->get('id')) {
             $resource = $modx->getObject('modResource', (int)$scriptProperties['resource']);
         }
@@ -111,14 +111,14 @@ else {
 
         if($tpl) {
             $chunk = $modx->getObject('modChunk', array('name' => $tpl));
-            if ($chunk instanceof modChunk) {
+            if ($chunk instanceof modChunk || $chunk instanceof \MODX\Revolution\modChunk) {
                 $field->set('template', $chunk->getContent());
             }
         }
 
         if($wrapTpl) {
             $chunk = $modx->getObject('modChunk', array('name' => $wrapTpl));
-            if ($chunk instanceof modChunk) {
+            if ($chunk instanceof modChunk || $chunk instanceof \MODX\Revolution\modChunk) {
                 $field->set('wrapper_template', $chunk->getContent());
             }
         }

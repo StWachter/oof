@@ -1,0 +1,50 @@
+<?php
+
+const MODX3_RESOURCE_TYPES = [
+    'MODX\Revolution\modDocument',
+    'Articles\Model\Article',
+    'Collections\Model\CollectionContainer'
+];
+
+if ($object->xpdo) {
+    switch ($options[xPDOTransport::PACKAGE_ACTION]) {
+        case xPDOTransport::ACTION_INSTALL:
+        case xPDOTransport::ACTION_UPGRADE:
+
+            // If MODX 3, make sure new accepted_resource_types exist
+            // This *should* only be an issue on an upgrade, but could theoretically also happen on a new install if the
+            // system setting already exists.
+            if (version_compare($object->xpdo->getOption('settings_version'), '3.0.0-dev', '<')) {
+                break;
+            }
+            $setting = $object->xpdo->getObject('modSystemSetting', [
+                'key' => 'contentblocks.accepted_resource_types'
+            ]);
+            if (!$setting) {
+                $object->xpdo->log(xPDO::LOG_LEVEL_ERROR,
+                    'Unable to update contentblocks.accepted_resource_types system setting!');
+                break;
+            }
+
+            $currentTypes = array_map('trim', explode(',', $setting->get('value')));
+            foreach (MODX3_RESOURCE_TYPES as $type) {
+                if (!in_array($type, $currentTypes)) {
+                    $currentTypes[] = $type;
+                }
+            }
+
+            $setting->set('value', implode(',', $currentTypes));
+            $setting->save();
+
+            $object->xpdo->cacheManager->refresh([
+                'system_settings' => [],
+                'resource' => [],
+            ]);
+
+            break;
+
+        case xPDOTransport::ACTION_UNINSTALL:
+            break;
+    }
+}
+return true;

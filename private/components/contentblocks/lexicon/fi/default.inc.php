@@ -30,6 +30,11 @@ $_lang['setting_contentblocks.link.link_detection_pattern_desc'] = 'Regex to det
 $_lang['setting_contentblocks.typeahead.include_introtext'] = 'Include Introtext in Typeahead';
 $_lang['setting_contentblocks.typeahead.include_introtext_desc'] = 'When enabled, the typeahead will include the introtext for each of the resources, providing you with more information about the resource.';
 
+$_lang['setting_contentblocks.file_template_path'] = 'Path for @FILE templates';
+$_lang['setting_contentblocks.file_template_path_desc'] = 'A relative path, from the root of the media source selected for "contentblocks.file_template_source", which determines the root from where @FILE templates will be loaded. For example, if your media source has a base path of <code>core/elements/</code> and this setting is <code>contentblocks/</code>, a template with <code>@FILE fields/heading.tpl</code> will read the file <code>core/elements/contentblocks/fields/heading.tpl</code> as its template. It is strongly recommended to make sure your templates are in a dedicated directory in a non-web-accessible location, such as core/elements/';
+$_lang['setting_contentblocks.file_template_source'] = 'Media source for @FILE templates';
+$_lang['setting_contentblocks.file_template_source_desc'] = 'The media source to use for loading @FILE templates. See the description of the <code>contentblocks.file_template_path</code> system setting. It is strongly recommended to use a media source pointing to a non-web-accessible location, such as in the core.';
+
 $_lang['contentblocks.error.not_an_export'] = "The file does not seem to be a ContentBlocks export";
 $_lang['contentblocks.error.importing_row'] = "Error importing row: ";
 $_lang['contentblocks.error.no_valid_field'] = "No valid field found for request.";
@@ -167,6 +172,9 @@ $_lang['contentblocks.columns.description'] = "Columns define how the layout is 
 $_lang['contentblocks.sortorder'] = "Sort Order";
 $_lang['contentblocks.icon'] = "Icon";
 $_lang['contentblocks.description'] = "Description";
+$_lang['contentblocks.description_tooltip'] = "The description that shows when hovering over this field on the 'Add Content' window.";
+$_lang['contentblocks.content_description'] = "Description in Content";
+$_lang['contentblocks.content_description_tooltip'] = "The description that is displayed under the field name on the ContentBlocks layout.";
 $_lang['contentblocks.template'] = "Template";
 $_lang['contentblocks.template.description'] = "The template for the layout has several available placeholders, depending on the Columns and Settings you define in the tabs on the left.";
 $_lang['contentblocks.width'] = "Width";
@@ -176,6 +184,7 @@ $_lang['contentblocks.reference'] = "Reference";
 $_lang['contentblocks.default_value'] = "Default Value";
 $_lang['contentblocks.fieldtype'] = "Field Type";
 $_lang['contentblocks.fieldtype.select'] = "Select";
+$_lang['contentblocks.fieldtype.multi_select'] = "Multi-select";
 $_lang['contentblocks.fieldtype.radio'] = "Radio options";
 $_lang['contentblocks.fieldtype.checkbox'] = "Checkbox options";
 $_lang['contentblocks.fieldtype.textfield'] = "Text";
@@ -183,6 +192,7 @@ $_lang['contentblocks.fieldtype.link'] = "Link";
 $_lang['contentblocks.fieldtype.textarea'] = "Textarea";
 $_lang['contentblocks.fieldtype.richtext'] = "Rich text";
 $_lang['contentblocks.fieldtype.image'] = "Image";
+$_lang['contentblocks.fieldtype.color_picker'] = "Color Picker";
 $_lang['contentblocks.fieldoptions'] = "Field Options";
 $_lang['contentblocks.fieldoptions.description'] = "Used for Select field types only. Define available values as \"placeholder_value==Displayed Value\" (\"Displayed Value=placeholder_value\" is also supported, but will be removed in 2.0), one per line. If you only pass a single value per line (such as \"foo\"), that will be used as both displayed and placeholder value.";
 $_lang['contentblocks.field_is_exposed'] = "Expose field";
@@ -231,6 +241,7 @@ $_lang['contentblocks.add_template'] = 'Add Template';
 $_lang['contentblocks.edit_template'] = 'Edit Template';
 $_lang['contentblocks.duplicate_template'] = 'Duplicate Template';
 $_lang['contentblocks.export_template'] = 'Export Template';
+$_lang['contentblocks.export_templates.confirm'] = "After clicking Yes below, we will prepare an XML export of all templates. This can be used to import them later or in a different installation. Generating the XML may take a few seconds depending on the number of templates you have configured.";
 $_lang['contentblocks.export_templates'] = 'Export Templates';
 $_lang['contentblocks.import_templates'] = 'Import Templates';
 $_lang['contentblocks.import_templates.title'] = 'Import Templates';
@@ -406,6 +417,16 @@ $_lang['contentblocks.video.paste_link'] = "Paste a link here";
 $_lang['contentblocks.video.youtube_not_loaded'] = "The YouTube API has not been loaded. Please try again in a few seconds. If the problem persists, the API might not be available currently.";
 $_lang['contentblocks.video.api_error'] = "Uh oh, an error occured: [[+message]] (Code [[+code]])";
 
+$_lang['contentblocks.checkbox'] = "Checkbox";
+$_lang['contentblocks.checkbox.description'] = "A simple checkbox input.";
+$_lang['contentblocks.colorpicker'] = 'Color Picker';
+$_lang['contentblocks.colorpicker.description'] = 'Color picker widget in a modal window.';
+$_lang['contentblocks.color_picker.select'] = 'Select';
+$_lang['contentblocks.color_picker.cancel'] = 'Cancel';
+$_lang['contentblocks.color_picker.current'] = 'Current';
+$_lang['contentblocks.color_picker.preset_swatch_colors'] = 'Preset Swatch Colors';
+$_lang['contentblocks.color_picker.property_desc'] = 'Enter up to 16 hex-codes (e.g. #f1f1f1) to define the color swatches for this input. (comma separated)';
+
 // Select
 $_lang['contentblocks.dropdown'] = "Dropdown";
 $_lang['contentblocks.dropdown.description'] = "A simple dropdown field, allowing the editor to choose one item from a number of predefined options.";
@@ -414,6 +435,14 @@ $_lang['contentblocks.dropdown.options'] = "Drop-down Options";
 $_lang['contentblocks.dropdown.options.description'] = "Define available values as 'value==Displayed Value', with one option per line. If you only pass a single value per line (such as 'foo'), that will be used as both displayed and placeholder value. Prefixing a single value with # will make it a disabled option. You can also use @SNIPPET bindings to dynamically provide option values. For detailed information on specifying options consult the Dropdown documentation at modmo.re/cb.";
 $_lang['contentblocks.dropdown.default_value'] = "Default Value";
 $_lang['contentblocks.dropdown.default_value.description'] = "The default value to choose when the dropdown is inserted, or nothing is selected.";
+$_lang['contentblocks.dropdown.search_enabled'] = 'Search Enabled';
+$_lang['contentblocks.dropdown.search_enabled.description'] = 'Allow users to find options quickly by typing into the dropdown field. Perfect for a dropdown with a large number of rows.';
+
+// Multi-Select
+$_lang['contentblocks.multiselect'] = "Multi-Select";
+$_lang['contentblocks.multiselect.description'] = "Multi-select dropdown field";
+$_lang['contentblocks.multiselect.output_separator'] = 'Output Separator';
+$_lang['contentblocks.multiselect.output_separator.description'] = 'Specify a delimiter to separate multi-select values.';
 
 // Snippet
 $_lang['contentblocks.snippet'] = "Snippet";
@@ -508,6 +537,9 @@ $_lang['contentblocks.use_tinyrte'] = "Use Tiny RTE?";
 $_lang['contentblocks.use_tinyrte.description'] = "When enabled, the input will be enhanced with a tiny rich text editor allowing for simple formatting (bold, italics and links).";
 $_lang['contentblocks.use_tinyrte.description.image'] = "When enabled, the title input will be enhanced with a tiny rich text editor allowing for simple formatting (bold, italics and links). If you use the title input for alt text or a title attribute, you may need to do some extra processing (i.e. htmlentities) to prevent the added markup from breaking your img tag. ";
 
+$_lang['contentblocks.rebuild_everything'] = "Everything";
+$_lang['contentblocks.choose_context'] = "Choose Context";
+$_lang['contentblocks.rebuild_all_contexts'] = "Rebuild all contexts";
 $_lang['contentblocks.rebuild_content'] = "Rebuild Content";
 $_lang['contentblocks.rebuild_content.confirm'] = "By rebuilding the content, all resources will be regenerated from their structured content. This means all layouts and fields previously used will be parsed again and the old content overwritten. Depending on the size of the website, this can take between several seconds and several minutes. To start this process, please click Yes below.";
 $_lang['contentblocks.rebuild_content.initialising'] = "Initialising...";
@@ -623,3 +655,13 @@ $_lang['setting_contentblocks.base_url_mode_desc'] = "When uploading images, the
 
 $_lang['setting_contentblocks.remove_content_dom'] = "Remove Content DOM";
 $_lang['setting_contentblocks.remove_content_dom_desc'] = "When enabled, the previously existing content field (potentially including an enabled rich text editor) will be completely removed from the page when ContentBlocks is initialised. In some cases where the rich text editor remaining in a hidden state can cause conflicts with ContentBlocks, and enabling this option can help with that.";
+
+$_lang['setting_contentblocks.image.max_upload_height'] = "Max upload height (in pixels)";
+$_lang['setting_contentblocks.image.max_upload_height_desc'] = "Uploaded images will be cropped to this height if they are larger. The aspect ratio will be preserved.";
+$_lang['setting_contentblocks.image.max_upload_width'] = "Max upload width (in pixels)";
+$_lang['setting_contentblocks.image.max_upload_width_desc'] = "Uploaded images will be cropped to this width if they are larger. The aspect ratio will be preserved.";
+$_lang['setting_contentblocks.image.strip_meta'] = "Strip meta from images";
+$_lang['setting_contentblocks.image.strip_meta_desc'] = "When enabled, embedded metadata in uploaded images (such as EXIF or IPTC data) will be automatically removed.";
+
+$_lang['setting_contentblocks.color_picker_defaults'] = "Default Swatch Colors";
+$_lang['setting_contentblocks.color_picker_defaults_desc'] = "A comma-separated list of up to 16 color hex codes (e.g. #f1f1f1) that are used as the default swatch colors on the color picker modal.";

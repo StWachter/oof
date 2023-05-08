@@ -3,6 +3,7 @@ parent_properties: null
 input: redactor
 name: Inhalt
 description: ''
+content_desc: null
 sortorder: 3
 category: 4
 icon: richtext

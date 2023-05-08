@@ -3,6 +3,7 @@ parent_properties: null
 input: repeater
 name: Bilder
 description: ''
+content_desc: null
 sortorder: 5
 category: 5
 icon: chunk_A

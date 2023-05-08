@@ -3,6 +3,7 @@ parent_properties: null
 input: redactor
 name: Short-Facts
 description: ''
+content_desc: null
 sortorder: 4
 category: 4
 icon: richtext
