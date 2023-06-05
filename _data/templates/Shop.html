@@ -28,10 +28,10 @@ properties: 'a:0:{}'
                 <ul class="filter__wrapper">
                     <li class="filter js-filter" data-filter=".all">[[%product.category.all? &namespace=`site` &language=`[[++cultureKey]]`]]</li>
                     <li class="filter js-filter" data-filter=".prints">[[%product.category.1]]</li>
+                    <li class="filter js-filter" data-filter=".large">Large Prints</li>
                     <li class="filter js-filter" data-filter=".cards">[[%product.category.2]]</li>
+                    <li class="filter js-filter" data-filter=".sticker">Sticker</li>
                     <li class="filter js-filter" data-filter=".more">[[%product.category.3]]</li>
-    
-
                 </ul>
             </div>
         </div>
@@ -60,7 +60,7 @@ Bestellen könnt ihr weiterhin wie gewohnt, ihr müsst nur etwas länger warten.
                         &depth=`0`
                         &limit=`0`
                         &tpl=`galleryTpl`
-                        &includeTVs=`productImage,productPrice,productOverlayColor,productOverlay,productButton,productButtonPosition,productHide,productCategory,productCategorySecond`
+                        &includeTVs=`productVariants,productImage,productPrice,productOverlayColor,productOverlay,productButton,productButtonPosition,productHide,productCategory,productCategorySecond`
                         &processTVs=`1`
                         &where=`{"hidemenu:=":"1"}`
                         &sortby=`menuindex`

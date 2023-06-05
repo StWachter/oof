@@ -1,0 +1,121 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Chunks' => 
+    array (
+      'd872b42c3de73b20b3cbfd75fd11fce2' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"socialFeedTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div>\\n    <a href=\\"[[+permalink]]\\" target=\\"_blank\\"><img src=\\"[[+image]]\\" alt=\\"[[+username:htmlent]]\\"><\\/a>\\n<\\/div>\\n","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div>\\n    <a href=\\"[[+permalink]]\\" target=\\"_blank\\"><img src=\\"[[+image]]\\" alt=\\"[[+username:htmlent]]\\"><\\/a>\\n<\\/div>\\n"}',
+        'guid' => 'b939a7794da8e83a7ab6311011077b5e',
+        'native_key' => NULL,
+        'signature' => 'e9b0c44d287e6bc18d6e251a7783f6d2',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      '019fc14ee26e251c8cd897773b427e86' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"socialFeed","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/*\\n * socialFeed\\n *\\n * Snippet to show posts\\n *\\n * Usage examples:\\n * [[socialFeed? &tpl=`yourTpl`]]\\n *\\n * @author Jan D\\u00e4hne <jan.daehne@quadro-system.de>\\n *\\/\\n\\n$corePath = $modx->getOption(\'socialfeed.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/socialfeed\\/\');\\n$socialfeed = $modx->getService(\'socialfeed\', \'SocialFeed\', $corePath . \'model\\/socialfeed\\/\', array(\\n    \'core_path\' => $corePath\\n));\\n\\n\\/\\/ properties\\n$tpl = $modx->getOption(\'tpl\', $scriptProperties, \'socialFeedTpl\', true);\\n$limit = $modx->getOption(\'limit\', $scriptProperties, 12, true);\\n$offset = $modx->getOption(\'offset\', $scriptProperties, 0, true);\\n$sortby = $modx->getOption(\'sortby\', $scriptProperties, \'date\', true);\\n$sortdir = $modx->getOption(\'sortdir\', $scriptProperties, \'desc\', true);\\n$filterUser = $modx->getOption(\'filterUser\', $scriptProperties);\\n$filterContent = $modx->getOption(\'filterContent\', $scriptProperties);\\n$cache = $modx->getOption(\'cache\', $scriptProperties, true, true);\\n$cacheTime = $modx->getOption(\'cacheTime\', 3600, true);\\n$cacheKey = $modx->getOption(\'cacheKey\', $scriptProperties, \'socialFeed\', true);\\n\\n\\n\\/\\/ get items\\n$items = $socialfeed->getItems($limit, $offset, $sortby, $sortdir, $filterUser, $filterContent, array(\\n    \'cache\' => $cache,\\n    \'time\' => $cacheTime,\\n    \'key\' => $cacheKey,\\n));\\n\\n$output = \'\';\\n\\nif (is_array($items)) {\\n    foreach ($items as $item) {\\n        $output .= $modx->getChunk($tpl, $item);\\n    }\\n}\\n\\n\\nreturn $output;","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"\\/*\\n * socialFeed\\n *\\n * Snippet to show posts\\n *\\n * Usage examples:\\n * [[socialFeed? &tpl=`yourTpl`]]\\n *\\n * @author Jan D\\u00e4hne <jan.daehne@quadro-system.de>\\n *\\/\\n\\n$corePath = $modx->getOption(\'socialfeed.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/socialfeed\\/\');\\n$socialfeed = $modx->getService(\'socialfeed\', \'SocialFeed\', $corePath . \'model\\/socialfeed\\/\', array(\\n    \'core_path\' => $corePath\\n));\\n\\n\\/\\/ properties\\n$tpl = $modx->getOption(\'tpl\', $scriptProperties, \'socialFeedTpl\', true);\\n$limit = $modx->getOption(\'limit\', $scriptProperties, 12, true);\\n$offset = $modx->getOption(\'offset\', $scriptProperties, 0, true);\\n$sortby = $modx->getOption(\'sortby\', $scriptProperties, \'date\', true);\\n$sortdir = $modx->getOption(\'sortdir\', $scriptProperties, \'desc\', true);\\n$filterUser = $modx->getOption(\'filterUser\', $scriptProperties);\\n$filterContent = $modx->getOption(\'filterContent\', $scriptProperties);\\n$cache = $modx->getOption(\'cache\', $scriptProperties, true, true);\\n$cacheTime = $modx->getOption(\'cacheTime\', 3600, true);\\n$cacheKey = $modx->getOption(\'cacheKey\', $scriptProperties, \'socialFeed\', true);\\n\\n\\n\\/\\/ get items\\n$items = $socialfeed->getItems($limit, $offset, $sortby, $sortdir, $filterUser, $filterContent, array(\\n    \'cache\' => $cache,\\n    \'time\' => $cacheTime,\\n    \'key\' => $cacheKey,\\n));\\n\\n$output = \'\';\\n\\nif (is_array($items)) {\\n    foreach ($items as $item) {\\n        $output .= $modx->getChunk($tpl, $item);\\n    }\\n}\\n\\n\\nreturn $output;"}',
+        'guid' => '67180f051072286b272ba3d2a6776b48',
+        'native_key' => NULL,
+        'signature' => 'ac8dd20c59a7a6709bc788ed5a4b73cb',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Children' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'parent',
+        1 => 'category',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Plugins' => 
+    array (
+      'unique_key' => 'name',
+      'preserve_keys' => false,
+      'update_object' => true,
+      'related_objects' => true,
+      'related_object_attributes' => 
+      array (
+        'PluginEvents' => 
+        array (
+          'preserve_keys' => true,
+          'update_object' => false,
+          'unique_key' => 
+          array (
+            0 => 'pluginid',
+            1 => 'event',
+          ),
+        ),
+      ),
+    ),
+  ),
+  'namespace' => 'socialfeed',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"socialfeed-1.0.7-pl\\/modCategory\\/3de03eb67464576d8c0b819ca82d7ad9\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"socialfeed"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"socialfeed-1.0.7-pl\\/modCategory\\/3de03eb67464576d8c0b819ca82d7ad9\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"socialfeed"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"socialfeed-1.0.7-pl\\/modCategory\\/3de03eb67464576d8c0b819ca82d7ad9.gpm.resolve.tables.resolver","type":"php","name":"gpm.resolve.tables"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '023d62b094134451859bc0e904715bfa',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '3de03eb67464576d8c0b819ca82d7ad9',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"socialFeed","rank":0}',
+);

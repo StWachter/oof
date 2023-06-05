@@ -7,6 +7,8 @@ properties: 'a:0:{}'
 
 -----
 
+
+
 <li class="js-filter-element all [[+productCategory:tvLabel:filterPathSegment]] [[+productCategorySecond:tvLabel:filterPathSegment]]">
     <a href="[[~[[+id]]]]" target="_blank" class="gallery__item gallery__item--[[+productOverlayColor]]" id="produkt-[[+id]]">
         <figure class="gallery__imageWrapper">
@@ -22,6 +24,12 @@ properties: 'a:0:{}'
     </a>
     <div class="gallery__caption">
         <div>[[+pagetitle]]</div>
-        <div style="font-size:.8em;">[[+productPrice:formatPrice]]€</div>
+        
+        <div style="font-size:.8em;">[[getImageList:notempty=`from `?
+            &tvname=`productVariants`
+            &tpl=`productTestTpl`
+            &limit=`1`
+            &docid=`[[+id]]`
+        ]][[+productPrice:formatPrice]]€</div>
     </div>
 </li>

@@ -115,6 +115,12 @@ abstract class xPDOQuery extends xPDOCriteria {
         $output = preg_replace('/\\".*?\\"/', '{mask}', $output);
         $output = preg_replace("/'.*?'/", '{mask}', $output);
         $output = preg_replace('/".*?"/', '{mask}', $output);
+        if (preg_match('/sleep\s*\(\s*\d+\s*\)/i', $output) > 0) {
+            return false;
+        }
+        if (preg_match('/benchmark\s*\(\s*.+,.+\s*\)/i', $output) > 0) {
+            return false;
+        }
         return strpos($output, ';') === false && strpos(strtolower($output), 'union') === false;
     }
 
@@ -709,12 +715,12 @@ abstract class xPDOQuery extends xPDOCriteria {
                         $key_operator= explode(':', $key);
                         if ($key_operator && count($key_operator) === 2) {
                             $key= $key_operator[0];
-                            $operator= $key_operator[1];
+                            $operator= strtoupper($key_operator[1]);
                         }
                         elseif ($key_operator && count($key_operator) === 3) {
                             $conj= $key_operator[0];
                             $key= $key_operator[1];
-                            $operator= $key_operator[2];
+                            $operator= strtoupper($key_operator[2]);
                         }
                         if (strpos($key, '.') !== false) {
                             $key_parts= explode('.', $key);
@@ -741,7 +747,7 @@ abstract class xPDOQuery extends xPDOCriteria {
                             else {
                                 $type= PDO::PARAM_STR;
                             }
-                            if (in_array(strtoupper($operator), array('IN', 'NOT IN')) && is_array($val)) {
+                            if (in_array($operator, array('IN', 'NOT IN')) && is_array($val)) {
                                 $vals = array();
                                 foreach ($val as $v) {
                                     if ($v === null) {
@@ -801,6 +807,13 @@ abstract class xPDOQuery extends xPDOCriteria {
             $field['binding']= array ('value' => $conditions, 'type' => $param_type, 'length' => 0);
             $field['conjunction']= $conjunction;
             $result = new xPDOQueryCondition($field);
+        }
+        else {
+            $result = new xPDOQueryCondition([
+                'sql' => $conditions,
+                'binding' => null,
+                'conjunction' => $conjunction
+            ]);
         }
         return $result;
     }

@@ -1,0 +1,19 @@
+<?php return array (
+  'preserve_keys' => false,
+  'update_object' => true,
+  'unique_key' => 
+  array (
+    0 => 'name',
+  ),
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '7d90ac3b59335cb46f4ba29a533fdcfe',
+  'package' => 'modx',
+  'class' => 'modDashboardWidget',
+  'signature' => '685c40cb39639da74da164f3755b49ee',
+  'native_key' => NULL,
+  'object' => '{"id":null,"name":"bigbrother.popular_pages.name","description":"bigbrother.popular_pages.desc","type":"file","content":"[[++core_path]]components\\/bigbrother\\/elements\\/widgets\\/popularpages.class.php","namespace":"bigbrother","lexicon":"bigbrother:default","size":"half","name_trans":"Google Analytics - Popular Pages","description_trans":"Big Brother - Standalone popular pages widget"}',
+);

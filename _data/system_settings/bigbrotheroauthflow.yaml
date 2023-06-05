@@ -1,0 +1,4 @@
+key: bigbrother.oauth_flow
+value: webapp
+namespace: bigbrother
+area: Authorization

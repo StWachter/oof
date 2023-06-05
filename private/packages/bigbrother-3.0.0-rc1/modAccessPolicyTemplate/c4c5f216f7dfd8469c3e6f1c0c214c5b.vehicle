@@ -1,0 +1,81 @@
+<?php return array (
+  'preserve_keys' => true,
+  'unique_key' => 
+  array (
+    0 => 'name',
+  ),
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Permissions' => 
+    array (
+      'b61bca005aedc50f89158fdd45ccc123' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPermission',
+        'object' => '{"id":null,"template":0,"name":"bigbrother_authorize","description":"bigbrother.permission.authorize","value":1}',
+        'guid' => '9b24798aee6280dc787e03e289162fdd',
+        'native_key' => NULL,
+        'signature' => 'b29f9045288e1d13a3dbb4b008999bb7',
+      ),
+    ),
+    'Policies' => 
+    array (
+      '1a429287ffde271b6a35aabac6e7198d' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'template',
+          1 => 'name',
+        ),
+        'class' => 'modAccessPolicy',
+        'object' => '{"id":null,"name":"BigBrother Admin","description":"Access Policy for BigBrother that gives access to the authorization manager page. Overwritten on upgrade.","parent":0,"template":0,"class":"","data":"{\\"bigbrother_authorize\\":true}","lexicon":"bigbrother:permissions"}',
+        'guid' => 'a8589a23d99e0f7108b15e37fcf8d752',
+        'native_key' => NULL,
+        'signature' => '07039586017fce55d726d04f894dd31b',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Permissions' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'template',
+        1 => 'name',
+      ),
+    ),
+    'Policies' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'template',
+        1 => 'name',
+      ),
+    ),
+  ),
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'f1dd5c553f11f93820315b70171c558d',
+  'package' => 'modx',
+  'class' => 'modAccessPolicyTemplate',
+  'signature' => 'c4c5f216f7dfd8469c3e6f1c0c214c5b',
+  'native_key' => NULL,
+  'object' => '{"id":null,"template_group":1,"name":"BigBrotherTemplate","description":"Policy Template for access to the BigBrother authorization page.","lexicon":"bigbrother:permissions"}',
+);

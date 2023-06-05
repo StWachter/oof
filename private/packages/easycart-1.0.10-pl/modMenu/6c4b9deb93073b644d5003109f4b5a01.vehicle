@@ -1,0 +1,30 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'related_objects' => true,
+  'related_object_attributes' => 
+  array (
+    'Action' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'namespace',
+        1 => 'controller',
+      ),
+    ),
+  ),
+  'namespace' => 'easycart',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '15a3847d7b74522168b7bba7ca89fe38',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => '6c4b9deb93073b644d5003109f4b5a01',
+  'native_key' => 'easycart.menu',
+  'object' => '{"text":"easycart.menu","parent":"components","action":"home","description":"easycart.menu_desc","icon":"","menuindex":0,"params":"","handler":"","permissions":"","namespace":"easycart"}',
+);

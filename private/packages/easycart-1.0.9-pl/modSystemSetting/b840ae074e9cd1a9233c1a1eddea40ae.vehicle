@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'easycart',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '5d9b1c94dfb251298386e75950bd0257',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'b840ae074e9cd1a9233c1a1eddea40ae',
+  'native_key' => 'easycart.shop_id',
+  'object' => '{"key":"easycart.shop_id","value":"","xtype":"textfield","namespace":"easycart","area":"api","editedon":null}',
+);

@@ -155,7 +155,7 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
         $useMultiByte = $this->ctx->getOption('use_multibyte', false);
         $encoding = $this->ctx->getOption('modx_charset', 'UTF-8');
 
-        $imagesExts = $this->getOption('imageExtensions',$properties,'jpg,jpeg,png,gif,svg');
+        $imagesExts = $this->getOption('imageExtensions',$properties,'jpg,jpeg,png,gif,svg,webp');
         $imagesExts = explode(',',$imagesExts);
 
         $hideTooltips = !empty($properties['hideTooltips']) && $properties['hideTooltips'] != 'false' ? true : false;
@@ -414,7 +414,7 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
         $bucketUrl = rtrim($properties['url'],'/').'/';
         $allowedFileTypes = $this->getOption('allowedFileTypes',$this->properties,'');
         $allowedFileTypes = !empty($allowedFileTypes) && is_string($allowedFileTypes) ? array_map("trim",explode(',',$allowedFileTypes)) : $allowedFileTypes;
-        $imageExtensions = $this->getOption('imageExtensions',$this->properties,'jpg,jpeg,png,gif,svg');
+        $imageExtensions = $this->getOption('imageExtensions',$this->properties,'jpg,jpeg,png,gif,svg,webp');
         $imageExtensions = explode(',',$imageExtensions);
         $thumbnailType = $this->getOption('thumbnailType',$this->properties,'png');
         $thumbnailQuality = $this->getOption('thumbnailQuality',$this->properties,90);
@@ -720,7 +720,9 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
      * @return boolean|string
      */
     public function updateObject($objectPath,$content) {
-        /* create empty file that acts as folder */
+        if (!$this->checkFiletype($objectPath)) {
+            return false;
+        }
         $created = $this->driver->create_object($this->bucket,$objectPath,array(
                  'body' => $content,
                  'acl' => AmazonS3::ACL_PUBLIC,
@@ -744,6 +746,9 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
      * @return boolean
      */
     public function removeObject($objectPath) {
+        if (!$this->checkFiletype($objectPath)) {
+            return false;
+        }
         if (!$this->driver->if_object_exists($this->bucket,$objectPath)) {
             $this->addError('file',$this->xpdo->lexicon('file_folder_err_ns').': '.$objectPath);
             return false;
@@ -1035,6 +1040,7 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
             'wav' => 'audio/x-wav',
             'wcm' => 'application/vnd.ms-works',
             'wdb' => 'application/vnd.ms-works',
+            'webp' => 'image/webp',
             'wks' => 'application/vnd.ms-works',
             'wmf' => 'application/x-msmetafile',
             'wps' => 'application/vnd.ms-works',
@@ -1159,7 +1165,7 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
                 'name' => 'imageExtensions',
                 'desc' => 'prop_s3.imageExtensions_desc',
                 'type' => 'textfield',
-                'value' => 'jpg,jpeg,png,gif,svg',
+                'value' => 'jpg,jpeg,png,gif,svg,webp',
                 'lexicon' => 'core:source',
             ),
             'thumbnailType' => array(
@@ -1170,6 +1176,7 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
                     array('name' => 'PNG','value' => 'png'),
                     array('name' => 'JPG','value' => 'jpg'),
                     array('name' => 'GIF','value' => 'gif'),
+                    array('name' => 'WebP','value' => 'webp'),
                 ),
                 'value' => 'png',
                 'lexicon' => 'core:source',
@@ -1275,7 +1282,7 @@ class modS3MediaSource extends modMediaSource implements modMediaSourceInterface
         $objectUrl = $properties['url'].$objectPath;
         $contents = @file_get_contents($objectUrl);
 
-        $imageExtensions = $this->getOption('imageExtensions',$this->properties,'jpg,jpeg,png,gif,svg');
+        $imageExtensions = $this->getOption('imageExtensions',$this->properties,'jpg,jpeg,png,gif,svg,webp');
         $imageExtensions = explode(',',$imageExtensions);
         $fileExtension = pathinfo($objectPath,PATHINFO_EXTENSION);
 

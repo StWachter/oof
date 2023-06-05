@@ -103,7 +103,7 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
         $hideTooltips = !empty($properties['hideTooltips']) && $properties['hideTooltips'] != 'false' ? true : false;
         $editAction = $this->getEditActionId();
 
-        $imagesExts = $this->getOption('imageExtensions',$properties,'jpg,jpeg,png,gif,svg');
+        $imagesExts = $this->getOption('imageExtensions',$properties,'jpg,jpeg,png,gif,svg,webp');
         $imagesExts = explode(',',$imagesExts);
         $skipFiles = $this->getOption('skipFiles',$properties,'.svn,.git,_notes,nbproject,.idea,.DS_Store');
         $skipFiles = explode(',',$skipFiles);
@@ -158,7 +158,7 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
 
                 $dirnames[] = strtoupper($fileName);
                 $directories[$fileName] = array(
-                    'id' => $bases['urlRelative'].rtrim($fileName,'/').'/',
+                    'id' => $bases['urlRelative'].rtrim($fileName, '/').'/',
                     'text' => $fileName,
                     'cls' => implode(' ',$cls),
                     'iconCls' => 'icon icon-folder',
@@ -205,7 +205,6 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
                     'iconCls' => 'icon icon-file icon-'.$ext . ($file->isWritable() ? '' : ' icon-lock'),
                     'type' => 'file',
                     'leaf' => true,
-                    // 'qtip' => in_array($ext,$imagesExts) ? '<img src="'.$fromManagerUrl.'" alt="'.$fileName.'" />' : '',
                     'page' => $this->fileHandler->isBinary($filePathName) ? null : $page,
                     'perms' => $octalPerms,
                     'path' => $bases['pathAbsoluteWithPath'].$fileName,
@@ -218,7 +217,7 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
                 );
                 $files[$fileName]['menu'] = array('items' => $this->getListContextMenu($file,$files[$fileName]));
 
-                // trough tree config we can request a tree without image-preview tooltips, don't do any work if not necessary
+                // through tree config we can request a tree without image-preview tooltips, don't do any work if not necessary
                 if (!$hideTooltips) {
 
                     $files[$fileName]['qtip'] = '';
@@ -276,7 +275,7 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
                                     'source' => $this->get('id'),
                                     't' => $file->getMTime(),
                                 ));
-                                $image = $this->ctx->getOption('connectors_url', MODX_CONNECTORS_URL).'system/phpthumb.php?'.urldecode($imageQuery);
+                                $image = $this->ctx->getOption('connectors_url', MODX_CONNECTORS_URL).'system/phpthumb.php?'.rawurldecode($imageQuery);
                             } else {
                                 $preview = false;
                                 $this->xpdo->log(modX::LOG_LEVEL_ERROR,'Thumbnail could not be created for file: '.$bases['pathAbsoluteWithPath'].$fileName);
@@ -680,7 +679,7 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
         if (!$file->isReadable()) {
             $this->addError('file',$this->xpdo->lexicon('file_err_perms'));
         }
-        $imageExtensions = $this->getOption('imageExtensions',$properties,'jpg,jpeg,png,gif,svg');
+        $imageExtensions = $this->getOption('imageExtensions',$properties,'jpg,jpeg,png,gif,svg,webp');
         $imageExtensions = explode(',',$imageExtensions);
         $fileExtension = pathinfo($objectPath,PATHINFO_EXTENSION);
 
@@ -709,6 +708,9 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
         $bases = $this->getBases($objectPath);
 
         $fullPath = $bases['pathAbsolute'].$objectPath;
+        if (!$this->checkFiletype($fullPath)) {
+            return false;
+        }
         if (!file_exists($fullPath)) {
             $this->addError('file',$this->xpdo->lexicon('file_folder_err_ns').': '.$fullPath);
             return false;
@@ -757,6 +759,9 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
         $bases = $this->getBases($objectPath);
 
         $fullPath = $bases['pathAbsolute'].ltrim($objectPath,'/');
+        if (!$this->checkFiletype($fullPath)) {
+            return false;
+        }
 
         /** @var modFile $file */
         $file = $this->fileHandler->make($fullPath);
@@ -1025,7 +1030,7 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
         $modAuth = $this->xpdo->user->getUserToken($this->xpdo->context->get('key'));
 
         /* get default settings */
-        $imageExtensions = $this->getOption('imageExtensions',$properties,'jpg,jpeg,png,gif,svg');
+        $imageExtensions = $this->getOption('imageExtensions',$properties,'jpg,jpeg,png,gif,svg,webp');
         $imageExtensions = explode(',',$imageExtensions);
         $use_multibyte = $this->ctx->getOption('use_multibyte', false);
         $encoding = $this->ctx->getOption('modx_charset', 'UTF-8');
@@ -1071,8 +1076,8 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
                 }
 
                 $filesize = @filesize($filePathName);
-                $url = urlencode(ltrim($dir.$fileName,'/'));
-                $page = !empty($editAction) ? '?a='.$editAction.'&file='.$bases['urlRelative'].$fileName.'&wctx='.$this->ctx->get('key').'&source='.$this->get('id') : null;
+                $url = rawurlencode(ltrim($dir.$fileName,'/'));
+                $page = !empty($editAction) ? '?a='.$editAction.'&file='.rawurlencode($bases['urlRelative'].$fileName).'&wctx='.$this->ctx->get('key').'&source='.$this->get('id') : null;
 
                 /* get thumbnail */
                 $preview = 0;
@@ -1114,7 +1119,7 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
                             $thumbHeight = $size[1] >= $thumbHeight ? $thumbHeight : $size[1];
                             $thumbWidth = round($size[0] * ($thumbHeight / $size[1]));
                         }
-                        $image = $thumb = $bases['urlAbsolute'].urldecode($url);
+                        $image = $thumb = $bases['urlAbsolute'].rawurldecode($url);
                     } else {
                         $size = @getimagesize($filePathName);
                         if (is_array($size) && $size[0] > 0 && $size[1] > 0) {
@@ -1151,7 +1156,7 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
                                 'source' => $this->get('id'),
                                 't' => $file->getMTime(),
                             ));
-                            $image = $this->ctx->getOption('connectors_url', MODX_CONNECTORS_URL).'system/phpthumb.php?'.urldecode($imageQuery);
+                            $image = $this->ctx->getOption('connectors_url', MODX_CONNECTORS_URL).'system/phpthumb.php?'.rawurldecode($imageQuery);
                             $thumbQuery = http_build_query(array(
                                 'src' => $url,
                                 'w' => $thumbQueryWidth,
@@ -1163,7 +1168,7 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
                                 'source' => $this->get('id'),
                                 't' => $file->getMTime(),
                             ));
-                            $thumb = $this->ctx->getOption('connectors_url', MODX_CONNECTORS_URL).'system/phpthumb.php?'.urldecode($thumbQuery);
+                            $thumb = $this->ctx->getOption('connectors_url', MODX_CONNECTORS_URL).'system/phpthumb.php?'.rawurldecode($thumbQuery);
                         } else {
                             $this->xpdo->log(modX::LOG_LEVEL_ERROR,'Thumbnail could not be created for file: '.$filePathName);
                             $preview = 0;
@@ -1287,7 +1292,7 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
                 'name' => 'imageExtensions',
                 'desc' => 'prop_file.imageExtensions_desc',
                 'type' => 'textfield',
-                'value' => 'jpg,jpeg,png,gif,svg',
+                'value' => 'jpg,jpeg,png,gif,svg,webp',
                 'lexicon' => 'core:source',
             ),
             'thumbnailType' => array(
@@ -1298,6 +1303,7 @@ class modFileMediaSource extends modMediaSource implements modMediaSourceInterfa
                     array('name' => 'PNG','value' => 'png'),
                     array('name' => 'JPG','value' => 'jpg'),
                     array('name' => 'GIF','value' => 'gif'),
+                    array('name' => 'WebP','value' => 'webp'),
                 ),
                 'value' => 'png',
                 'lexicon' => 'core:source',

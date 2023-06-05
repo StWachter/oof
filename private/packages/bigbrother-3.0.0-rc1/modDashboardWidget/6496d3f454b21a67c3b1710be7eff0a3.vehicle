@@ -1,0 +1,19 @@
+<?php return array (
+  'preserve_keys' => false,
+  'update_object' => true,
+  'unique_key' => 
+  array (
+    0 => 'name',
+  ),
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'f70b24a8f90c4fc61fe73b7c51cd76b5',
+  'package' => 'modx',
+  'class' => 'modDashboardWidget',
+  'signature' => '6496d3f454b21a67c3b1710be7eff0a3',
+  'native_key' => NULL,
+  'object' => '{"id":null,"name":"bigbrother.acquisition.name","description":"bigbrother.acquisition.desc","type":"file","content":"[[++core_path]]components\\/bigbrother\\/elements\\/widgets\\/acquisition.class.php","namespace":"bigbrother","lexicon":"bigbrother:default","size":"half","name_trans":"Google Analytics - Acquisition","description_trans":"Big Brother - Standalone acquisition widget"}',
+);

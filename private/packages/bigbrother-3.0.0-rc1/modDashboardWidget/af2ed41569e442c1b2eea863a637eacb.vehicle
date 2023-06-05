@@ -1,0 +1,19 @@
+<?php return array (
+  'preserve_keys' => false,
+  'update_object' => true,
+  'unique_key' => 
+  array (
+    0 => 'name',
+  ),
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '919e5f4f605638ba4e74857a9a0fc652',
+  'package' => 'modx',
+  'class' => 'modDashboardWidget',
+  'signature' => 'af2ed41569e442c1b2eea863a637eacb',
+  'native_key' => NULL,
+  'object' => '{"id":null,"name":"bigbrother.visits.name","description":"bigbrother.visits.desc","type":"file","content":"[[++core_path]]components\\/bigbrother\\/elements\\/widgets\\/visitsline.class.php","namespace":"bigbrother","lexicon":"bigbrother:default","size":"half","name_trans":"Google Analytics - Visits","description_trans":"Big Brother - Standalone visits widget"}',
+);

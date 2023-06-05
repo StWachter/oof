@@ -1,0 +1,4 @@
+key: bigbrother.assets_url
+value: '{assets_url}components/bigbrother/'
+namespace: bigbrother
+area: Paths

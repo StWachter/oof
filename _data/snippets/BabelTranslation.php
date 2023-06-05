@@ -2,7 +2,7 @@ id: 78
 name: BabelTranslation
 description: 'Returns the id of a translated resource in a given context.'
 category: Babel
-properties: 'a:4:{s:10:"resourceId";a:7:{s:4:"name";s:10:"resourceId";s:4:"desc";s:27:"babeltranslation.resourceId";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:0:"";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:10:"contextKey";a:7:{s:4:"name";s:10:"contextKey";s:4:"desc";s:27:"babeltranslation.contextKey";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:0:"";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:10:"cultureKey";a:7:{s:4:"name";s:10:"cultureKey";s:4:"desc";s:27:"babeltranslation.cultureKey";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:0:"";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:15:"showUnpublished";a:7:{s:4:"name";s:15:"showUnpublished";s:4:"desc";s:32:"babeltranslation.showUnpublished";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:1:"0";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}}'
+properties: 'a:4:{s:10:"resourceId";a:7:{s:4:"name";s:10:"resourceId";s:4:"desc";s:27:"babeltranslation.resourceId";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:0:"";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:10:"contextKey";a:7:{s:4:"name";s:10:"contextKey";s:4:"desc";s:27:"babeltranslation.contextKey";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:0:"";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:10:"cultureKey";a:7:{s:4:"name";s:10:"cultureKey";s:4:"desc";s:27:"babeltranslation.cultureKey";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:0:"";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:15:"showUnpublished";a:7:{s:4:"name";s:15:"showUnpublished";s:4:"desc";s:32:"babeltranslation.showUnpublished";s:4:"type";s:13:"combo-boolean";s:7:"options";s:0:"";s:5:"value";b:0;s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}}'
 
 -----
 
@@ -47,14 +47,15 @@ if (!($babel instanceof Babel) || !$babel->babelTv)
     return;
 
 /* get snippet properties */
-$resourceId = intval($modx->getOption('resourceId', $scriptProperties));
-if (empty($resourceId)) {
+$resourceIds = $modx->getOption('resourceId', $scriptProperties);
+if (empty($resourceIds)) {
     if (!empty($modx->resource) && is_object($modx->resource)) {
-        $resourceId = $modx->resource->get('id');
+        $resourceIds = $modx->resource->get('id');
     } else {
         return;
     }
 }
+$resourceIds = array_map('trim', explode(',', $resourceIds));;
 $contextKey = $modx->getOption('contextKey', $scriptProperties, '', true);
 if (empty($contextKey)) {
     $cultureKey = $modx->getOption('cultureKey', $scriptProperties, '', true);
@@ -62,13 +63,15 @@ if (empty($contextKey)) {
 }
 $showUnpublished = $modx->getOption('showUnpublished', $scriptProperties, 0, true);
 
-/* determine id of tranlated resource */
-$linkedResources = $babel->getLinkedResources($resourceId);
-$output          = null;
-if (isset($linkedResources[$contextKey])) {
-    $resource = $modx->getObject('modResource', $linkedResources[$contextKey]);
-    if ($resource && ($showUnpublished || $resource->get('published') == 1)) {
-        $output = $resource->get('id');
+/* determine ids of translated resource */
+$output = [];
+foreach($resourceIds as $resourceId) {
+    $linkedResource = $babel->getLinkedResources($resourceId);
+    if (isset($linkedResource[$contextKey])) {
+        $resource = $modx->getObject('modResource', $linkedResource[$contextKey]);
+        if ($resource && ($showUnpublished || $resource->get('published') == 1)) {
+            $output[] = $resource->get('id');
+        }
     }
 }
-return $output;
+return implode(',', $output);

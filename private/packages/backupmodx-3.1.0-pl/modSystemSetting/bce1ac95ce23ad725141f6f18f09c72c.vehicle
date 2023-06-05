@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'backupmodx',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '7c9f3c5d07391b9548d0a28633a907a2',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'bce1ac95ce23ad725141f6f18f09c72c',
+  'native_key' => 'backupmodx.timelimit',
+  'object' => '{"key":"backupmodx.timelimit","value":"120","xtype":"textfield","namespace":"backupmodx","area":"system","editedon":null}',
+);

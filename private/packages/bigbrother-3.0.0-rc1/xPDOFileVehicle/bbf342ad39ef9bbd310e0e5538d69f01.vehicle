@@ -1,0 +1,24 @@
+<?php return array (
+  'class' => 'xPDOFileVehicle',
+  'object' => 
+  array (
+    'source' => 'bigbrother-3.0.0-rc1/xPDOFileVehicle/bbf342ad39ef9bbd310e0e5538d69f01/',
+    'target' => 'return MODX_CORE_PATH . \'components/\';',
+    'name' => 'bigbrother',
+  ),
+  'abort_install_on_vehicle_fail' => true,
+  'vehicle_class' => 'xPDOFileVehicle',
+  'validate' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"type":"php","source":"bigbrother-3.0.0-rc1\\/xPDOFileVehicle\\/bbf342ad39ef9bbd310e0e5538d69f01.requirements.script.validator","name":"requirements.script"}',
+    ),
+  ),
+  'vehicle_package' => 'transport',
+  'guid' => 'b89042a6506d74aa0f5beb853fef1e77',
+  'package' => '',
+  'signature' => 'bbf342ad39ef9bbd310e0e5538d69f01',
+  'native_key' => 'b89042a6506d74aa0f5beb853fef1e77',
+);

@@ -1,0 +1,22 @@
+{
+    "config": {
+        "platform": {
+            "php": "7.2.5"
+        }
+    },
+    "require": {
+        "google/analytics-data": "^0.8",
+        "google/analytics-admin": "^0.6",
+        "php": ">=7.2",
+        "ext-json": "*",
+        "ext-bcmath": "*"
+    },
+    "replace": {
+        "guzzlehttp/guzzle": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "modmore\\BigBrother\\": "src"
+        }
+    }
+}

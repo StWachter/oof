@@ -1,0 +1,4 @@
+key: backupmodx.timelimit
+value: '120'
+namespace: backupmodx
+area: system

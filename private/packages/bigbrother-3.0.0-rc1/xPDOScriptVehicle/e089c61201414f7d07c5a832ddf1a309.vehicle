@@ -1,0 +1,16 @@
+<?php return array (
+  'class' => 'xPDOScriptVehicle',
+  'object' => 
+  array (
+    'source' => 'bigbrother-3.0.0-rc1/xPDOScriptVehicle/e089c61201414f7d07c5a832ddf1a309.upgrade.resolver.script',
+  ),
+  'vehicle_class' => 'xPDOScriptVehicle',
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'guid' => '1d52379312b873671c280b7be192a86e',
+  'package' => '',
+  'signature' => 'e089c61201414f7d07c5a832ddf1a309',
+  'native_key' => '1d52379312b873671c280b7be192a86e',
+);

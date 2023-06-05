@@ -1,0 +1,197 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Plugins' => 
+    array (
+      '45c78d7b57a20cf956fd70521fd01a02' => 
+      array (
+        'unique_key' => 'name',
+        'preserve_keys' => false,
+        'update_object' => true,
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            '02095fdfc50b8b7e026ae937f4731781' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => false,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnHandleRequest","priority":0,"propertyset":0}',
+              'guid' => 'e257f339e95dc831a348fb1ca2322858',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnHandleRequest',
+              ),
+              'signature' => 'a174fa6a6611a2e53e57584d06f5d027',
+            ),
+            '3741cc624565f20a5e88dbe0793a0f15' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => false,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnContextSave","priority":0,"propertyset":0}',
+              'guid' => '3fc2900384787e18b2e8638418c500a2',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnContextSave',
+              ),
+              'signature' => '530e02d78cda703379a50494d4883acd',
+            ),
+            'b693bc7d5cb98663affe26d69a852cc2' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => false,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnContextRemove","priority":0,"propertyset":0}',
+              'guid' => 'f86290dd6095a63570175f7e1a196a64',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnContextRemove',
+              ),
+              'signature' => 'c5ea3188719a81b71be4a705ae008e36',
+            ),
+            'dbda696580fc62a9052848cd20342ef7' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => false,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnSiteRefresh","priority":0,"propertyset":0}',
+              'guid' => 'fec1899cee48a30553f334b8d9a5d1ec',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnSiteRefresh',
+              ),
+              'signature' => '38c3d3320f2232de8b4fb30c4628fa23',
+            ),
+          ),
+        ),
+        'related_object_attributes' => 
+        array (
+          'PluginEvents' => 
+          array (
+            'preserve_keys' => true,
+            'update_object' => false,
+            'unique_key' => 
+            array (
+              0 => 'pluginid',
+              1 => 'event',
+            ),
+          ),
+        ),
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"XRouting","description":"XRouting is a simple plugin that handles requests for different contexts. It automatically switches the context based on a (sub)domain AND\\/OR subfolder.","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/**\\n * XRouting Plugin\\n *\\n * @package xrouting\\n * @subpackage plugin\\n *\\n * @var modX $modx\\n * @var array $scriptProperties\\n *\\/\\n\\n$className = \'SEDAdigital\\\\XRouting\\\\Plugins\\\\Events\\\\\\\\\' . $modx->event->name;\\n\\n$corePath = $modx->getOption(\'xrouting.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/xrouting\\/\');\\n\\/** @var XRouting $xrouting *\\/\\n$xrouting = $modx->getService(\'xrouting\', \'XRouting\', $corePath . \'model\\/xrouting\\/\', [\\n    \'core_path\' => $corePath\\n]);\\n\\nif ($xrouting) {\\n    if (class_exists($className)) {\\n        $handler = new $className($modx, $scriptProperties);\\n        if (get_class($handler) == $className) {\\n            $handler->run();\\n        } else {\\n            $modx->log(xPDO::LOG_LEVEL_ERROR, $className. \' could not be initialized!\', \'\', \'XRouting Plugin\');\\n        }\\n    } else {\\n        $modx->log(xPDO::LOG_LEVEL_ERROR, $className. \' was not found!\', \'\', \'XRouting Plugin\');\\n    }\\n}\\n\\nreturn;","locked":0,"properties":"a:0:{}","disabled":0,"moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * XRouting Plugin\\n *\\n * @package xrouting\\n * @subpackage plugin\\n *\\n * @var modX $modx\\n * @var array $scriptProperties\\n *\\/\\n\\n$className = \'SEDAdigital\\\\XRouting\\\\Plugins\\\\Events\\\\\\\\\' . $modx->event->name;\\n\\n$corePath = $modx->getOption(\'xrouting.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/xrouting\\/\');\\n\\/** @var XRouting $xrouting *\\/\\n$xrouting = $modx->getService(\'xrouting\', \'XRouting\', $corePath . \'model\\/xrouting\\/\', [\\n    \'core_path\' => $corePath\\n]);\\n\\nif ($xrouting) {\\n    if (class_exists($className)) {\\n        $handler = new $className($modx, $scriptProperties);\\n        if (get_class($handler) == $className) {\\n            $handler->run();\\n        } else {\\n            $modx->log(xPDO::LOG_LEVEL_ERROR, $className. \' could not be initialized!\', \'\', \'XRouting Plugin\');\\n        }\\n    } else {\\n        $modx->log(xPDO::LOG_LEVEL_ERROR, $className. \' was not found!\', \'\', \'XRouting Plugin\');\\n    }\\n}\\n\\nreturn;"}',
+        'guid' => '913a5bb979f1ee983eb961a722a40f0c',
+        'native_key' => NULL,
+        'signature' => 'e147cec2e51ec208dcbce0a2bfc5b634',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Children' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'parent',
+        1 => 'category',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Plugins' => 
+    array (
+      'unique_key' => 'name',
+      'preserve_keys' => false,
+      'update_object' => true,
+      'related_objects' => true,
+      'related_object_attributes' => 
+      array (
+        'PluginEvents' => 
+        array (
+          'preserve_keys' => true,
+          'update_object' => false,
+          'unique_key' => 
+          array (
+            0 => 'pluginid',
+            1 => 'event',
+          ),
+        ),
+      ),
+    ),
+  ),
+  'namespace' => 'xrouting',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"xrouting-1.5.0-pl\\/modCategory\\/02a6905c51a21b62159dbe77ec1957bd\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"xrouting"}',
+    ),
+    1 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"xrouting-1.5.0-pl\\/modCategory\\/02a6905c51a21b62159dbe77ec1957bd.resolve.treehillstudio.resolver","type":"php","name":"resolve.treehillstudio"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'e001def4eb478aad45abdbe74b844281',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '02a6905c51a21b62159dbe77ec1957bd',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"XRouting","rank":0}',
+);

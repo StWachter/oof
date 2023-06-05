@@ -1,5 +1,0 @@
-key: bigbrother.show_pies_on_dashboard
-value: '1'
-xtype: combo-boolean
-namespace: bigbrother
-area: 'Google Analytics for MODx Revolution'

@@ -1,0 +1,5 @@
+key: bigbrother.oauth_client_id
+value: 627950609744-r8cv7rpujhuoogcp2eumcmor3hd5o5sb.apps.googleusercontent.com
+xtype: text-password
+namespace: bigbrother
+area: Authorization

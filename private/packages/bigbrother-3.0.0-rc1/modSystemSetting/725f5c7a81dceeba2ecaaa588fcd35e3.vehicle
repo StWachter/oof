@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'c773074e541dd6dc752837c6877e6a97',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '725f5c7a81dceeba2ecaaa588fcd35e3',
+  'native_key' => 'bigbrother.oauth_flow',
+  'object' => '{"key":"bigbrother.oauth_flow","value":"","xtype":"textfield","namespace":"bigbrother","area":"Authorization","editedon":null}',
+);

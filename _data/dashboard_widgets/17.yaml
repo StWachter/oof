@@ -1,0 +1,9 @@
+id: 17
+name: bigbrother.metrics.name
+description: bigbrother.metrics.desc
+type: file
+content: '[[++core_path]]components/bigbrother/elements/widgets/metrics.class.php'
+namespace: bigbrother
+lexicon: 'bigbrother:default'
+name_trans: bigbrother.metrics.name
+description_trans: bigbrother.metrics.desc

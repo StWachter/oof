@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '177886196566915c94062b1d927f38f9',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '531316caa8ceef00704d2399b3f4a2f0',
+  'native_key' => 'bigbrother.oauth_client_id',
+  'object' => '{"key":"bigbrother.oauth_client_id","value":"627950609744-r8cv7rpujhuoogcp2eumcmor3hd5o5sb.apps.googleusercontent.com","xtype":"text-password","namespace":"bigbrother","area":"Authorization","editedon":null}',
+);

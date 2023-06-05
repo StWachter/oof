@@ -1,0 +1,4 @@
+key: bigbrother.core_path
+value: '{core_path}components/bigbrother/'
+namespace: bigbrother
+area: Paths

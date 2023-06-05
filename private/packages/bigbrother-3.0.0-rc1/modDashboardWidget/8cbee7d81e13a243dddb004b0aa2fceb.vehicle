@@ -1,0 +1,19 @@
+<?php return array (
+  'preserve_keys' => false,
+  'update_object' => true,
+  'unique_key' => 
+  array (
+    0 => 'name',
+  ),
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'af878e2c7574cb9efa0fb5c9082d8ecd',
+  'package' => 'modx',
+  'class' => 'modDashboardWidget',
+  'signature' => '8cbee7d81e13a243dddb004b0aa2fceb',
+  'native_key' => NULL,
+  'object' => '{"id":null,"name":"bigbrother.main.name","description":"bigbrother.main.desc","type":"file","content":"[[++core_path]]components\\/bigbrother\\/elements\\/widgets\\/main.class.php","namespace":"bigbrother","lexicon":"bigbrother:default","size":"full","name_trans":"Google Analytics - Main","description_trans":"Big Brother - Full-width main widget encompassing visits, key metrics, acquisition and popular pages insights."}',
+);

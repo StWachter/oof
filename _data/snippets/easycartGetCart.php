@@ -24,6 +24,11 @@ $easycart = $modx->getService('easycart', 'easycart', $corePath . 'model/easycar
 // properties
 // ...
 
+// set order by get parameter
+if (!empty($_REQUEST['ecorder'])) {
+    $_SESSION['order'] = $_REQUEST['ecorder'];
+}
+
 
 if (empty($_SESSION['order'])) {
     $modx->toPlaceholders(array(
@@ -52,6 +57,7 @@ if (!$order->id or $order->status >= 3) {
 // set placeholders
 $modx->toPlaceholders(array(
     'total_quantity' => $order->total_quantity,
+    'order' => $order->id,
 ),'easycart');
 
 return;

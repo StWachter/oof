@@ -2,7 +2,7 @@ id: 77
 name: BabelLinks
 description: 'Displays links to translated resources.'
 category: Babel
-properties: 'a:6:{s:10:"resourceId";a:7:{s:4:"name";s:10:"resourceId";s:4:"desc";s:21:"babellinks.resourceId";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:0:"";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:3:"tpl";a:7:{s:4:"name";s:3:"tpl";s:4:"desc";s:14:"babellinks.tpl";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:9:"babelLink";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:9:"activeCls";a:7:{s:4:"name";s:9:"activeCls";s:4:"desc";s:20:"babellinks.activeCls";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:6:"active";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:15:"showUnpublished";a:7:{s:4:"name";s:15:"showUnpublished";s:4:"desc";s:26:"babellinks.showUnpublished";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:1:"0";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:11:"showCurrent";a:7:{s:4:"name";s:11:"showCurrent";s:4:"desc";s:22:"babellinks.showCurrent";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:1:"0";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:15:"includeUnlinked";a:7:{s:4:"name";s:15:"includeUnlinked";s:4:"desc";s:26:"babellinks.includeUnlinked";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:1:"0";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}}'
+properties: 'a:6:{s:10:"resourceId";a:7:{s:4:"name";s:10:"resourceId";s:4:"desc";s:21:"babellinks.resourceId";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:0:"";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:3:"tpl";a:7:{s:4:"name";s:3:"tpl";s:4:"desc";s:20:"babeltranslation.tpl";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:9:"babelLink";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:9:"activeCls";a:7:{s:4:"name";s:9:"activeCls";s:4:"desc";s:26:"babeltranslation.activeCls";s:4:"type";s:9:"textfield";s:7:"options";s:0:"";s:5:"value";s:6:"active";s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:15:"showUnpublished";a:7:{s:4:"name";s:15:"showUnpublished";s:4:"desc";s:32:"babeltranslation.showUnpublished";s:4:"type";s:13:"combo-boolean";s:7:"options";s:0:"";s:5:"value";b:0;s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:11:"showCurrent";a:7:{s:4:"name";s:11:"showCurrent";s:4:"desc";s:28:"babeltranslation.showCurrent";s:4:"type";s:13:"combo-boolean";s:7:"options";s:0:"";s:5:"value";b:0;s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}s:15:"includeUnlinked";a:7:{s:4:"name";s:15:"includeUnlinked";s:4:"desc";s:32:"babeltranslation.includeUnlinked";s:4:"type";s:13:"combo-boolean";s:7:"options";s:0:"";s:5:"value";b:0;s:7:"lexicon";s:16:"babel:properties";s:4:"area";s:0:"";}}'
 
 -----
 
@@ -81,7 +81,7 @@ if (!empty($modx->resource) && is_object($modx->resource) && $resourceId === $mo
 
 $linkedResources = $babel->getLinkedResources($resourceId);
 $languages       = $babel->getLanguages();
-$outputArray     = array();
+$outputArray     = [];
 foreach ($contextKeys as $contextKey) {
     if (!$showCurrent && $contextKey === $resource->get('context_key')) {
         continue;
@@ -89,7 +89,7 @@ foreach ($contextKeys as $contextKey) {
     if (!$includeUnlinked && !isset($linkedResources[$contextKey])) {
         continue;
     }
-    $context = $modx->getObject('modContext', array('key' => $contextKey));
+    $context = $modx->getObject('modContext', ['key' => $contextKey]);
     if (!$context) {
         $modx->log(modX::LOG_LEVEL_ERROR, 'Could not load context: '.$contextKey);
         continue;
@@ -102,15 +102,15 @@ foreach ($contextKeys as $contextKey) {
     $translationAvailable = false;
     if (isset($linkedResources[$contextKey])) {
         $c = $modx->newQuery('modResource');
-        $c->where(array(
+        $c->where([
             'id'          => $linkedResources[$contextKey],
             'deleted:!='  => 1,
             'published:=' => 1,
-        ));
+                  ]);
         if ($showUnpublished) {
-            $c->where(array(
+            $c->where([
                 'OR:published:=' => 0,
-            ));
+                      ]);
         }
         $count = $modx->getCount('modResource', $c);
         if ($count) {
@@ -124,13 +124,13 @@ foreach ($contextKeys as $contextKey) {
     if ($translationAvailable) {
         $url          = $context->makeUrl($linkedResources[$contextKey], $getRequest, 'full');
         $active       = ($resource->get('context_key') == $contextKey) ? $activeCls : '';
-        $placeholders = array(
+        $placeholders = [
             'cultureKey' => $cultureKey,
             'url'        => $url,
             'active'     => $active,
             'id'         => $linkedResources[$contextKey],
             'language'   => $languages[$cultureKey]['Description'],
-        );
+        ];
 
         if (!empty($toArray)) {
             $outputArray[] = $placeholders;
@@ -143,13 +143,13 @@ foreach ($contextKeys as $contextKey) {
     } elseif ($includeUnlinked) {
         $url          = $context->makeUrl($context->getOption('site_start'), $getRequest, 'full');
         $active       = ($resource->get('context_key') == $contextKey) ? $activeCls : '';
-        $placeholders = array(
+        $placeholders = [
             'cultureKey' => $cultureKey,
             'url'        => $url,
             'active'     => $active,
             'id'         => $context->getOption('site_start'),
             'language'   => $languages[$cultureKey]['Description'],
-        );
+        ];
 
         if (!empty($toArray)) {
             $outputArray[] = $placeholders;
@@ -168,9 +168,9 @@ if (!empty($toArray)) {
 
 $output = implode($outputSeparator, $outputArray);
 if (!empty($wrapperTpl)) {
-    $output = $babel->getChunk($wrapperTpl, array(
+    $output = $babel->getChunk($wrapperTpl, [
         'babelLinks' => $output
-    ));
+    ]);
 }
 
 if (!empty($toPlaceholder)) {

@@ -1,2 +1,3 @@
 name: xrouting
 path: '{core_path}components/xrouting/'
+assets_path: '{assets_path}components/xrouting/'

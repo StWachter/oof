@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '1765406b58534855685c7a4d0bf0423f',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'ab2804ad65df049dcc20ab4fb2e38bfe',
+  'native_key' => 'bigbrother.scripts_dev',
+  'object' => '{"key":"bigbrother.scripts_dev","value":"0","xtype":"combo-boolean","namespace":"bigbrother","area":"Paths","editedon":null}',
+);

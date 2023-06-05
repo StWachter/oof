@@ -22,6 +22,7 @@ $_lang['area_phpthumb'] = 'phpThumb';
 $_lang['area_proxy'] = 'Proxy';
 $_lang['area_session'] = 'Session a Cookie';
 $_lang['area_static_elements'] = 'Static Elements';
+$_lang['area_static_resources'] = 'Static Resources';
 $_lang['area_lexicon_string'] = 'Oblast záznamu slovníku';
 $_lang['area_lexicon_string_msg'] = 'Zadejte klíč záznamu slovníku pro tuto oblast. Pokud ve slovníku záznam není, zobrazí se pouze klíč oblasti.<br />Oblasti jádra: authentication, caching, file, furls, gateway, language, manager, session, site, system';
 $_lang['area_site'] = 'Portál';
@@ -370,10 +371,10 @@ $_lang['setting_inline_help'] = 'Zobrazovat řádkové nápovědy u políček';
 $_lang['setting_inline_help_desc'] = 'Je-li nastaveno na "Ano" pak budou přímo pod políčky zobrazeny jejich nápovědné texty. Pokud je nastaveno na "Ne", budou nápovědné texty zobrazeny v tooltipech.';
 
 $_lang['setting_link_tag_scheme'] = 'Schéma generování URL';
-$_lang['setting_link_tag_scheme_desc'] = 'Schéma generování URL pro tag [[~id]]. Možné volby viz: <a href="http://api.modxcms.com/modx/modX.html#makeUrl">http://api.modxcms.com/modx/modX.html#makeUrl</a>';
+$_lang['setting_link_tag_scheme_desc'] = 'Schéma generování URL pro tag [[~id]]. Možné volby  <a href="https://docs.modx.com/current/en/extending-modx/modx-class/reference/modx.makeurl" target="_blank">zde</a>.';
 
 $_lang['setting_locale'] = 'Locale';
-$_lang['setting_locale_desc'] = 'Nastavte locale pro vaše národní použití. Ponechte prázdné pro použití výchozí hodnoty. Více informací v <a href="http://php.net/setlocale" target="_blank">PHP dokumentaci</a>.';
+$_lang['setting_locale_desc'] = 'Nastavte locale pro systém. Ponechte prázdné pro použití výchozího nastavení. Více informací najdete v <a href="https://www.php.net/setlocale" target="_blank">PHP dokumentu</a>.';
 
 $_lang['setting_lock_ttl'] = 'Čas odstranění zámků';
 $_lang['setting_lock_ttl_desc'] = 'Počet sekund, po kterou je dokument uzamčen a uživatel v něm již nic neupravil, po jehož uplynutí bude daný zámek zrušen.';
@@ -414,8 +415,11 @@ $_lang['setting_mail_smtp_pass_desc'] = 'Heslo pro autentizaci k SMTP serveru.';
 $_lang['setting_mail_smtp_port'] = 'SMTP port';
 $_lang['setting_mail_smtp_port_desc'] = 'Nastavení výchozího SMTP portu.';
 
-$_lang['setting_mail_smtp_prefix'] = 'SMTP prefix připojení';
-$_lang['setting_mail_smtp_prefix_desc'] = 'Nastavení prefixu připojení. Možnosti jsou "", "ssl" nebo "tls"';
+$_lang['setting_mail_smtp_prefix'] = 'SMTP šifrování';
+$_lang['setting_mail_smtp_prefix_desc'] = 'Nastaví šifrování SMTP připojení. Možnosti jsou "", "ssl" nebo "tls".';
+
+$_lang['setting_mail_smtp_autotls'] = 'SMTP automatické TLS';
+$_lang['setting_mail_smtp_autotls_desc'] = 'Automaticky povolit TLS šifrování, pokud jej server podporuje, i když "SMTP Encryption" není nastaveno na "tls"';
 
 $_lang['setting_mail_smtp_single_to'] = 'SMTP jednotlivě';
 $_lang['setting_mail_smtp_single_to_desc'] = 'Možnost odesílání e-mailových zpráv jednotlivě.';
@@ -668,6 +672,9 @@ $_lang['setting_session_cookie_secure_desc'] = 'Aktivací této možnosti dojde 
 $_lang['setting_session_cookie_httponly'] = 'Session Cookie HttpOnly';
 $_lang['setting_session_cookie_httponly_desc'] = 'Povolte toto nastavení pro nastavení příznaku HttpOnly v session cookies.';
 
+$_lang['setting_session_cookie_samesite'] = 'Session Cookie Samesite';
+$_lang['setting_session_cookie_samesite_desc'] = 'Zvolte Lax nebo Strict.';
+
 $_lang['setting_session_gc_maxlifetime'] = 'Maximální životnost Session Garbage Collectoru';
 $_lang['setting_session_gc_maxlifetime_desc'] = 'Umožnuje přizpůsobení nastavení PHP ini session.gc_maxlifetime používá-li se "modSessionHandler".';
 
@@ -738,6 +745,12 @@ $_lang['setting_static_elements_default_category_desc'] = 'Zvolte výchozí kate
 
 $_lang['setting_static_elements_basepath'] = 'Static elements basepath';
 $_lang['setting_static_elements_basepath_desc'] = 'Basepath of where to store the static elements files.';
+
+$_lang['setting_resource_static_allow_absolute'] = 'Allow absolute static resource path';
+$_lang['setting_resource_static_allow_absolute_desc'] = 'This setting enables users to enter a fully qualified absolute path to any readable file on the server as the content of a static resource. Important: enabling this setting may be considered a significant security risk! It\'s strongly recommended to keep this setting disabled, unless you fully trust every single manager user.';
+
+$_lang['setting_resource_static_path'] = 'Static resource base path';
+$_lang['setting_resource_static_path_desc'] = 'When resource_static_allow_absolute is disabled, static resources are restricted to be within the absolute path provided here.  Important: setting this too wide may allow users to read files they shouldn\'t! It is strongly recommended to limit users to a specific directory such as {core_path}static/ or {assets_path} with this setting.';
 
 $_lang['setting_strip_image_paths'] = 'Přepisovat URL souborů';
 $_lang['setting_strip_image_paths_desc'] = 'Pokud je nastaveno na "Ne", MODX bude zapisovat cesty k souborům (obrázky, soubory, flash, atd.) jako absolutní URL. Relativní URL jsou užitečné pokud byste chtěli přesunout celou instalaci MODX, např. z vývojového serveru na produkční. Pokud netušíte co s tímto nastavením, ponechte jej nastavené na "Ano".';
@@ -861,3 +874,6 @@ $_lang['setting_error_log_filename_desc'] = 'Přizpůsobte si název souboru pro
 
 $_lang['setting_error_log_filepath'] = 'Cesta k protokolu chyb';
 $_lang['setting_error_log_filepath_desc'] = 'Volitelně nastavit absolutní cestu umístění protokolu chyb. Můžete použít placehodery jako např. {cache_path}.';
+
+$_lang['static_elements_html_extension'] = 'Statické prvky html rozšíření';
+$_lang['static_elements_html_extension_desc'] = 'Přípona pro soubory použité statickými prvky s HTML obsahem.';

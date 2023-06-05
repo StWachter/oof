@@ -1,0 +1,10 @@
+id: 15
+name: bigbrother.main.name
+description: bigbrother.main.desc
+type: file
+content: '[[++core_path]]components/bigbrother/elements/widgets/main.class.php'
+namespace: bigbrother
+lexicon: 'bigbrother:default'
+size: full
+name_trans: bigbrother.main.name
+description_trans: bigbrother.main.desc

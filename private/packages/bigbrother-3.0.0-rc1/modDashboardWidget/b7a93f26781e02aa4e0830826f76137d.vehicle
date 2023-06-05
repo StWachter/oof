@@ -1,0 +1,19 @@
+<?php return array (
+  'preserve_keys' => false,
+  'update_object' => true,
+  'unique_key' => 
+  array (
+    0 => 'name',
+  ),
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '6ab682e0c7187b62107d34aec28fb627',
+  'package' => 'modx',
+  'class' => 'modDashboardWidget',
+  'signature' => 'b7a93f26781e02aa4e0830826f76137d',
+  'native_key' => NULL,
+  'object' => '{"id":null,"name":"bigbrother.top_referrers.name","description":"bigbrother.top_referrers.desc","type":"file","content":"[[++core_path]]components\\/bigbrother\\/elements\\/widgets\\/topreferrers.class.php","namespace":"bigbrother","lexicon":"bigbrother:default","size":"half","name_trans":"bigbrother.top_referrers.name","description_trans":"bigbrother.top_referrers.desc"}',
+);

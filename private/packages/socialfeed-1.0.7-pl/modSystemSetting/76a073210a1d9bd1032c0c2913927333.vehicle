@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'socialfeed',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '0c18ed6dea63afaeb245438b51c81b98',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '76a073210a1d9bd1032c0c2913927333',
+  'native_key' => 'socialfeed.api_key',
+  'object' => '{"key":"socialfeed.api_key","value":"","xtype":"textfield","namespace":"socialfeed","area":"system","editedon":null}',
+);

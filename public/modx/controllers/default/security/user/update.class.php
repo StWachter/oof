@@ -38,10 +38,11 @@ class SecurityUserUpdateManagerController extends modManagerController {
      */
     public function loadCustomCssJs() {
         $mgrUrl = $this->modx->getOption('manager_url',null,MODX_MANAGER_URL);
-        $this->addHtml('<script type="text/javascript">
+        $this->addHtml('<script>
 // <![CDATA[
 MODx.onUserFormRender = "'.$this->onUserFormRender.'";
 MODx.perm.set_sudo = '.($this->modx->hasPermission('set_sudo') ? 1 : 0).';
+MODx.perm.user_settings = '.(($this->modx->hasPermission('settings') && $this->modx->hasPermission('namespace')) ? 1 : 0).';
 // ]]>
 </script>');
 
@@ -52,7 +53,7 @@ MODx.perm.set_sudo = '.($this->modx->hasPermission('set_sudo') ? 1 : 0).';
         $this->addJavascript($mgrUrl.'assets/modext/widgets/security/modx.grid.user.group.js');
         $this->addJavascript($mgrUrl.'assets/modext/widgets/security/modx.panel.user.js');
         $this->addJavascript($mgrUrl.'assets/modext/sections/security/user/update.js');
-        $this->addHtml('<script type="text/javascript">
+        $this->addHtml('<script>
 // <![CDATA[
 Ext.onReady(function() {
     MODx.load({

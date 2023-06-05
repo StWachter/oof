@@ -1,0 +1,9 @@
+id: 20
+name: bigbrother.top_countries.name
+description: bigbrother.top_countries.desc
+type: file
+content: '[[++core_path]]components/bigbrother/elements/widgets/topcountries.class.php'
+namespace: bigbrother
+lexicon: 'bigbrother:default'
+name_trans: bigbrother.top_countries.name
+description_trans: bigbrother.top_countries.desc

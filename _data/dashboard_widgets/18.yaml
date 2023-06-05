@@ -1,0 +1,9 @@
+id: 18
+name: bigbrother.acquisition.name
+description: bigbrother.acquisition.desc
+type: file
+content: '[[++core_path]]components/bigbrother/elements/widgets/acquisition.class.php'
+namespace: bigbrother
+lexicon: 'bigbrother:default'
+name_trans: bigbrother.acquisition.name
+description_trans: bigbrother.acquisition.desc

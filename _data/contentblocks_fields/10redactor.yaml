@@ -1,0 +1,14 @@
+id: 1
+parent_properties: null
+input: redactor
+name: Inhalt
+description: ''
+content_desc: ''
+sortorder: 1
+icon: site-cb-exampleicon
+icon_type: custom
+template: '[[+value]]'
+properties: '{"configuration_set":"4"}'
+availability: '[]'
+layouts: '1'
+settings: '[]'

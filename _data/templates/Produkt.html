@@ -11,6 +11,25 @@ properties: 'a:0:{}'
                 
         [[$header]]
         
+        <style>
+            .cartForm__select {
+                appearance: none;
+                padding: 0 20px;
+                margin-top: 0.2em;
+                margin-left: 0;
+                margin-bottom: 1.5rem;
+            }
+            
+            .cartForm__extra,
+            .cartForm__field--extra{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+            }
+
+
+        </style>
+        
         <!-- product -->
         <div class="pt7">
             <div class="container">
@@ -57,18 +76,37 @@ properties: 'a:0:{}'
                             &image=`https://www.ohofi.de/[[*productImage:replace=`/assets==assets`]]`
                             &url=`[[~[[*id]]? &scheme=`full`]]`
                             &redirect=`1`
+                            &preHooks=`setVariation`
+                            &language=`[[++cultureKey]]`
                         ]]
                         
-                        [[-&attributes=`Variant==[[!getVariant]]`]]
+                        
+                        [[getImageList? 
+                            &tvname=`productVariants` 
+                            &tpl=`productVariantsTpl`
+                            &toPlaceholder=`variants`
+                        ]]
                         
                         <form action="[[~[[*id]]]]" method="post">
                             <input type="hidden" name="add_to_cart" value="1">
                             
                             <div class="cartForm">
-                                <div>
+                                <div class="cartForm__extra">
+                                    
+                                    [[+variants:notempty=`
+                                    <div class="cartForm__field cartForm__field--extra">
+                                        <select class="cartForm__select" required name="variant" id="">
+                                            <option selected disabled hidden>Choose Option</option>
+                                            [[+variants]]
+                                        </select>
+                                    </div>
+                                    `]]
+                                    
                                     <div class="cartForm__field">
+                                        [[+variants:is=``:then=`
                                         <span class="cartForm__label">[[*productLabel]]</span>
                                         <span class="cartForm__price">[[*productPrice:formatPrice]] €</span>
+                                        `:else=``]]
                                         <div class="js-increment-wrapper">
                                             <div class="cartForm__incrementWrapper">
                                                 <div class="cartForm__increment cartForm__increment--plus js-increment-plus">+</div>
@@ -77,16 +115,8 @@ properties: 'a:0:{}'
                                             <input class="cartForm__incrementInput js-increment-counter" type="text" name="quantity" value="1">
                                         </div>
                                     </div>
-                                    [[-
-                                    <div class="cartForm__field">
-                                        <span class="cartForm__label">Variante</span>
-                                        <select class="cartForm__select" name="variants" id="">
-                                            <option selected disabled hidden>Auswählen</option>
-                                            <option>Blue</option>
-                                            <option>Red</option>
-                                        </select>
-                                    </div>
-                                    ]]
+                                    
+                                    
                                 </div>
                             </div>
                             <div class="pt1">

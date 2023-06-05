@@ -1,0 +1,33 @@
+<?php return array (
+  'class' => 'xPDOFileVehicle',
+  'object' => 
+  array (
+    'source' => 'bigbrother-3.0.0-rc1/xPDOFileVehicle/4438677ab72b3dd4c5bb98078f81ced9/',
+    'target' => 'return MODX_ASSETS_PATH . \'components/\';',
+    'name' => 'bigbrother',
+  ),
+  'vehicle_class' => 'xPDOFileVehicle',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"type":"php","source":"bigbrother-3.0.0-rc1\\/xPDOFileVehicle\\/4438677ab72b3dd4c5bb98078f81ced9.removeoldfiles.resolver.resolver","name":"removeoldfiles.resolver"}',
+    ),
+    1 => 
+    array (
+      'type' => 'php',
+      'body' => '{"type":"php","source":"bigbrother-3.0.0-rc1\\/xPDOFileVehicle\\/4438677ab72b3dd4c5bb98078f81ced9.dependencies.resolver.resolver","name":"dependencies.resolver"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"type":"php","source":"bigbrother-3.0.0-rc1\\/xPDOFileVehicle\\/4438677ab72b3dd4c5bb98078f81ced9.policies.resolver.resolver","name":"policies.resolver"}',
+    ),
+  ),
+  'vehicle_package' => 'transport',
+  'guid' => 'e32c1ad2acc0bf791235fe1124cae6e8',
+  'package' => '',
+  'signature' => '4438677ab72b3dd4c5bb98078f81ced9',
+  'native_key' => 'e32c1ad2acc0bf791235fe1124cae6e8',
+);

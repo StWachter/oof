@@ -1,7 +1,7 @@
 <div id="tv-input-properties-form{$tv|default}"></div>
 {literal}
 
-<script type="text/javascript">
+<script>
 // <![CDATA[
 var params = {
 {/literal}{foreach from=$params key=k item=v name='p'}
@@ -77,6 +77,20 @@ MODx.load({
         xtype: MODx.expandHelp ? 'label' : 'hidden'
         ,forId: 'inopt_decimalPrecision{/literal}{$tv|default}{literal}'
         ,html: _('decimalprecision_desc')
+        ,cls: 'desc-under'
+    },{
+        xtype: 'combo-boolean'
+        ,fieldLabel: _('number_strict_decimalprecision')
+        ,name: 'inopt_strictDecimalPrecision'
+        ,hiddenName: 'inopt_strictDecimalPrecision'
+        ,id: 'inopt_strictDecimalPrecision{/literal}{$tv|default}{literal}'
+        ,width: 200
+        ,value: (params['strictDecimalPrecision']) ? !(params['strictDecimalPrecision'] === 0 || params['strictDecimalPrecision'] === 'false') : false
+        ,listeners: oc
+    },{
+        xtype: MODx.expandHelp ? 'label' : 'hidden'
+        ,forId: 'inopt_strictDecimalPrecision{/literal}{$tv|default}{literal}'
+        ,html: _('number_strict_decimalprecision_desc')
         ,cls: 'desc-under'
     },{
         xtype: 'textfield'

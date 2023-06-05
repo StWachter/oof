@@ -1,0 +1,14 @@
+id: 29
+source: 2
+type: migx
+name: productVariants
+caption: Varianten
+category: Varianten
+elements: ''
+rank: 100
+display: default
+default_text: ''
+properties: 'a:0:{}'
+input_properties: "a:7:{s:7:\"configs\";s:0:\"\";s:8:\"formtabs\";s:165:\"[\n{\"caption\":\"Varianten\", \"fields\": [\n    {\"field\":\"variant\",\"caption\":\"Variante\"}, \n {\"field\":\"variantPrice\",\"caption\":\"Preis\",\"inputTV\":\"productVariantPrice\"}\n]}\n]\";s:7:\"columns\";s:173:\"[\n{\"header\": \"Variante\", \"width\": \"160\", \"sortable\": \"true\", \"dataIndex\": \"variant\"},\n{\"header\": \"Preis\", \"width\": \"40\", \"sortable\": \"true\", \"dataIndex\": \"variantPrice\"}\n]\n\n\";s:7:\"btntext\";s:20:\"Variante hinzufügen\";s:10:\"previewurl\";s:0:\"\";s:10:\"jsonvarkey\";s:0:\"\";s:19:\"autoResourceFolders\";s:5:\"false\";}"
+output_properties: 'a:0:{}'
+content: ''

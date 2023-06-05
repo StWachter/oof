@@ -1,0 +1,19 @@
+<?php return array (
+  'preserve_keys' => false,
+  'update_object' => true,
+  'unique_key' => 
+  array (
+    0 => 'name',
+  ),
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '2bdb33dd6042db5e7fe9e63d85953e02',
+  'package' => 'modx',
+  'class' => 'modDashboardWidget',
+  'signature' => 'ad0b295940151de2ae4c23f80b3786fc',
+  'native_key' => NULL,
+  'object' => '{"id":null,"name":"bigbrother.metrics.name","description":"bigbrother.metrics.desc","type":"file","content":"[[++core_path]]components\\/bigbrother\\/elements\\/widgets\\/metrics.class.php","namespace":"bigbrother","lexicon":"bigbrother:default","size":"half","name_trans":"Google Analytics - Key Metrics","description_trans":"Big Brother - Standalone key metrics widget"}',
+);

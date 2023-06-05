@@ -8,14 +8,14 @@
  */
 $_lang['login_language'] = 'Мова';
 $_lang['login_activation_key_err'] = 'Няправільны код актывацыі! Калі ласка, праверце ліст з кодам актывацыі і пераканайцеся, што вы загрузілі правільны URL.';
-$_lang['login_blocked_admin'] = 'You have been blocked by an administrator.';
+$_lang['login_blocked_admin'] = 'Вы былі заблакаваны адміністратарам.';
 $_lang['login_blocked_error'] = 'Вы часова заблакаваны і не можаце ўвайсці ў сістэму кіравання сайтам. Паспрабуйце пазней.';
 $_lang['login_blocked_ip'] = 'Вам забаронена ўваходзіць у сістэму кіравання сайтам з гэтага IP-адрасу.';
 $_lang['login_blocked_time'] = 'Вам забаронена ўваходзіць у сістэму кіравання зараз. Калі ласка, паспрабуйце пазней.';
 $_lang['login_blocked_too_many_attempts'] = 'Вы былі заблакаваныя з-за занадта вялікай колькасці няўдалых спробаў уваходу.';
 $_lang['login_button'] = 'Увайсці';
 $_lang['login_cannot_locate_account'] = 'Няправільнае імя карыстальніка або пароль. Калі ласка, праверце уведзеныя дадзеныя і паспрабуйце зноў.';
-$_lang['login_copyright'] = '&copy; 2005-[[+current_year]] by <a href="http://modx.com/about/" target="_blank">MODX, LLC</a>. MODX Revolution&trade; распаўсюджваецца пад ліцэнзіяй GPLv2 ці па больш позняй версіі гэтай ліцэнзіі.';
+$_lang['login_copyright'] = '&copy; 2005-[[+current_year]] by <a href="https://modx.com/about/" target="_blank">MODX, LLC</a>. MODX Revolution&trade; is licensed under the GPLv2 or later.';
 $_lang['login_email_label'] = 'Email ўліковага запісу:';
 $_lang['login_err_unknown'] = 'Пры спробе аўтарызацыі адбылася невядомая памылка.';
 $_lang['login_forget_your_login'] = 'Запамятавалi сваё імя карыстальніка?';

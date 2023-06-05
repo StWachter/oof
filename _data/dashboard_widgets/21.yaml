@@ -1,0 +1,9 @@
+id: 21
+name: bigbrother.top_referrers.name
+description: bigbrother.top_referrers.desc
+type: file
+content: '[[++core_path]]components/bigbrother/elements/widgets/topreferrers.class.php'
+namespace: bigbrother
+lexicon: 'bigbrother:default'
+name_trans: bigbrother.top_referrers.name
+description_trans: bigbrother.top_referrers.desc

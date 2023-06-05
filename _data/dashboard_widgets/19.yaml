@@ -1,0 +1,9 @@
+id: 19
+name: bigbrother.popular_pages.name
+description: bigbrother.popular_pages.desc
+type: file
+content: '[[++core_path]]components/bigbrother/elements/widgets/popularpages.class.php'
+namespace: bigbrother
+lexicon: 'bigbrother:default'
+name_trans: bigbrother.popular_pages.name
+description_trans: bigbrother.popular_pages.desc

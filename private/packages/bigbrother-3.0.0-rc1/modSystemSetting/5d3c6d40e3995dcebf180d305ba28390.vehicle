@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'bigbrother',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '225f0638b2cabe822655f7cf41adf22a',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '5d3c6d40e3995dcebf180d305ba28390',
+  'native_key' => 'bigbrother.refresh_token',
+  'object' => '{"key":"bigbrother.refresh_token","value":"","xtype":"textfield","namespace":"bigbrother","area":"Authorization","editedon":null}',
+);

@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'backupmodx',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '39182da3006f0d9d00da6b52a0750fae',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '54782d40daec59203f65c6b52bee2757',
+  'native_key' => 'backupmodx.excludeFolders',
+  'object' => '{"key":"backupmodx.excludeFolders","value":"","xtype":"textfield","namespace":"backupmodx","area":"system","editedon":null}',
+);
