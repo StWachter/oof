@@ -11,14 +11,37 @@ properties: 'a:0:{}'
                 
         [[$header]]
         
+        
         <style>
             .temp {
-                fonts-size: 1.8rem;
+                font-size: 1.2rem;
                 text-align:center;
-                max-width: 800px;
+                max-width: 900px;
                 margin: 0 auto;
+                background: #ff9036;
+                padding: 20px 1rem;
+            }
+            
+            @media(max-width:600px) {
+                .temp {
+                    font-size: 0.9rem;
+                }
             }
         </style>
+        [[-
+        <div class="pt4">
+           <div class="container">
+                <div class="temp content">
+                    [[++cultureKey:is=`en`:then=`
+<strong>ATTENTION: SHIPPING BREAK!</strong> <br><br>
+Orders placed by <b>11:30 a.m. on December 30</b> will be shipped on the same day, after that there will be a break. You can still order as usual, but have to wait a little longer. Shipping will be continued <b>January 21.</b> ]]                  `:else=`
+<strong>ACHTUNG: VERSANDPAUSE!</strong><br><br>
+Bestellungen bis <b>30.12. 11:30 Uhr</b> gehen am gleichen Tag noch raus, danach ist erstmal Pause. Bestellen kannst du weiterhin wie gewohnt, du musst nur etwas länger warten. Verschickt wird erst wieder ab dem <b>21. Januar</b>                    `
+                </div>
+            </div>
+        </div> 
+        ]]
+        
         
         
 
@@ -35,21 +58,6 @@ properties: 'a:0:{}'
                 </ul>
             </div>
         </div>
-        
-        <!--
-        <div class="pt4">
-           <div class="container">
-                <div class="temp content">
-                    [[++cultureKey:is=`en`:then=`
-<strong>ATTENTION — SHIPPING BREAK!</strong> <br>
-You can still order as usual, but have to wait a little longer. <br>Shipping will be continued December 28.                   `:else=`
-<strong>ACHTUNG — VERSANDPAUSE!</strong><br>
-Bestellen könnt ihr weiterhin wie gewohnt, ihr müsst nur etwas länger warten.<br> Verschickt wird erst wieder ab dem 28.12.                     `]]
-                </div>
-            </div>
-        </div> -->
-        
-        
         
         <!-- gallery -->
         <div class="pt3 pb0">
