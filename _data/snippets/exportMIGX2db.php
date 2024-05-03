@@ -1,7 +1,7 @@
 id: 53
 name: exportMIGX2db
 category: MIGX
-properties: ''
+properties: 'a:0:{}'
 
 -----
 

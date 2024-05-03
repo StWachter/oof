@@ -1,7 +1,0 @@
-{
-    "name": "modmore/guzzle7",
-    "description": "Installer package to load Guzzle 7 in MODX.",
-    "require": {
-        "guzzlehttp/guzzle": "^7.3"
-    }
-}

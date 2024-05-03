@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'crosscontextssettings',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '10d76576a2ecbdcf74a88d24edfbc87f',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'ebc0639ee41ece590a37259c15c3946e',
+  'native_key' => 'crosscontextssettings.clear_cache',
+  'object' => '{"key":"crosscontextssettings.clear_cache","value":"0","xtype":"combo-boolean","namespace":"crosscontextssettings","area":"system","editedon":null}',
+);

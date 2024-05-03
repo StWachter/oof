@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'babel',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'dd55454f5f29eba31e77675210d1d6cc',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'c7722e383676d00ae6cbdae089540c7e',
+  'native_key' => 'babel.restrictToGroup',
+  'object' => '{"key":"babel.restrictToGroup","value":"1","xtype":"combo-boolean","namespace":"babel","area":"system","editedon":null}',
+);

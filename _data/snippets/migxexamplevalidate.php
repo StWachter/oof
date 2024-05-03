@@ -1,7 +1,7 @@
 id: 58
 name: migx_example_validate
 category: MIGX
-properties: ''
+properties: 'a:0:{}'
 
 -----
 

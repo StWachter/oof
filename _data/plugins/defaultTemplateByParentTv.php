@@ -3,6 +3,7 @@ source: 2
 name: defaultTemplateByParentTv
 category: Einstellungen
 properties: 'a:0:{}'
+disabled: 1
 
 -----
 

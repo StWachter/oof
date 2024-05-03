@@ -1,0 +1,40 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'sitedashclient',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"sitedashclient-1.7.0-pl\\/modSystemSetting\\/009f4b0beb6430d9272ebc5d013bbf34\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"sitedashclient"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"sitedashclient-1.7.0-pl\\/modSystemSetting\\/009f4b0beb6430d9272ebc5d013bbf34\\/1\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"sitedashclient"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"sitedashclient-1.7.0-pl\\/modSystemSetting\\/009f4b0beb6430d9272ebc5d013bbf34.sitekey.resolver.resolver","type":"php","name":"sitekey.resolver"}',
+    ),
+  ),
+  'validate' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"sitedashclient-1.7.0-pl\\/modSystemSetting\\/009f4b0beb6430d9272ebc5d013bbf34.requirements.script.validator","type":"php","name":"requirements.script"}',
+    ),
+  ),
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'c50a275217752ffdd8e2f5a0c2a71175',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '009f4b0beb6430d9272ebc5d013bbf34',
+  'native_key' => 'sitedashclient.allow_user_search',
+  'object' => '{"key":"sitedashclient.allow_user_search","value":true,"xtype":"modx-combo-boolean","namespace":"sitedashclient","area":"security","editedon":1713213581}',
+);

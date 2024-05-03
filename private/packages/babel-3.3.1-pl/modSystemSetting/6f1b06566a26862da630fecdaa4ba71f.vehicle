@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'babel',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'f81150efb6d50e4cb469063bc8f3cd83',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '6f1b06566a26862da630fecdaa4ba71f',
+  'native_key' => 'babel.debug',
+  'object' => '{"key":"babel.debug","value":"0","xtype":"combo-boolean","namespace":"babel","area":"system","editedon":null}',
+);

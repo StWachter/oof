@@ -1,0 +1,5 @@
+key: sitedashclient.allow_user_search
+value: '1'
+xtype: modx-combo-boolean
+namespace: sitedashclient
+area: security

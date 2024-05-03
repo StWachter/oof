@@ -1,0 +1,5 @@
+key: babel.restrictToGroup
+value: '1'
+xtype: combo-boolean
+namespace: babel
+area: system

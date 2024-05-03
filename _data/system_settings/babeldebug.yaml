@@ -1,0 +1,5 @@
+key: babel.debug
+value: '0'
+xtype: combo-boolean
+namespace: babel
+area: system

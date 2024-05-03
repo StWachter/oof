@@ -48,6 +48,8 @@ $quantityPrices = $modx->getOption('quantityPrices', $scriptProperties);
 $preHooks = $modx->getOption('preHooks', $scriptProperties);
 $language = $modx->getOption('language', $scriptProperties);
 $submit_var = $modx->getOption('submitVar', $scriptProperties);
+$weight = $modx->getOption('weight', $scriptProperties, 0, true);
+$type = $modx->getOption('type', $scriptProperties);
 
 // check if submit var is set and not submitted
 if (!empty($submit_var) and !isset($_REQUEST[$submit_var])) return;
@@ -122,6 +124,8 @@ $item = $ec->createItem(array(
     'properties' => json_encode($properties),
     'group_prices' => json_encode($groupPrices),
     'quantity_prices' => json_encode($quantityPrices),
+    'weight' => $weight,
+    'type' => $type,
 ));
 
 
@@ -176,6 +180,7 @@ if (!empty($json)) {
     return json_encode(array(
         'order' => $order->id,
         'url' => $url,
+        'total_quantity' => $order->total_quantity,
         'message' => $successMessage,
     ));
 }

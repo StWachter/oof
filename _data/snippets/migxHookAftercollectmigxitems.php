@@ -1,7 +1,7 @@
 id: 59
 name: migxHookAftercollectmigxitems
 category: MIGX
-properties: ''
+properties: 'a:0:{}'
 
 -----
 

@@ -46,7 +46,7 @@ class LanguageSubtagRegistry
     {
         $registries = explode('%%', $this->src);
         array_shift($registries); // File-Date: 2010-10-26
-        $languagesArray = [];
+        $languagesArray = array();
         foreach ($registries as $regKey => $regVal) {
             $regVal = str_replace("\n  ", ' ', $regVal);
             $rows = explode("\n", $regVal);
@@ -80,7 +80,7 @@ class LanguageSubtagRegistry
             return;
         }
         $languagesArray = $this->languagesArray();
-        $languagesAssocArray = [];
+        $languagesAssocArray = array();
         foreach ($languagesArray as $row => $info) {
             if (!isset($info[$parentKey]) || empty($info[$parentKey])) {
                 continue;
@@ -101,7 +101,7 @@ class LanguageSubtagRegistry
      *
      * @return string the return value of the given value
      */
-    public function languagesAssoc($assoc = [], $returnKey = null)
+    public function languagesAssoc($assoc = array(), $returnKey = null)
     {
         list($assocKey, $assocVal) = each($assoc);
         $languagesAssocArray = $this->languagesAssocArray($assocKey);

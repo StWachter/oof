@@ -1,0 +1,92 @@
+<?php return array (
+  'unique_key' => 'name',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'PluginEvents' => 
+    array (
+      '1f9b1a35ac7a38b2c375ff72090ce10e' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnMODXInit","priority":0,"propertyset":0}',
+        'guid' => 'e08cb39512a444b26b7348f1d96fe2c8',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnMODXInit',
+        ),
+        'signature' => '571f07ae661e98ccec150722f3f01b0e',
+      ),
+      '946f0d125593d7a2aa66699bb7d0ad27' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnHandleRequest","priority":1,"propertyset":0}',
+        'guid' => 'ef578cb8cafdcdecb996ecd49465fb3e',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnHandleRequest',
+        ),
+        'signature' => '64e4a6df2768ab0c303195ebebbf6f7a',
+      ),
+      'b56d739b106a30c97fad0c249bd2aaa2' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"pdoToolsOnFenomInit","priority":0,"propertyset":0}',
+        'guid' => '830a9d61b3479b712f9616161daec3d6',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'pdoToolsOnFenomInit',
+        ),
+        'signature' => '335bc75ff491d010f23572baf56f0f55',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => false,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'clientconfig',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '6811992bc6c0ab077dbf338c98af3879',
+  'package' => 'modx',
+  'class' => 'modPlugin',
+  'signature' => 'ca1271f3ecd29667f6009bc17567acd8',
+  'native_key' => 1,
+  'object' => '{"id":1,"source":0,"property_preprocess":0,"name":"ClientConfig","description":"Sets system settings from the Client Config CMP.","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/**\\n * ClientConfig\\n *\\n * Copyright 2011-2014 by Mark Hamstra <hello@markhamstra.com>\\n *\\n * ClientConfig is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * ClientConfig is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * ClientConfig; if not, write to the Free Software Foundation, Inc., 59 Temple\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package clientconfig\\n *\\n * @var modX $modx\\n * @var int $id\\n * @var string $mode\\n * @var modResource $resource\\n * @var modTemplate $template\\n * @var modTemplateVar $tv\\n * @var modChunk $chunk\\n * @var modSnippet $snippet\\n * @var modPlugin $plugin\\n*\\/\\n\\n$eventName = $modx->event->name;\\n\\nswitch($eventName) {\\n    case \'OnMODXInit\':\\n    case \'OnHandleRequest\':\\n    case \'pdoToolsOnFenomInit\':\\n        \\/\\/ Measure to guard against pdoTools fenom parser loop bug: https:\\/\\/github.com\\/modmore\\/ClientConfig\\/issues\\/192\\n        \\/\\/ Here we only allow the pdoToolsOnFenomInit event to trigger the first time.\\n        if ($eventName === \'pdoToolsOnFenomInit\') {\\n            if ($modx->getOption(\'clientconfig.fenom_initialized\')) {\\n                return;\\n            }\\n            $modx->setOption(\'clientconfig.fenom_initialized\', true);\\n        }\\n\\n        \\/* Grab the class *\\/\\n        $path = $modx->getOption(\'clientconfig.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/clientconfig\\/\');\\n        $path .= \'model\\/clientconfig\\/\';\\n        $clientConfig = $modx->getService(\'clientconfig\',\'ClientConfig\', $path);\\n\\n        \\/* If we got the class (gotta be careful of failed migrations), grab settings and go! *\\/\\n        if ($clientConfig instanceof ClientConfig) {\\n            $contextKey = $modx->context instanceof modContext || $modx->context instanceof \\\\MODX\\\\Revolution\\\\modContext\\n                ? $modx->context->get(\'key\') : \'web\';\\n            $settings = $clientConfig->getSettings($contextKey);\\n\\n            \\/* Make settings available as [[++tags]] *\\/\\n            $modx->setPlaceholders($settings, \'+\');\\n\\n            \\/* Make settings available for $modx->getOption() *\\/\\n            foreach ($settings as $key => $value) {\\n                $modx->setOption($key, $value);\\n            }\\n        }\\n        break;\\n}\\n\\nreturn;","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * ClientConfig\\n *\\n * Copyright 2011-2014 by Mark Hamstra <hello@markhamstra.com>\\n *\\n * ClientConfig is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * ClientConfig is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * ClientConfig; if not, write to the Free Software Foundation, Inc., 59 Temple\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package clientconfig\\n *\\n * @var modX $modx\\n * @var int $id\\n * @var string $mode\\n * @var modResource $resource\\n * @var modTemplate $template\\n * @var modTemplateVar $tv\\n * @var modChunk $chunk\\n * @var modSnippet $snippet\\n * @var modPlugin $plugin\\n*\\/\\n\\n$eventName = $modx->event->name;\\n\\nswitch($eventName) {\\n    case \'OnMODXInit\':\\n    case \'OnHandleRequest\':\\n    case \'pdoToolsOnFenomInit\':\\n        \\/\\/ Measure to guard against pdoTools fenom parser loop bug: https:\\/\\/github.com\\/modmore\\/ClientConfig\\/issues\\/192\\n        \\/\\/ Here we only allow the pdoToolsOnFenomInit event to trigger the first time.\\n        if ($eventName === \'pdoToolsOnFenomInit\') {\\n            if ($modx->getOption(\'clientconfig.fenom_initialized\')) {\\n                return;\\n            }\\n            $modx->setOption(\'clientconfig.fenom_initialized\', true);\\n        }\\n\\n        \\/* Grab the class *\\/\\n        $path = $modx->getOption(\'clientconfig.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/clientconfig\\/\');\\n        $path .= \'model\\/clientconfig\\/\';\\n        $clientConfig = $modx->getService(\'clientconfig\',\'ClientConfig\', $path);\\n\\n        \\/* If we got the class (gotta be careful of failed migrations), grab settings and go! *\\/\\n        if ($clientConfig instanceof ClientConfig) {\\n            $contextKey = $modx->context instanceof modContext || $modx->context instanceof \\\\MODX\\\\Revolution\\\\modContext\\n                ? $modx->context->get(\'key\') : \'web\';\\n            $settings = $clientConfig->getSettings($contextKey);\\n\\n            \\/* Make settings available as [[++tags]] *\\/\\n            $modx->setPlaceholders($settings, \'+\');\\n\\n            \\/* Make settings available for $modx->getOption() *\\/\\n            foreach ($settings as $key => $value) {\\n                $modx->setOption($key, $value);\\n            }\\n        }\\n        break;\\n}\\n\\nreturn;"}',
+);

@@ -1,7 +1,7 @@
 id: 52
 name: migxObjectMediaPath
 category: MIGX
-properties: ''
+properties: 'a:0:{}'
 
 -----
 

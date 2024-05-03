@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'upgrademodx',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '79d41b12926d97fbab73ca93d6dd1dcc',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '2476b89a786d64da7da83a8602402d02',
+  'native_key' => 'ugm_verbose',
+  'object' => '{"key":"ugm_verbose","value":"0","xtype":"combo-boolean","namespace":"upgrademodx","area":"GitHub","editedon":null,"name":"setting_ugm_verbose","description":"setting_ugm_verbose_desc"}',
+);

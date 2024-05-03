@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'tower',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '8d37d4987a206e46acdfac38842b8414',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '9534e74a67c84c79f56cf418f81108dd',
+  'native_key' => 'tower.ip_whitelist',
+  'object' => '{"key":"tower.ip_whitelist","value":"","xtype":"textfield","namespace":"tower","area":"system","editedon":null}',
+);

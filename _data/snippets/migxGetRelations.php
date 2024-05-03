@@ -1,7 +1,7 @@
 id: 42
 name: migxGetRelations
 category: MIGX
-properties: ''
+properties: 'a:0:{}'
 
 -----
 
@@ -28,7 +28,7 @@ foreach ($parentIDs as $id) {
         $output = '';
                 
         $c = $modx->newQuery($classname, array('target_id' => $id, 'published' => '1'));
-        $c->select($modx->getSelectColumns($classname, $classname));
+        $c->select($modx->getSelectColumns($classname, $c->getAlias()));
 
         if (!empty($sourceWhere)) {
             $sourceWhere_ar = $modx->fromJson($sourceWhere);

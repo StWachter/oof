@@ -1,0 +1,5 @@
+key: imageoptimonupload.checkfile
+value: '1'
+xtype: combo-boolean
+namespace: imageoptimonupload
+area: system

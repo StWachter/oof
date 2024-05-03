@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'sitedashclient',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'ca2aa6d96e5568fd4fe359667a8b2f22',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'd28fe3edd045e484c4b669a97c9abcb1',
+  'native_key' => 'sitedashclient.allow_user_search',
+  'object' => '{"key":"sitedashclient.allow_user_search","value":true,"xtype":"modx-combo-boolean","namespace":"sitedashclient","area":"security","editedon":1713213581}',
+);

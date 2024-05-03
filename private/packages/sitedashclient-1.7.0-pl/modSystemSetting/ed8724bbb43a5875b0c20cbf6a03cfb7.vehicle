@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'sitedashclient',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'af3566a93bc75fb437200740a28f9b24',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'ed8724bbb43a5875b0c20cbf6a03cfb7',
+  'native_key' => 'sitedashclient.mysqldump_binary',
+  'object' => '{"key":"sitedashclient.mysqldump_binary","value":"mysqldump","xtype":"textfield","namespace":"sitedashclient","area":"executables","editedon":1713213581}',
+);

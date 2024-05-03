@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'sitedashclient',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'e77f5f65767b10afcfedb5b62d879217',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '34b3b4936a1256991d458d357bda321e',
+  'native_key' => 'sitedashclient.php_binary',
+  'object' => '{"key":"sitedashclient.php_binary","value":"","xtype":"textfield","namespace":"sitedashclient","area":"executables","editedon":1713213581}',
+);

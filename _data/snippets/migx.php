@@ -1,7 +1,7 @@
 id: 43
 name: migx
 category: MIGX
-properties: ''
+properties: 'a:0:{}'
 
 -----
 

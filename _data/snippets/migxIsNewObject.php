@@ -1,7 +1,7 @@
 id: 57
 name: migxIsNewObject
 category: MIGX
-properties: ''
+properties: 'a:0:{}'
 
 -----
 

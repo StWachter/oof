@@ -27,7 +27,7 @@ echo '<pre>';
 print_r($languagesAssocArray);
 echo '</pre>';
 
-$languagesAssoc = $ianaLstr->languagesAssoc(['Subtag' => 'cu'], 'Description');
+$languagesAssoc = $ianaLstr->languagesAssoc(array('Subtag' => 'cu') , 'Description');
 echo __LINE__ . ' : $languagesAssoc = ' . $languagesAssoc . '<br />';
 echo '<pre>';
 print_r($languagesAssoc);

@@ -1,6 +1,0 @@
-{
-    "require": {
-        "modmore/alpacka": "~1",
-        "imagine/imagine": "^0.7.1"
-    }
-}

@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'babel',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '648305f229da00b8510835ca82ef6f75',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '03f1aefdc791fe6a69f92d86ce79863c',
+  'native_key' => 'babel.displayText',
+  'object' => '{"key":"babel.displayText","value":"language","xtype":"textfield","namespace":"babel","area":"system","editedon":null}',
+);
