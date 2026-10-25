@@ -7,8 +7,9 @@ properties: 'a:0:{}'
 
 $variations = json_decode($modx->resource->getTVValue('productVariants'));
 
+
 // stop here if no variations exist
-if (count($variations) <= 0) return true;
+if (empty($variations)) return true;
 
 
 foreach ($variations as $var) {

@@ -3,7 +3,6 @@ template: 2
 label: pagetitle
 name: pagetitle
 sortable: 1
-width: 170
 renderer: Collections.renderer.pagetitleWithButtons
 position: 2
 sort_type: null

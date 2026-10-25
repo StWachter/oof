@@ -1,0 +1,4 @@
+key: consentfriend.mmdb_refresh
+value: '30'
+namespace: consentfriend
+area: geoip

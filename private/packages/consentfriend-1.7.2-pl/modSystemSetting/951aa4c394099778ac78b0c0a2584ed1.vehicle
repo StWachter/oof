@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'consentfriend',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'ed88d00907bea69c9ee64723b1781531',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '951aa4c394099778ac78b0c0a2584ed1',
+  'native_key' => 'consentfriend.mmdb_refresh',
+  'object' => '{"key":"consentfriend.mmdb_refresh","value":"30","xtype":"textfield","namespace":"consentfriend","area":"geoip","editedon":null}',
+);

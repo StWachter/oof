@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'consentfriend',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '65fe5f784f9e1d49451da4112b835d9a',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '66b03bba8df5afb5edd71ef09848ae00',
+  'native_key' => 'consentfriend.cronjob_id',
+  'object' => '{"key":"consentfriend.cronjob_id","value":"","xtype":"textfield","namespace":"consentfriend","area":"system","editedon":null}',
+);

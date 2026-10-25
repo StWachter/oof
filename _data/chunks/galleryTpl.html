@@ -9,7 +9,7 @@ properties: 'a:0:{}'
 
 
 
-<li class="js-filter-element all [[+productCategory:tvLabel:filterPathSegment]] [[+productCategorySecond:tvLabel:filterPathSegment]]">
+<li class="js-filter-element all [[+productMarketingPrice:notempty=`sale`]] [[+productCategory:tvLabel:filterPathSegment]] [[+productCategorySecond:tvLabel:filterPathSegment]]">
     <a href="[[~[[+id]]]]" target="_blank" class="gallery__item gallery__item--[[+productOverlayColor]]" id="produkt-[[+id]]">
         <figure class="gallery__imageWrapper">
             <picture>
@@ -30,6 +30,7 @@ properties: 'a:0:{}'
             &tpl=`productTestTpl`
             &limit=`1`
             &docid=`[[+id]]`
-        ]][[+productPrice:formatPrice]]€</div>
+        ]][[+productMarketingPrice:notempty=`<span class="cartForm__price" style="text-decoration:line-through;margin-right:10px;">[[+productMarketingPrice:formatPrice]] €</span>`]]
+[[+productMarketingPrice:is=``:then=`[[+productPrice:formatPrice]]€`:else=`<span style="color:#BBFF33">[[+productPrice:formatPrice]]€</span>`]]</div>
     </div>
 </li>

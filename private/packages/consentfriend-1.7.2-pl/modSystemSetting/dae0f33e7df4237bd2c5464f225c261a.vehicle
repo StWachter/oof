@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'consentfriend',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'f16e18f54d2ecc055b32300b41e15e54',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'dae0f33e7df4237bd2c5464f225c261a',
+  'native_key' => 'consentfriend.use_cron',
+  'object' => '{"key":"consentfriend.use_cron","value":"0","xtype":"combo-boolean","namespace":"consentfriend","area":"system","editedon":null}',
+);

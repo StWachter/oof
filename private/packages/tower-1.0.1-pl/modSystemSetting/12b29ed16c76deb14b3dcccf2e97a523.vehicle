@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'tower',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '9c8925bbef37266c615a3b3a7188ae01',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '12b29ed16c76deb14b3dcccf2e97a523',
+  'native_key' => 'tower.site_key',
+  'object' => '{"key":"tower.site_key","value":"","xtype":"textfield","namespace":"tower","area":"system","editedon":null}',
+);

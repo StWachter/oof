@@ -1,0 +1,4 @@
+key: consentfriend.mmdb_database
+value: GeoLite2-Country
+namespace: consentfriend
+area: geoip

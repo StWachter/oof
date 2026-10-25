@@ -7,6 +7,51 @@ properties: 'a:0:{}'
 
 -----
 
+        <div id="popup" style="
+          position:fixed;
+          inset:0;
+          margin: 40px;
+          color: #fff;
+          display:none;
+          align-items:center;
+          justify-content:center;
+          z-index:9999;
+        ">
+          <div style="
+          
+                    background:#603cac;
+
+            padding:20px;
+            max-width:700px;
+            text-align:center;
+            font-size:24px;
+          ">
+            <p>
+                [[*context_key:is=`en`:then=`
+                I now ship regularly only once a week, usually on Fridays. If it’s urgent and you need your order sooner, feel free to email me at hej@ohofi.de
+                `:else=`
+                Achtung: ich versende regulär nur noch 1x pro Woche, meistens freitags. Wenn es eilt und du deine Bestellung schneller benötigst, schreib mir gerne eine Email an hej@ohofi.de
+                `]]
+            </p>
+            <button class="button" style="color:#000;" onclick="closePopup()">OK</button>
+          </div>
+        </div>
+        
+        <script>
+            (function () {
+              if (sessionStorage.getItem('popupShown')) return;
+            
+              document.getElementById('popup').style.display = 'flex';
+              sessionStorage.setItem('popupShown', '1');
+            })();
+            
+            function closePopup() {
+              document.getElementById('popup').style.display = 'none';
+            }
+        </script>
+
+
+
 <!-- footer -->
 <footer class="footer [[+footerClass]]">
     <div class="container">
@@ -21,6 +66,7 @@ properties: 'a:0:{}'
                         &resources=`[[++sites_footer]]`
                         &showHidden=`1`
                     ]]
+                    <li><a style="cursor:pointer" onclick="klaro.show();return false;">Cookies</a></li>
                 </ul>
             </nav>
             <a href="https://www.instagram.com/oh.ofi/" target="_blank">Instagram</a>

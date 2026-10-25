@@ -26,6 +26,23 @@ properties: 'a:0:{}'
                     flex-direction: column;
                     align-items: center;
             }
+            
+            .product {
+                align-items: flex-start;
+                position: relative;
+            }
+            
+            .product__slider {
+                position: sticky;
+                top: 100px;
+            }
+            
+            @media (max-width: 900px) {
+                .product__slider {
+                    position: static;
+                    top: auto;
+                }
+            }
 
 
         </style>
@@ -94,9 +111,9 @@ properties: 'a:0:{}'
                                 <div class="cartForm__extra">
                                     
                                     [[+variants:notempty=`
-                                    <div style="font-size: 1.3rem; margin-bottom: .5rem">Option wählen / choose option: </div>
                                     <div class="cartForm__field cartForm__field--extra">
-                                        <select class="cartForm__select" required name="variant" id="">
+                                        <select class="cartForm__select" required name="variant">
+                                            <option disabled selected hidden value="">CLICK + CHOOSE OPTION &darr;</option>
                                             [[+variants]]
                                         </select>
                                     </div>
@@ -105,7 +122,8 @@ properties: 'a:0:{}'
                                     <div class="cartForm__field">
                                         [[+variants:is=``:then=`
                                         <span class="cartForm__label">[[*productLabel]]</span>
-                                        <span class="cartForm__price">[[*productPrice:formatPrice]] €</span>
+                                        [[*productMarketingPrice:notempty=`<span class="cartForm__price" style="text-decoration:line-through">[[*productMarketingPrice:formatPrice]] €</span>`]]
+                                        <span class="cartForm__price" [[*productMarketingPrice:notempty=`style="color:red"`]]>[[*productPrice:formatPrice]] €</span>
                                         `:else=``]]
                                         <div class="js-increment-wrapper">
                                             <div class="cartForm__incrementWrapper">
@@ -120,14 +138,41 @@ properties: 'a:0:{}'
                                 </div>
                             </div>
                             <div class="pt1">
+                                
                                 [[*productButton:is=`b-sold-o`:then=`<div class="button">[[%product.soldout? &namespace=`site` &language=`[[++cultureKey]]`]]</div>`:else=`
                                 <button type="submit" class="button">[[%product.add]]</button>
                                 `]]
+                                [[-
+                                <div style="opacity:0.6;pointer-events:none" class="button">SHOP CLOSED!</div>
+                                ]]
                             </div>
                         </form>
                         <div class="content">
                             <div style="font-size:.7rem; margin: 1rem auto 0;">
+                                Artikelnummer: [[*id]]<br>
                                 [[%product.prices]]
+                            </div>
+                            <style>
+                                .buttonSlide {
+                                    font-size: 0.7rem;
+                                    cursor: pointer;
+                                }
+                                
+                                .buttonSlideContent {
+                                    font-size: 0.7rem;
+                                    display: none;
+                                }
+                            </style>
+                            
+                            
+                            <div class="pt1">
+                                <div class="buttonSlide js-more-button"><strong>Herstellerangaben ↓</strong></div>
+                                <div class="buttonSlideContent js-more-content" style="display:none">
+                                    Sophie Kuhn<br>
+                                    Augustenburgstr. 53<br>
+                                    76229 Karlsruhe<br>
+                                    <a href="mailto:hej@ohofi.de">hej@ohofi.de</a>
+                                </div>
                             </div>
                         </div>
                     </div>

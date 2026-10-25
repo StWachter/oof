@@ -19,18 +19,8 @@ class Tower {
         // add addPackage
         $basePath = $this->modx->getOption('tower.core_path',$config,$this->modx->getOption('core_path').'components/tower/');
         $assetsUrl = $this->modx->getOption('tower.assets_url',$config,$this->modx->getOption('assets_url').'components/tower/');
-        $this->config = array_merge(array(
-            'basePath' => $basePath,
-            'corePath' => $basePath,
-            'modelPath' => $basePath . 'model/',
-            'processorsPath' => $basePath . 'processors/',
-            'templatesPath' => $basePath . 'templates/',
-            'chunksPath' => $basePath . 'elements/chunks/',
-            'jsUrl' => $assetsUrl . 'js/',
-            'cssUrl' => $assetsUrl . 'css/',
-            'assetsUrl' => $assetsUrl,
-            'connectorUrl' => $assetsUrl . 'connector.php',
-        ), $config);
+
+        $this->config = $this->modx->getConfig();
 
         $this->modx->addPackage('tower', $this->config['modelPath']);
     }
@@ -63,6 +53,34 @@ class Tower {
         }
 
         return $data;
+    }
+
+
+    // check Security
+    public function checkSecurity()
+    {
+        // check if site key is empty
+        if (!array_key_exists('site-key', $_REQUEST)) {
+            http_response_code(401);
+            return json_encode(['success' => false, 'message' => 'Missing authentication.']);
+        }
+
+        // check for correct site key
+        if ($this->modx->getOption('tower.site_key') != $_REQUEST['site-key'] or empty($this->modx->getOption('tower.site_key'))) {
+            http_response_code(401);
+            return json_encode(['success' => false, 'message' => 'Missing authentication.']);
+        }
+
+        // check for correct ip
+        if (!empty($this->modx->getOption('tower.ip_whitelist'))) {
+            $ips = explode(',', $this->modx->getOption('tower.ip_whitelist'));
+            if (!in_array($_SERVER['REMOTE_ADDR'], $ips)) {
+                http_response_code(401);
+                return json_encode(['success' => false, 'message' => 'Missing authentication.']);
+            }
+        }
+
+        return true;
     }
 
 }

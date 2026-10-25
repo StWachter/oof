@@ -1,0 +1,43 @@
+<?php
+/**
+ * Resolve create folders
+ *
+ * @package consentfriend
+ * @subpackage build
+ *
+ * @var array $options
+ * @var xPDOObject $object
+ */
+
+$success = true;
+if ($object->xpdo) {
+
+    switch ($options[xPDOTransport::PACKAGE_ACTION]) {
+        case xPDOTransport::ACTION_INSTALL:
+        case xPDOTransport::ACTION_UPGRADE:
+            /** @var modX $modx */
+            $modx =& $object->xpdo;
+
+            $corepath = $modx->getOption('consentfriend.core_path', null, $modx->getOption('core_path') . 'components/consentfriend/');
+
+            // Create folders
+            $folders = [
+                $corepath . 'elements/mmdb'
+            ];
+
+            $cacheManager = $modx->getCacheManager();
+            foreach ($folders as $folder) {
+                if (!file_exists($folder) || !is_dir($folder)) {
+                    if (!$cacheManager->writeTree($folder)) {
+                        $modx->log(xPDO::LOG_LEVEL_ERROR, 'Folder "' . $folder . '" could not be created');
+                        $success = false;
+                    }
+                }
+            }
+            break;
+    }
+    if ($success) {
+        $modx->log(xPDO::LOG_LEVEL_INFO, 'ConsentFriend custom folders were created.');
+    }
+}
+return $success;

@@ -3,7 +3,7 @@ template: 2
 label: resource_menuindex
 name: menuindex
 sortable: 1
-width: 50
+width: 20
 editor: '{"xtype":"numberfield","allowNegative":false,"allowDecimal":false}'
-position: 4
+position: 10
 sort_type: null

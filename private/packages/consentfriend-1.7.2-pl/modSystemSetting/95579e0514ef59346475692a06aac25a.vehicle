@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'consentfriend',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '9d9fcf152cd73790f3de7cb739486035',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '95579e0514ef59346475692a06aac25a',
+  'native_key' => 'consentfriend.use_geoip',
+  'object' => '{"key":"consentfriend.use_geoip","value":"0","xtype":"combo-boolean","namespace":"consentfriend","area":"geoip","editedon":null}',
+);

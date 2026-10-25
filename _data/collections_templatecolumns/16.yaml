@@ -1,0 +1,8 @@
+id: 16
+template: 2
+label: Preis
+name: tv_productPrice
+width: 20
+editor: '{"xtype":"numberfield","allowNegative":false,"allowDecimal":true}'
+position: 5
+sort_type: null

@@ -1,0 +1,10 @@
+id: 22
+name: consentfriend.widget.statistics
+description: consentfriend.widget.statistics_desc
+type: file
+content: '[[++core_path]]components/consentfriend/elements/widgets/statistics.widget.php'
+namespace: consentfriend
+lexicon: 'consentfriend:default'
+size: full
+name_trans: consentfriend.widget.statistics
+description_trans: consentfriend.widget.statistics_desc

@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'consentfriend',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '30bfb55fe722162547963d7ad4bc73d6',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'cb9c4302b06d2bcc3c5ccd3c268da572',
+  'native_key' => 'consentfriend.mmdb_license_key',
+  'object' => '{"key":"consentfriend.mmdb_license_key","value":"","xtype":"textfield","namespace":"consentfriend","area":"geoip","editedon":null}',
+);

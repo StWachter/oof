@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'consentfriend',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '801c8ca84eb9572a6fed8a7dc53aa8d2',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '399644789cc9c0e17bf7f3c3118c132a',
+  'native_key' => 'consentfriend.mmdb_database',
+  'object' => '{"key":"consentfriend.mmdb_database","value":"GeoLite2-Country","xtype":"textfield","namespace":"consentfriend","area":"geoip","editedon":null}',
+);
