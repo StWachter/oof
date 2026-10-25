@@ -39,10 +39,10 @@ properties: 'a:0:{}'
         
         <script>
             (function () {
-              if (sessionStorage.getItem('popupShown')) return;
+              if (document.cookie.indexOf('popupShown=1') !== -1) return;
             
               document.getElementById('popup').style.display = 'flex';
-              sessionStorage.setItem('popupShown', '1');
+              document.cookie = 'popupShown=1; path=/; SameSite=Lax';
             })();
             
             function closePopup() {
