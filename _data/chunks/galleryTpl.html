@@ -13,8 +13,8 @@ properties: 'a:0:{}'
     <a href="[[~[[+id]]]]" target="_blank" class="gallery__item gallery__item--[[+productOverlayColor]]" id="produkt-[[+id]]">
         <figure class="gallery__imageWrapper">
             <picture>
-                <source srcset="[[+productImage:pThumb=`w=600&f=webp`]]" media="(min-width: 320px)">
-                <img class="gallery__image" width="400" height="400" src="[[+productImage]]" alt="[[+pagetitle:htmlent]]" loading="lazy">
+                <source type="image/webp" srcset="[[+productImage:pThumb=`w=400&f=webp`]] 400w, [[+productImage:pThumb=`w=800&f=webp`]] 800w" sizes="(max-width: 700px) calc(100vw - 80px), (max-width: 1000px) calc(50vw - 65px), 400px">
+                <img class="gallery__image" width="400" height="400" src="[[+productImage:pThumb=`w=800`]]" alt="[[+pagetitle:htmlent]]" loading="lazy" decoding="async">
             </picture>
             <figcaption class="gallery__overlay">
                 [[+productOverlay]]

@@ -61,10 +61,8 @@ properties: 'a:0:{}'
         <!-- backgroundImage -->
         <figure class="backgroundImage__wrapper animateIn animateIn--toTop animateIn--fade" data-animation-delay=".6" style="margin-top:-50px">
             <picture>
-                <source srcset="[[*backgroundImage:pThumb=`w=1200`]]" media="(min-width: 1000px)">
-                <source srcset="[[*backgroundImage:pThumb=`w=1000`]]" media="(min-width: 600px)">
-                <source srcset="[[*backgroundImage:pThumb=`w=600`]]" media="(min-width: 320px)">
-                <img class="backgroundImage" width="900" height="900" src="[[*backgroundImage]]" alt="[[*pagetitle:htmlent]]" loading="lazy">
+                <source type="image/webp" srcset="[[*backgroundImage:pThumb=`w=600&f=webp`]] 600w, [[*backgroundImage:pThumb=`w=1000&f=webp`]] 1000w, [[*backgroundImage:pThumb=`w=1500&f=webp`]] 1500w" sizes="(max-width: 1000px) 100vw, 1000px">
+                <img class="backgroundImage" width="900" height="900" src="[[*backgroundImage:pThumb=`w=1000`]]" alt="[[*pagetitle:htmlent]]" fetchpriority="high">
             </picture>
         </figure>
         
