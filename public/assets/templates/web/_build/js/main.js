@@ -52,7 +52,7 @@ $(document).ready(function() {
 			window.location = url;
 		}
         return false;
-    });​
+    });
 
 
 
@@ -203,9 +203,60 @@ $(document).ready(function() {
             },
             load: {
                 filter: initialFilter
+            },
+            callbacks: {
+                // keep active filter in the url hash (without new history entry)
+                onMixEnd: function(state) {
+                    var filter = state.activeFilter.selector.replace(/^\./, ''),
+                        url = location.pathname + location.search;
+
+                    // full path needed, relative urls resolve against <base href>
+                    history.replaceState(null, '', filter === 'all' ? url : url + '#' + filter);
+                }
             }
         });
+
+        // restore scroll position when coming back from a product
+        var scrollKey = 'shopScroll:' + location.pathname,
+            navigation = window.performance && performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        try {
+            var savedScroll = sessionStorage.getItem(scrollKey);
+            if (savedScroll && navigation && navigation.type === 'back_forward') {
+                window.scrollTo(0, parseInt(savedScroll, 10));
+            }
+        } catch (e) {}
+
+        $(window).on('pagehide', function() {
+            try {
+                sessionStorage.setItem(scrollKey, window.pageYOffset);
+            } catch (e) {}
+        });
     }
+
+
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * *
+    // * back button
+    // *
+    // * goes back in history if the user came from the linked page
+    // * (keeps scroll position and filter), otherwise follows the link
+    // *
+    $(".js-back").click(function(e) {
+        try {
+            var referrer = new URL(document.referrer),
+                target = new URL(this.href);
+
+            if (referrer.origin === target.origin && referrer.pathname === target.pathname && history.length > 1) {
+                e.preventDefault();
+                history.back();
+            }
+        } catch (err) {}
+    });
 
 
 });
